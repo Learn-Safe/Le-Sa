@@ -23,8 +23,8 @@ namespace Le_Sa
             if (pnlLoadingFront.Width >= 925)
             {
                 timerLoading.Stop();
-                //formSignUp signin = new formSignUp();
-                //signin.Show();
+                formDashboard dahsboard = new formDashboard();
+                dahsboard.Show();
                 this.Hide();
             }
         }
