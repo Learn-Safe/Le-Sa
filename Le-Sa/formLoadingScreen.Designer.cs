@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formLoadingScreen));
             this.lblCreator = new System.Windows.Forms.Label();
             this.lblSlogan = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
@@ -76,7 +75,7 @@
             // 
             // pnlLoadingBack
             // 
-            this.pnlLoadingBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(26)))));
+            this.pnlLoadingBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(74)))));
             this.pnlLoadingBack.Controls.Add(this.pnlLoadingFront);
             this.pnlLoadingBack.Location = new System.Drawing.Point(0, 445);
             this.pnlLoadingBack.Name = "pnlLoadingBack";
@@ -111,7 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(919, 490);
             this.Controls.Add(this.lblCreator);
             this.Controls.Add(this.lblSlogan);

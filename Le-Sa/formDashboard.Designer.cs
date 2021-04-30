@@ -36,6 +36,7 @@
             this.pnlUser = new System.Windows.Forms.Panel();
             this.lblUserName = new System.Windows.Forms.Label();
             this.pbUserPic = new System.Windows.Forms.PictureBox();
+            this.pnlTitleBar = new System.Windows.Forms.Panel();
             this.pnlMenu.SuspendLayout();
             this.pnlUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserPic)).BeginInit();
@@ -50,9 +51,9 @@
             this.pnlMenu.Controls.Add(this.ibtnDashboard);
             this.pnlMenu.Controls.Add(this.pnlUser);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnlMenu.Location = new System.Drawing.Point(0, 23);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(186, 557);
+            this.pnlMenu.Size = new System.Drawing.Size(186, 577);
             this.pnlMenu.TabIndex = 0;
             // 
             // ibtnSettings
@@ -68,7 +69,7 @@
             this.ibtnSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ibtnSettings.IconSize = 30;
             this.ibtnSettings.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.ibtnSettings.Location = new System.Drawing.Point(0, 517);
+            this.ibtnSettings.Location = new System.Drawing.Point(0, 537);
             this.ibtnSettings.Name = "ibtnSettings";
             this.ibtnSettings.Size = new System.Drawing.Size(186, 40);
             this.ibtnSettings.TabIndex = 5;
@@ -172,14 +173,26 @@
             this.pbUserPic.TabIndex = 0;
             this.pbUserPic.TabStop = false;
             // 
+            // pnlTitleBar
+            // 
+            this.pnlTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.pnlTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitleBar.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitleBar.Name = "pnlTitleBar";
+            this.pnlTitleBar.Size = new System.Drawing.Size(950, 23);
+            this.pnlTitleBar.TabIndex = 1;
+            this.pnlTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
+            // 
             // formDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(951, 557);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(74)))));
+            this.ClientSize = new System.Drawing.Size(950, 600);
             this.Controls.Add(this.pnlMenu);
-            this.MinimumSize = new System.Drawing.Size(967, 596);
+            this.Controls.Add(this.pnlTitleBar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "formDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.formDashboard_Load);
@@ -202,5 +215,6 @@
         private FontAwesome.Sharp.IconButton ibtnSettings;
         private FontAwesome.Sharp.IconButton ibtnInfo;
         private FontAwesome.Sharp.IconButton ibtnRports;
+        private System.Windows.Forms.Panel pnlTitleBar;
     }
 }
