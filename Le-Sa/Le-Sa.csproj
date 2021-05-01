@@ -67,8 +67,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include=".editorconfig" />
     <None Include="packages.config" />
-    <None Include="Resources\user_ico_64.ico" />
     <EmbeddedResource Include="formDashboard.resx">
       <DependentUpon>formDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,6 +100,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_65px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_click20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filled_close_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filled_minimize_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize_click_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize_filled_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_click20px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
