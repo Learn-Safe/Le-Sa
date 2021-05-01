@@ -13,12 +13,33 @@ namespace Le_Sa
 {
     public partial class formDashboard : Form
     {
-
         public formDashboard()
         {
             InitializeComponent();
         }
 
+        #region Resizability 
+        //Resizable form
+        private const int cGrip = 16;
+
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == 0x84)
+            {
+                Point pos = new Point(m.LParam.ToInt32());
+                pos = this.PointToScreen(pos);
+                if (pos.X >= ClientSize.Width - cGrip && pos.Y >= ClientSize.Height - cGrip)
+                {
+                    m.Result = (IntPtr)17;
+                    return;
+                }
+            }
+            base.WndProc(ref m);
+        }
+        //Resizable form end
+        #endregion
+
+        #region Draggability
         //Draggable form
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -38,6 +59,7 @@ namespace Le_Sa
             }
         }
         //Draggable form end
+        #endregion
 
         private void formDashboard_Load(object sender, EventArgs e)
         {
