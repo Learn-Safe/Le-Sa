@@ -13,9 +13,8 @@ namespace Le_Sa
 {
     public partial class formDesktop : Form
     {
-
         private IconButton currentBtn;
-
+        private Form currentChildForm;
 
         public formDesktop()
         {
@@ -33,10 +32,23 @@ namespace Le_Sa
             public static Color menuBackDefault = Color.FromArgb(24, 30, 54);
         }
 
-        protected override void OnPaint(PaintEventArgs e)
+        #region Open Child Form
+        private void OpenChildForm(Form childForm)
         {
-            ControlPaint.DrawBorder(e.Graphics, ClientRectangle, Color.Gold, ButtonBorderStyle.Solid);
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlDesktop.Controls.Add(childForm);
+            pnlDesktop.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
+        #endregion  
 
         #region Side Menu
         private void ActiveButton(object senderBtn, Color color)
@@ -88,5 +100,6 @@ namespace Le_Sa
             ActiveButton(sender, RGBColors.settings);
         }
         #endregion
+
     }
 }
