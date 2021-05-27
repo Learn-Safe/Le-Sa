@@ -1,7 +1,7 @@
 ﻿
 namespace Le_Sa
 {
-    partial class formDashboard
+    partial class formDesktop
     {
         /// <summary>
         /// Required designer variable.
@@ -102,6 +102,7 @@ namespace Le_Sa
             this.ibtnSettings.AutoSize = true;
             this.ibtnSettings.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ibtnSettings.FlatAppearance.BorderSize = 0;
+            this.ibtnSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(49)))), ((int)(((byte)(90)))));
             this.ibtnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibtnSettings.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ibtnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
@@ -122,7 +123,7 @@ namespace Le_Sa
             // 
             this.ibtnInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.ibtnInfo.FlatAppearance.BorderSize = 0;
-            this.ibtnInfo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ibtnInfo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(49)))), ((int)(((byte)(90)))));
             this.ibtnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibtnInfo.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ibtnInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
@@ -143,7 +144,7 @@ namespace Le_Sa
             // 
             this.ibtnRports.Dock = System.Windows.Forms.DockStyle.Top;
             this.ibtnRports.FlatAppearance.BorderSize = 0;
-            this.ibtnRports.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ibtnRports.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(49)))), ((int)(((byte)(90)))));
             this.ibtnRports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibtnRports.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ibtnRports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
@@ -165,7 +166,7 @@ namespace Le_Sa
             this.ibtnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.ibtnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
             this.ibtnDashboard.FlatAppearance.BorderSize = 0;
-            this.ibtnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ibtnDashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(49)))), ((int)(((byte)(90)))));
             this.ibtnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ibtnDashboard.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ibtnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
@@ -195,6 +196,7 @@ namespace Le_Sa
             this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "formDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Le-Sa";
             this.pnlUser.ResumeLayout(false);
             this.pnlUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserPic)).EndInit();

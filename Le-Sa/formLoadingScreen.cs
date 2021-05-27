@@ -23,7 +23,7 @@ namespace Le_Sa
             if (pnlLoadingFront.Width >= 925)
             {
                 timerLoading.Stop();
-                formDashboard dahsboard = new formDashboard();
+                formDesktop dahsboard = new formDesktop();
                 dahsboard.Show();
                 this.Hide();
             }

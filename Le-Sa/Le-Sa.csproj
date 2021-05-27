@@ -57,11 +57,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="formDashboard.cs">
+    <Compile Include="formDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formDashboard.Designer.cs">
-      <DependentUpon>formDashboard.cs</DependentUpon>
+    <Compile Include="formDesktop.Designer.cs">
+      <DependentUpon>formDesktop.cs</DependentUpon>
     </Compile>
     <Compile Include="formLoadingScreen.cs">
       <SubType>Form</SubType>
@@ -72,8 +72,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include=".editorconfig" />
-    <EmbeddedResource Include="formDashboard.resx">
-      <DependentUpon>formDashboard.cs</DependentUpon>
+    <EmbeddedResource Include="formDesktop.resx">
+      <DependentUpon>formDesktop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formLoadingScreen.resx">
       <DependentUpon>formLoadingScreen.cs</DependentUpon>
