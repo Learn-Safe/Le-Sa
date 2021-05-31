@@ -75,6 +75,12 @@
     <Compile Include="formLoadingScreen.Designer.cs">
       <DependentUpon>formLoadingScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="formSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formSettings.Designer.cs">
+      <DependentUpon>formSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include=".editorconfig" />
@@ -86,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formLoadingScreen.resx">
       <DependentUpon>formLoadingScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formSettings.resx">
+      <DependentUpon>formSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
