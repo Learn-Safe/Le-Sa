@@ -80,6 +80,7 @@ namespace Le_Sa
         {
             currentMenuItem = "Dashboard";
             ActiveButton(sender, RGBColors.normal);
+            OpenChildForm(new formDashboard());
         }
 
         private void ibtnRports_Click(object sender, EventArgs e)
