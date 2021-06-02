@@ -10,7 +10,7 @@ using System.ComponentModel;
 
 namespace Le_Sa
 {
-    public class RoundedButton : Button
+    public class CustRoundedButton : Button
     {
         #region Fields
         private int borderSize = 0;
@@ -80,7 +80,7 @@ namespace Le_Sa
         #endregion
 
         #region Constructor
-        public RoundedButton()
+        public CustRoundedButton()
         {
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderSize = 0;
@@ -96,6 +96,7 @@ namespace Le_Sa
                 borderRadius = this.Height;
         }
 
+        #region Methods
         private GraphicsPath GetFigurePath(RectangleF rect, float radius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -107,6 +108,7 @@ namespace Le_Sa
             path.CloseFigure();
             return path;
         }
+        #endregion
 
         protected override void OnPaint(PaintEventArgs pevent)
         {

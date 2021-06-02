@@ -57,6 +57,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControls\CustToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="formDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,7 +86,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rounded Button.cs">
+    <Compile Include="CustomControls\CustRoundedButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <None Include=".editorconfig" />
