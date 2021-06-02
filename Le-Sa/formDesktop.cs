@@ -87,7 +87,6 @@ namespace Le_Sa
         {
             currentMenuItem = "Report";
             ActiveButton(sender, RGBColors.normal);
-            OpenChildForm(new formSettings());
         }
 
         private void ibtnInfo_Click(object sender, EventArgs e)
@@ -100,7 +99,7 @@ namespace Le_Sa
         {
             currentMenuItem = "Settings";
             ActiveButton(sender, RGBColors.settings);
-
+            OpenChildForm(new formSettings());
         }
         #endregion
 
