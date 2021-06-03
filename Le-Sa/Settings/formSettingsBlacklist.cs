@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Le_Sa
+namespace Le_Sa.Settings
 {
-    public partial class formSettings : Form
+    public partial class formSettingsBlacklist : Form
     {
-        public formSettings()
+        public formSettingsBlacklist()
         {
             InitializeComponent();
         }

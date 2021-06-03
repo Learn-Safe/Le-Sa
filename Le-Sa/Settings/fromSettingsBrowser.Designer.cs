@@ -1,0 +1,72 @@
+﻿
+namespace Le_Sa.Settings
+{
+    partial class fromSettingsBrowser
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.custRoundedButton1 = new Le_Sa.CustRoundedButton();
+            this.SuspendLayout();
+            // 
+            // custRoundedButton1
+            // 
+            this.custRoundedButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.custRoundedButton1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.custRoundedButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.custRoundedButton1.BorderRadius = 0;
+            this.custRoundedButton1.BorderSize = 0;
+            this.custRoundedButton1.FlatAppearance.BorderSize = 0;
+            this.custRoundedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.custRoundedButton1.ForeColor = System.Drawing.Color.White;
+            this.custRoundedButton1.Location = new System.Drawing.Point(258, 218);
+            this.custRoundedButton1.Name = "custRoundedButton1";
+            this.custRoundedButton1.Size = new System.Drawing.Size(150, 40);
+            this.custRoundedButton1.TabIndex = 0;
+            this.custRoundedButton1.Text = "custRoundedButton1";
+            this.custRoundedButton1.TextColor = System.Drawing.Color.White;
+            this.custRoundedButton1.UseVisualStyleBackColor = false;
+            // 
+            // fromSettingsBrowser
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(74)))));
+            this.ClientSize = new System.Drawing.Size(566, 561);
+            this.Controls.Add(this.custRoundedButton1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(566, 561);
+            this.Name = "fromSettingsBrowser";
+            this.Text = "fromSettingsBrowser";
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private CustRoundedButton custRoundedButton1;
+    }
+}

@@ -1,7 +1,7 @@
 ﻿
-namespace Le_Sa
+namespace Le_Sa.Settings
 {
-    partial class formSettings
+    partial class formSettingsBlacklist
     {
         /// <summary>
         /// Required designer variable.
@@ -29,35 +29,21 @@ namespace Le_Sa
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlSettings = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // pnlSettings
-            // 
-            this.pnlSettings.AutoScroll = true;
-            this.pnlSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(74)))));
-            this.pnlSettings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlSettings.Location = new System.Drawing.Point(0, 0);
-            this.pnlSettings.Name = "pnlSettings";
-            this.pnlSettings.Size = new System.Drawing.Size(748, 561);
-            this.pnlSettings.TabIndex = 0;
-            // 
-            // formSettings
+            // formBlacklist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 561);
-            this.Controls.Add(this.pnlSettings);
+            this.ClientSize = new System.Drawing.Size(566, 561);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(748, 561);
-            this.Name = "formSettings";
-            this.Text = "formSettings";
+            this.MinimumSize = new System.Drawing.Size(566, 561);
+            this.Name = "formBlacklist";
+            this.Text = "formBlacklist";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnlSettings;
     }
 }

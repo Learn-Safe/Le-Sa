@@ -13,8 +13,8 @@ namespace Le_Sa
     public class CustRoundedButton : Button
     {
         #region Fields
-        private int borderSize = 0;
-        private int borderRadius = 40;
+        private int borderSize;
+        private int borderRadius;
         private Color borderColor = Color.PaleVioletRed;
         #endregion
 

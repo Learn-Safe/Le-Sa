@@ -78,10 +78,16 @@
     <Compile Include="formLoadingScreen.Designer.cs">
       <DependentUpon>formLoadingScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="formSettings.cs">
+    <Compile Include="Settings\formSettingsBlacklist.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formSettings.Designer.cs">
+    <Compile Include="Settings\formSettingsBlacklist.Designer.cs">
+      <DependentUpon>formSettingsBlacklist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\formSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\formSettings.Designer.cs">
       <DependentUpon>formSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -89,6 +95,18 @@
     <Compile Include="CustomControls\CustRoundedButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Settings\fromSettingsBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\fromSettingsBrowser.Designer.cs">
+      <DependentUpon>fromSettingsBrowser.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Settings\formSettingsBlacklist.resx">
+      <DependentUpon>formSettingsBlacklist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\fromSettingsBrowser.resx">
+      <DependentUpon>fromSettingsBrowser.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include=".editorconfig" />
     <EmbeddedResource Include="formDashboard.resx">
       <DependentUpon>formDashboard.cs</DependentUpon>
@@ -99,7 +117,7 @@
     <EmbeddedResource Include="formLoadingScreen.resx">
       <DependentUpon>formLoadingScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="formSettings.resx">
+    <EmbeddedResource Include="Settings\formSettings.resx">
       <DependentUpon>formSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -158,6 +176,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\minimize_click20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_edit_150px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
