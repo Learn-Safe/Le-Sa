@@ -6,19 +6,19 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FontAwesome.Sharp;
 using System.Windows.Forms;
  
 namespace Le_Sa
 {
     public partial class formDesktop : Form
     {
-        private IconButton currentBtn;
+        private CustRoundedButton currentBtn;
         private Form currentChildForm;
 
         public formDesktop()
         {
             InitializeComponent();
+            crBtnHistory.ImageAlign = ContentAlignment.TopCenter;
         }
 
         readonly String titlebarText = "Le-Sa | ";
@@ -26,10 +26,12 @@ namespace Le_Sa
 
         private struct RGBColors
         {
-            public static Color desktopBackDefault = Color.FromArgb(34, 40, 74);
-            public static Color normal = Color.FromArgb(52, 152, 219);
-            public static Color settings = Color.FromArgb(231, 76, 60);
-            public static Color menuBackDefault = Color.FromArgb(24, 30, 54);
+            public static Color btnDefault = Color.FromArgb(35,46,76);
+            public static Color btnDefaultFore = Color.FromArgb(210, 211, 213);
+            public static Color btnClicked = Color.FromArgb(45, 54, 76);
+            public static Color btnClickedFore = Color.FromArgb(255, 255, 255);
+            public static Color btnsnettingsDefaultFore = Color.FromArgb(173,39,29);
+            public static Color btnsettingsClickedFore = Color.FromArgb(217,48,37);
         }
 
         #region Open Child Form
@@ -57,9 +59,8 @@ namespace Le_Sa
             {
                 DisableButton();
                 //Button customization
-                currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = RGBColors.desktopBackDefault;
-                currentBtn.IconColor = color;
+                currentBtn = (CustRoundedButton)senderBtn;
+                currentBtn.BackColor = RGBColors.btnClicked;
                 currentBtn.ForeColor = color;
                 this.Text = titlebarText + currentMenuItem;
             }
@@ -70,38 +71,30 @@ namespace Le_Sa
             if (currentBtn != null)
             {
                 //Button customization to default
-                currentBtn.BackColor = RGBColors.menuBackDefault;
-                currentBtn.IconColor = RGBColors.normal;
-                currentBtn.ForeColor = RGBColors.normal;
+                currentBtn.BackColor = RGBColors.btnDefault;
+                currentBtn.ForeColor = RGBColors.btnDefaultFore;
+                crBtnSettings.ForeColor = RGBColors.btnsnettingsDefaultFore;
             }
         }
 
-        private void ibtnDashboard_Click(object sender, EventArgs e)
+        private void crBtnDashboard_Click(object sender, EventArgs e)
         {
             currentMenuItem = "Dashboard";
-            ActiveButton(sender, RGBColors.normal);
+            ActiveButton(sender, RGBColors.btnClickedFore);
             OpenChildForm(new formDashboard());
         }
 
-        private void ibtnRports_Click(object sender, EventArgs e)
+        private void crBtnHistory_Click(object sender, EventArgs e)
         {
-            currentMenuItem = "Report";
-            ActiveButton(sender, RGBColors.normal);
+            ActiveButton(sender, RGBColors.btnClickedFore);
+            currentMenuItem = "History";
         }
 
-        private void ibtnInfo_Click(object sender, EventArgs e)
+        private void crBtnSettings_Click(object sender, EventArgs e)
         {
-            currentMenuItem = "Info";
-            ActiveButton(sender, RGBColors.normal);
-        }
-
-        private void ibtnSettings_Click(object sender, EventArgs e)
-        {
+            ActiveButton(sender, RGBColors.btnsettingsClickedFore);
             currentMenuItem = "Settings";
-            ActiveButton(sender, RGBColors.settings);
-            OpenChildForm(new formSettings());
         }
         #endregion
-
     }
 }
