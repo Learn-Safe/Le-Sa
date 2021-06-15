@@ -40,9 +40,9 @@ namespace Le_Sa
             // 
             this.pnlDesktop.AutoScroll = true;
             this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlDesktop.Location = new System.Drawing.Point(182, 0);
+            this.pnlDesktop.Location = new System.Drawing.Point(180, 0);
             this.pnlDesktop.Name = "pnlDesktop";
-            this.pnlDesktop.Size = new System.Drawing.Size(566, 561);
+            this.pnlDesktop.Size = new System.Drawing.Size(514, 561);
             this.pnlDesktop.TabIndex = 0;
             // 
             // pnlMenu
@@ -104,11 +104,11 @@ namespace Le_Sa
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(748, 561);
+            this.ClientSize = new System.Drawing.Size(694, 561);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlDesktop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(748, 561);
+            this.MinimumSize = new System.Drawing.Size(694, 561);
             this.Name = "formSettings";
             this.Text = "formSettings";
             this.pnlMenu.ResumeLayout(false);

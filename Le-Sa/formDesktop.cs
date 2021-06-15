@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Le_Sa.History;
 using System.Windows.Forms;
  
 namespace Le_Sa
@@ -86,8 +87,9 @@ namespace Le_Sa
 
         private void crBtnHistory_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender, RGBColors.btnClickedFore);
             currentMenuItem = "History";
+            ActiveButton(sender, RGBColors.btnClickedFore);
+            OpenChildForm(new formHistory());
         }
 
         private void crBtnSettings_Click(object sender, EventArgs e)

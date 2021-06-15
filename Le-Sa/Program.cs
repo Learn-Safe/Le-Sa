@@ -16,7 +16,7 @@ namespace Le_Sa
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formLoadingScreen());
+            Application.Run(new formDesktop());
         }
     }
 }
