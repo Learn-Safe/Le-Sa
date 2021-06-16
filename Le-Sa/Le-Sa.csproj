@@ -122,6 +122,7 @@
     </Compile>
     <Compile Include="Models\BrowseHistory.cs" />
     <Compile Include="Models\ChromeBrowserHistory.cs" />
+    <Compile Include="Models\EdgeBrowserHistory.cs" />
     <Compile Include="Models\FirefoxBrowserHistory.cs" />
     <Compile Include="Settings\formSettingsBlacklist.cs">
       <SubType>Form</SubType>

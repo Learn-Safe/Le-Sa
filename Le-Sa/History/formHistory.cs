@@ -21,15 +21,16 @@ namespace Le_Sa.History
         }
 
         private string browser;
-        private string N;
 
         private struct RGBColors
         {
             public static Color btnDefaultBack = Color.FromArgb(21, 27, 56);
             public static Color btnChromeClickedBack = Color.FromArgb(74, 138, 244);
-            public static Color btnFirefoxClickedBack = Color.FromArgb(255, 93, 52);
             public static Color btnChromeClickedBorder = Color.FromArgb(26, 91, 234);
+            public static Color btnFirefoxClickedBack = Color.FromArgb(255, 93, 52);
             public static Color btnFirefoxClickedBorder = Color.FromArgb(250, 48, 82);
+            public static Color btnEdgeClickedBack = Color.FromArgb(51, 192, 237);
+            public static Color btnEdgeClickedBorder = Color.FromArgb(10, 76, 141);
         }
 
         #region Side Menu
@@ -88,6 +89,21 @@ namespace Le_Sa.History
             dgvBrowserHistory.DataSource = history.GetDataTable();
         }
 
+        private void crBtnEdge_Click(object sender, EventArgs e)
+        {
+            // Assign Data to variables
+            browser = "Edge";
+            sourcePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Microsoft\Edge\User Data\Default";
+            destinationPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Le-Sa\Data\EData\EHis";
+            fileName = "History";
+
+            CopyHistory();
+            ActiveButton(sender, RGBColors.btnEdgeClickedBack);
+            crBtnEdge.BorderColor = RGBColors.btnEdgeClickedBorder;
+            EdgeBrowserHistory history = new EdgeBrowserHistory();
+            dgvBrowserHistory.DataSource = history.GetDataTable();
+        }
+
         #region Find Firefox Data Location
         private string ReadFirefoxProfile()
         {
@@ -125,9 +141,6 @@ namespace Le_Sa.History
         {
             string sourceFile = System.IO.Path.Combine(sourcePath, fileName);
             string destFile = System.IO.Path.Combine(destinationPath, fileName);
-            MessageBox.Show(sourceFile + " s file");
-            MessageBox.Show(destFile + " d file");
-
 
             System.IO.Directory.CreateDirectory(destinationPath);
             if (System.IO.Directory.Exists(sourcePath))
@@ -140,6 +153,5 @@ namespace Le_Sa.History
             }
         }
         #endregion
-
     }
 }

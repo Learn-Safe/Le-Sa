@@ -15,8 +15,6 @@ namespace Le_Sa.Models
         {
             using (SQLiteConnection cn = new SQLiteConnection("Data Source=" + path + ";Version=3;New=False;Compress=True;"))
             {
-                MessageBox.Show(path + "paaaaaaaaath");
-
                 try
                 {
                     cn.Open();
