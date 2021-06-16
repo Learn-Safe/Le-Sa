@@ -32,6 +32,7 @@ namespace Le_Sa.History
             this.pnlDashboard = new System.Windows.Forms.Panel();
             this.pnlDesktop = new System.Windows.Forms.Panel();
             this.dgvBrowserHistory = new System.Windows.Forms.DataGridView();
+            this.crBtnOpera = new Le_Sa.CustRoundedButton();
             this.crBtnEdge = new Le_Sa.CustRoundedButton();
             this.crBtnFirefox = new Le_Sa.CustRoundedButton();
             this.crBtnChrome = new Le_Sa.CustRoundedButton();
@@ -44,6 +45,7 @@ namespace Le_Sa.History
             // 
             this.pnlDashboard.AutoScroll = true;
             this.pnlDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(75)))));
+            this.pnlDashboard.Controls.Add(this.crBtnOpera);
             this.pnlDashboard.Controls.Add(this.crBtnEdge);
             this.pnlDashboard.Controls.Add(this.crBtnFirefox);
             this.pnlDashboard.Controls.Add(this.crBtnChrome);
@@ -79,11 +81,31 @@ namespace Le_Sa.History
             this.dgvBrowserHistory.Size = new System.Drawing.Size(694, 511);
             this.dgvBrowserHistory.TabIndex = 0;
             // 
+            // crBtnOpera
+            // 
+            this.crBtnOpera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
+            this.crBtnOpera.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
+            this.crBtnOpera.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
+            this.crBtnOpera.BorderRadius = 18;
+            this.crBtnOpera.BorderSize = 0;
+            this.crBtnOpera.FlatAppearance.BorderSize = 0;
+            this.crBtnOpera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBtnOpera.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.crBtnOpera.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
+            this.crBtnOpera.Location = new System.Drawing.Point(308, 5);
+            this.crBtnOpera.Name = "crBtnOpera";
+            this.crBtnOpera.Size = new System.Drawing.Size(95, 40);
+            this.crBtnOpera.TabIndex = 3;
+            this.crBtnOpera.Text = "Opera";
+            this.crBtnOpera.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
+            this.crBtnOpera.UseVisualStyleBackColor = false;
+            this.crBtnOpera.Click += new System.EventHandler(this.crBtnOpera_Click);
+            // 
             // crBtnEdge
             // 
             this.crBtnEdge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
             this.crBtnEdge.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
-            this.crBtnEdge.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
+            this.crBtnEdge.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(76)))), ((int)(((byte)(141)))));
             this.crBtnEdge.BorderRadius = 18;
             this.crBtnEdge.BorderSize = 0;
             this.crBtnEdge.FlatAppearance.BorderSize = 0;
@@ -165,5 +187,6 @@ namespace Le_Sa.History
         private System.Windows.Forms.Panel pnlDesktop;
         private System.Windows.Forms.DataGridView dgvBrowserHistory;
         private CustRoundedButton crBtnEdge;
+        private CustRoundedButton crBtnOpera;
     }
 }

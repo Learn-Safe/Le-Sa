@@ -31,6 +31,8 @@ namespace Le_Sa.History
             public static Color btnFirefoxClickedBorder = Color.FromArgb(250, 48, 82);
             public static Color btnEdgeClickedBack = Color.FromArgb(51, 192, 237);
             public static Color btnEdgeClickedBorder = Color.FromArgb(10, 76, 141);
+            public static Color btnOperaClickedBack = Color.FromArgb(255, 27, 45);
+            public static Color btnOperaClickedBorder = Color.FromArgb(255, 27, 45);
         }
 
         #region Side Menu
@@ -59,23 +61,15 @@ namespace Le_Sa.History
         }
         #endregion
 
-        private void crBtnFirefox_Click(object sender, EventArgs e)
-        {
-            // Assign Data to variables
-            browser = "Firefox";
-            sourcePath = ReadFirefoxProfile();
-            destinationPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Le-Sa\Data\FData\FHis";
-            fileName = "places.sqlite";
+        #region Browsers List
 
-            CopyHistory();
-            ActiveButton(sender, RGBColors.btnFirefoxClickedBack);
-            crBtnFirefox.BorderColor = RGBColors.btnFirefoxClickedBorder;
-            FirefoxBrowserHistory history = new FirefoxBrowserHistory();
-            dgvBrowserHistory.DataSource = history.GetDataTable();
-        }
-
+        //Chrome
         private void crBtnChrome_Click(object sender, EventArgs e)
         {
+            //Button Customization
+            ActiveButton(sender, RGBColors.btnChromeClickedBack);
+            crBtnChrome.BorderColor = RGBColors.btnChromeClickedBorder;
+
             // Assign Data to variables
             browser = "Chrome";
             sourcePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Google\Chrome\User Data\Default";
@@ -83,14 +77,35 @@ namespace Le_Sa.History
             fileName = "History";
 
             CopyHistory();
-            ActiveButton(sender, RGBColors.btnChromeClickedBack);
-            crBtnChrome.BorderColor = RGBColors.btnChromeClickedBorder;
             ChromeBrowserHistory history = new ChromeBrowserHistory();
             dgvBrowserHistory.DataSource = history.GetDataTable();
         }
 
+        //Firefox
+        private void crBtnFirefox_Click(object sender, EventArgs e)
+        {
+            //Button Customization
+            ActiveButton(sender, RGBColors.btnFirefoxClickedBack);
+            crBtnFirefox.BorderColor = RGBColors.btnFirefoxClickedBorder;
+
+            // Assign Data to variables
+            browser = "Firefox";
+            sourcePath = ReadFirefoxProfile();
+            destinationPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Le-Sa\Data\FData\FHis";
+            fileName = "places.sqlite";
+
+            CopyHistory();
+            FirefoxBrowserHistory history = new FirefoxBrowserHistory();
+            dgvBrowserHistory.DataSource = history.GetDataTable();
+        }
+
+        //Edge(Chromium Based)
         private void crBtnEdge_Click(object sender, EventArgs e)
         {
+            //Button Customization
+            ActiveButton(sender, RGBColors.btnEdgeClickedBack);
+            crBtnEdge.BorderColor = RGBColors.btnEdgeClickedBorder;
+
             // Assign Data to variables
             browser = "Edge";
             sourcePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Microsoft\Edge\User Data\Default";
@@ -98,9 +113,26 @@ namespace Le_Sa.History
             fileName = "History";
 
             CopyHistory();
-            ActiveButton(sender, RGBColors.btnEdgeClickedBack);
-            crBtnEdge.BorderColor = RGBColors.btnEdgeClickedBorder;
             EdgeBrowserHistory history = new EdgeBrowserHistory();
+            dgvBrowserHistory.DataSource = history.GetDataTable();
+        }
+        #endregion
+
+        //Opera
+        private void crBtnOpera_Click(object sender, EventArgs e)
+        {
+            //Button Customization
+            ActiveButton(sender, RGBColors.btnOperaClickedBack);
+            crBtnChrome.BorderColor = RGBColors.btnOperaClickedBorder;
+
+            // Assign Data to variables
+            browser = "Opera";
+            sourcePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Opera Software\Opera Stable";
+            destinationPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Le-Sa\Data\OData\OHis";
+            fileName = "History";
+
+            CopyHistory();
+            OperaBrowserHistory history = new OperaBrowserHistory();
             dgvBrowserHistory.DataSource = history.GetDataTable();
         }
 

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Le_Sa
@@ -16,7 +13,7 @@ namespace Le_Sa
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formDesktop());
+            Application.Run(new formLoadingScreen());
         }
     }
 }
