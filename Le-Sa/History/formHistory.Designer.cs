@@ -30,9 +30,9 @@ namespace Le_Sa.History
         private void InitializeComponent()
         {
             this.pnlDashboard = new System.Windows.Forms.Panel();
+            this.pnlDesktop = new System.Windows.Forms.Panel();
             this.crBtnFirefox = new Le_Sa.CustRoundedButton();
             this.crBtnChrome = new Le_Sa.CustRoundedButton();
-            this.pnlDesktop = new System.Windows.Forms.Panel();
             this.dgvBrowserHistory = new System.Windows.Forms.DataGridView();
             this.pnlDashboard.SuspendLayout();
             this.pnlDesktop.SuspendLayout();
@@ -51,6 +51,17 @@ namespace Le_Sa.History
             this.pnlDashboard.Size = new System.Drawing.Size(694, 50);
             this.pnlDashboard.TabIndex = 1;
             // 
+            // pnlDesktop
+            // 
+            this.pnlDesktop.AutoScroll = true;
+            this.pnlDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(75)))));
+            this.pnlDesktop.Controls.Add(this.dgvBrowserHistory);
+            this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDesktop.Location = new System.Drawing.Point(0, 50);
+            this.pnlDesktop.Name = "pnlDesktop";
+            this.pnlDesktop.Size = new System.Drawing.Size(694, 511);
+            this.pnlDesktop.TabIndex = 2;
+            // 
             // crBtnFirefox
             // 
             this.crBtnFirefox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
@@ -60,7 +71,7 @@ namespace Le_Sa.History
             this.crBtnFirefox.BorderSize = 0;
             this.crBtnFirefox.FlatAppearance.BorderSize = 0;
             this.crBtnFirefox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crBtnFirefox.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.crBtnFirefox.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.crBtnFirefox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
             this.crBtnFirefox.Location = new System.Drawing.Point(161, 5);
             this.crBtnFirefox.Name = "crBtnFirefox";
@@ -80,7 +91,7 @@ namespace Le_Sa.History
             this.crBtnChrome.BorderSize = 0;
             this.crBtnChrome.FlatAppearance.BorderSize = 0;
             this.crBtnChrome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crBtnChrome.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.crBtnChrome.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.crBtnChrome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
             this.crBtnChrome.Location = new System.Drawing.Point(5, 5);
             this.crBtnChrome.Name = "crBtnChrome";
@@ -91,25 +102,18 @@ namespace Le_Sa.History
             this.crBtnChrome.UseVisualStyleBackColor = false;
             this.crBtnChrome.Click += new System.EventHandler(this.crBtnChrome_Click);
             // 
-            // pnlDesktop
-            // 
-            this.pnlDesktop.AutoScroll = true;
-            this.pnlDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(75)))));
-            this.pnlDesktop.Controls.Add(this.dgvBrowserHistory);
-            this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDesktop.Location = new System.Drawing.Point(0, 50);
-            this.pnlDesktop.Name = "pnlDesktop";
-            this.pnlDesktop.Size = new System.Drawing.Size(694, 511);
-            this.pnlDesktop.TabIndex = 2;
-            // 
             // dgvBrowserHistory
             // 
             this.dgvBrowserHistory.AllowUserToAddRows = false;
             this.dgvBrowserHistory.AllowUserToDeleteRows = false;
+            this.dgvBrowserHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBrowserHistory.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(75)))));
+            this.dgvBrowserHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBrowserHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBrowserHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBrowserHistory.Location = new System.Drawing.Point(0, 0);
             this.dgvBrowserHistory.Name = "dgvBrowserHistory";
+            this.dgvBrowserHistory.RowHeadersVisible = false;
             this.dgvBrowserHistory.Size = new System.Drawing.Size(694, 511);
             this.dgvBrowserHistory.TabIndex = 0;
             // 

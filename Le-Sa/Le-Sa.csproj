@@ -91,6 +91,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CopyHistoryFiles\ChromeHistoryFile.cs" />
+    <Compile Include="CopyHistoryFiles\CopyHistoryFiles.cs" />
     <Compile Include="CustomControls\CustToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
