@@ -31,14 +31,14 @@ namespace Le_Sa.Settings
         {
             this.SuspendLayout();
             // 
-            // formBlacklist
+            // formSettingsBlacklist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 561);
+            this.ClientSize = new System.Drawing.Size(694, 561);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(566, 561);
-            this.Name = "formBlacklist";
+            this.MinimumSize = new System.Drawing.Size(694, 521);
+            this.Name = "formSettingsBlacklist";
             this.Text = "formBlacklist";
             this.ResumeLayout(false);
 

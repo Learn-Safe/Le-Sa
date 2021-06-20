@@ -33,7 +33,7 @@ namespace Le_Sa.History
             this.crBtnOpera = new Le_Sa.CustRoundedButton();
             this.crBtnEdge = new Le_Sa.CustRoundedButton();
             this.crBtnFirefox = new Le_Sa.CustRoundedButton();
-            this.crBtnChrome = new Le_Sa.CustRoundedButton();
+            this.crBtnCommonSettings = new Le_Sa.CustRoundedButton();
             this.pnlDesktop = new System.Windows.Forms.Panel();
             this.dgvBrowserHistory = new System.Windows.Forms.DataGridView();
             this.pnlDashboard.SuspendLayout();
@@ -48,7 +48,7 @@ namespace Le_Sa.History
             this.pnlDashboard.Controls.Add(this.crBtnOpera);
             this.pnlDashboard.Controls.Add(this.crBtnEdge);
             this.pnlDashboard.Controls.Add(this.crBtnFirefox);
-            this.pnlDashboard.Controls.Add(this.crBtnChrome);
+            this.pnlDashboard.Controls.Add(this.crBtnCommonSettings);
             this.pnlDashboard.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlDashboard.Location = new System.Drawing.Point(0, 0);
             this.pnlDashboard.Name = "pnlDashboard";
@@ -115,25 +115,25 @@ namespace Le_Sa.History
             this.crBtnFirefox.UseVisualStyleBackColor = false;
             this.crBtnFirefox.Click += new System.EventHandler(this.crBtnFirefox_Click);
             // 
-            // crBtnChrome
+            // crBtnCommonSettings
             // 
-            this.crBtnChrome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
-            this.crBtnChrome.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
-            this.crBtnChrome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
-            this.crBtnChrome.BorderRadius = 20;
-            this.crBtnChrome.BorderSize = 0;
-            this.crBtnChrome.FlatAppearance.BorderSize = 0;
-            this.crBtnChrome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crBtnChrome.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.crBtnChrome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
-            this.crBtnChrome.Location = new System.Drawing.Point(5, 5);
-            this.crBtnChrome.Name = "crBtnChrome";
-            this.crBtnChrome.Size = new System.Drawing.Size(90, 30);
-            this.crBtnChrome.TabIndex = 0;
-            this.crBtnChrome.Text = "Chrome";
-            this.crBtnChrome.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
-            this.crBtnChrome.UseVisualStyleBackColor = false;
-            this.crBtnChrome.Click += new System.EventHandler(this.crBtnChrome_Click);
+            this.crBtnCommonSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
+            this.crBtnCommonSettings.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
+            this.crBtnCommonSettings.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.crBtnCommonSettings.BorderRadius = 20;
+            this.crBtnCommonSettings.BorderSize = 0;
+            this.crBtnCommonSettings.FlatAppearance.BorderSize = 0;
+            this.crBtnCommonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBtnCommonSettings.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.crBtnCommonSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
+            this.crBtnCommonSettings.Location = new System.Drawing.Point(5, 5);
+            this.crBtnCommonSettings.Name = "crBtnCommonSettings";
+            this.crBtnCommonSettings.Size = new System.Drawing.Size(90, 30);
+            this.crBtnCommonSettings.TabIndex = 0;
+            this.crBtnCommonSettings.Text = "Chrome";
+            this.crBtnCommonSettings.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
+            this.crBtnCommonSettings.UseVisualStyleBackColor = false;
+            this.crBtnCommonSettings.Click += new System.EventHandler(this.crBtnChrome_Click);
             // 
             // pnlDesktop
             // 
@@ -182,7 +182,7 @@ namespace Le_Sa.History
         #endregion
 
         private System.Windows.Forms.Panel pnlDashboard;
-        private CustRoundedButton crBtnChrome;
+        private CustRoundedButton crBtnCommonSettings;
         private CustRoundedButton crBtnFirefox;
         private System.Windows.Forms.Panel pnlDesktop;
         private System.Windows.Forms.DataGridView dgvBrowserHistory;

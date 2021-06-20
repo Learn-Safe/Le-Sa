@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FontAwesome.Sharp;
 using Le_Sa.Settings;
 using System.Windows.Forms;
@@ -15,7 +9,7 @@ namespace Le_Sa
     public partial class formSettings : Form
     {
 
-        private IconButton currentBtn;
+        private CustRoundedButton currentBtn;
         private Form currentChildForm;
 
         public formSettings()
@@ -56,9 +50,8 @@ namespace Le_Sa
             {
                 DisableButton();
                 //Button customization
-                currentBtn = (IconButton)senderBtn;
+                currentBtn = (CustRoundedButton)senderBtn;
                 currentBtn.BackColor = RGBColors.desktopBackDefault;
-                currentBtn.IconColor = color;
                 currentBtn.ForeColor = color;
             }
         }
@@ -68,21 +61,14 @@ namespace Le_Sa
             if (currentBtn != null)
             {
                 //Button customization to default
-                currentBtn.IconColor = RGBColors.menuItemDefault;
                 currentBtn.ForeColor = RGBColors.menuItemDefault;
             }
         }
 
-        private void ibtnBrowser_Click(object sender, EventArgs e)
+        private void crBtnDNSConfig_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.normal);
-            OpenChildForm(new fromSettingsBrowser());
-        }
-
-        private void ibtnBlackList_Click(object sender, EventArgs e)
-        {
-            ActiveButton(sender, RGBColors.normal);
-            OpenChildForm(new formSettingsBlacklist());
+            OpenChildForm(new formDNSConfig());
         }
         #endregion
     }

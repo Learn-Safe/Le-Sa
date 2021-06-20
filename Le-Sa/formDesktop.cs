@@ -94,8 +94,9 @@ namespace Le_Sa
 
         private void crBtnSettings_Click(object sender, EventArgs e)
         {
-            ActiveButton(sender, RGBColors.btnsettingsClickedFore);
             currentMenuItem = "Settings";
+            ActiveButton(sender, RGBColors.btnsettingsClickedFore);
+            OpenChildForm(new formSettings());
         }
         #endregion
     }

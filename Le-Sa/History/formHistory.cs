@@ -68,7 +68,7 @@ namespace Le_Sa.History
         {
             //Button Customization
             ActiveButton(sender, RGBColors.btnChromeClickedBack);
-            crBtnChrome.BorderColor = RGBColors.btnChromeClickedBorder;
+            crBtnCommonSettings.BorderColor = RGBColors.btnChromeClickedBorder;
 
             // Assign Data to variables
             browser = "Chrome";
@@ -123,7 +123,7 @@ namespace Le_Sa.History
         {
             //Button Customization
             ActiveButton(sender, RGBColors.btnOperaClickedBack);
-            crBtnChrome.BorderColor = RGBColors.btnOperaClickedBorder;
+            crBtnCommonSettings.BorderColor = RGBColors.btnOperaClickedBorder;
 
             // Assign Data to variables
             browser = "Opera";
