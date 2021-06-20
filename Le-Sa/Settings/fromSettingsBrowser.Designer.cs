@@ -29,26 +29,7 @@ namespace Le_Sa.Settings
         /// </summary>
         private void InitializeComponent()
         {
-            this.custRoundedButton1 = new Le_Sa.CustRoundedButton();
             this.SuspendLayout();
-            // 
-            // custRoundedButton1
-            // 
-            this.custRoundedButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.custRoundedButton1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.custRoundedButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.custRoundedButton1.BorderRadius = 0;
-            this.custRoundedButton1.BorderSize = 0;
-            this.custRoundedButton1.FlatAppearance.BorderSize = 0;
-            this.custRoundedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.custRoundedButton1.ForeColor = System.Drawing.Color.White;
-            this.custRoundedButton1.Location = new System.Drawing.Point(258, 218);
-            this.custRoundedButton1.Name = "custRoundedButton1";
-            this.custRoundedButton1.Size = new System.Drawing.Size(150, 40);
-            this.custRoundedButton1.TabIndex = 0;
-            this.custRoundedButton1.Text = "custRoundedButton1";
-            this.custRoundedButton1.TextColor = System.Drawing.Color.White;
-            this.custRoundedButton1.UseVisualStyleBackColor = false;
             // 
             // fromSettingsBrowser
             // 
@@ -56,7 +37,6 @@ namespace Le_Sa.Settings
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(566, 561);
-            this.Controls.Add(this.custRoundedButton1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(566, 561);
             this.Name = "fromSettingsBrowser";
@@ -66,7 +46,5 @@ namespace Le_Sa.Settings
         }
 
         #endregion
-
-        private CustRoundedButton custRoundedButton1;
     }
 }

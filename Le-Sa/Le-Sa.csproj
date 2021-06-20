@@ -80,6 +80,7 @@
     <Reference Include="System.Data.SQLite.Linq, Version=1.0.114.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>packages\System.Data.SQLite.Linq.1.0.114.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -94,6 +95,7 @@
     <Compile Include="CustomControls\CustToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Encryption\Encryptor.cs" />
     <Compile Include="formDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +148,12 @@
     <Compile Include="Settings\fromSettingsBrowser.Designer.cs">
       <DependentUpon>fromSettingsBrowser.cs</DependentUpon>
     </Compile>
+    <Compile Include="test\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="History\formHistory.resx">
       <DependentUpon>formHistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Settings\fromSettingsBrowser.resx">
       <DependentUpon>fromSettingsBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".editorconfig" />
     <EmbeddedResource Include="formDashboard.resx">

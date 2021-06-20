@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Le_Sa.test;
+using System;
 using System.Windows.Forms;
 
 namespace Le_Sa
@@ -13,7 +14,7 @@ namespace Le_Sa
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formLoadingScreen());
+            Application.Run(new Form1());
         }
     }
 }
