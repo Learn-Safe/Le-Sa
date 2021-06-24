@@ -113,6 +113,16 @@ namespace Le_Sa.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hide_22px {
+            get {
+                object obj = ResourceManager.GetObject("hide_22px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap history_65px {
             get {
                 object obj = ResourceManager.GetObject("history_65px", resourceCulture);
@@ -166,6 +176,16 @@ namespace Le_Sa.Properties {
         internal static System.Drawing.Bitmap minimize_click20px {
             get {
                 object obj = ResourceManager.GetObject("minimize_click20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap show_22px {
+            get {
+                object obj = ResourceManager.GetObject("show_22px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
