@@ -30,16 +30,13 @@ namespace Le_Sa.Account
         private void InitializeComponent()
         {
             this.lblUsername = new System.Windows.Forms.Label();
-            this.lblLogin = new System.Windows.Forms.Label();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.lblWarning = new System.Windows.Forms.Label();
             this.llblForgotPassword = new System.Windows.Forms.LinkLabel();
             this.crBtnVisibility = new Le_Sa.CustRoundedButton();
             this.cTBUsername = new Le_Sa.CustomControls.CustomTextBox();
             this.cTBPassword = new Le_Sa.CustomControls.CustomTextBox();
-            this.crPBDP = new Le_Sa.CustRoundedPictureBox();
             this.crBtnContinue = new Le_Sa.CustRoundedButton();
-            ((System.ComponentModel.ISupportInitialize)(this.crPBDP)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUsername
@@ -48,23 +45,23 @@ namespace Le_Sa.Account
             this.lblUsername.BackColor = System.Drawing.Color.Transparent;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.White;
-            this.lblUsername.Location = new System.Drawing.Point(5, 170);
+            this.lblUsername.Location = new System.Drawing.Point(12, 206);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(105, 25);
-            this.lblUsername.TabIndex = 55;
+            this.lblUsername.TabIndex = 65;
             this.lblUsername.Text = "Username";
             // 
-            // lblLogin
+            // lblWelcome
             // 
-            this.lblLogin.AutoSize = true;
-            this.lblLogin.BackColor = System.Drawing.Color.Transparent;
-            this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.ForeColor = System.Drawing.Color.White;
-            this.lblLogin.Location = new System.Drawing.Point(4, 9);
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(80, 31);
-            this.lblLogin.TabIndex = 54;
-            this.lblLogin.Text = "Login";
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
+            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.ForeColor = System.Drawing.Color.White;
+            this.lblWelcome.Location = new System.Drawing.Point(4, 89);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(186, 62);
+            this.lblWelcome.TabIndex = 64;
+            this.lblWelcome.Text = "Hello there,\r\nwelcome back\r\n";
             // 
             // lblPassword
             // 
@@ -72,33 +69,21 @@ namespace Le_Sa.Account
             this.lblPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.White;
-            this.lblPassword.Location = new System.Drawing.Point(5, 242);
+            this.lblPassword.Location = new System.Drawing.Point(7, 285);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(99, 25);
-            this.lblPassword.TabIndex = 56;
+            this.lblPassword.TabIndex = 66;
             this.lblPassword.Text = "Password";
-            // 
-            // lblWarning
-            // 
-            this.lblWarning.AutoSize = true;
-            this.lblWarning.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWarning.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lblWarning.Location = new System.Drawing.Point(7, 339);
-            this.lblWarning.Name = "lblWarning";
-            this.lblWarning.Size = new System.Drawing.Size(253, 42);
-            this.lblWarning.TabIndex = 61;
-            this.lblWarning.Text = "* Wrong Username or Password.\r\n* Please try again.";
-            this.lblWarning.Visible = false;
             // 
             // llblForgotPassword
             // 
             this.llblForgotPassword.AutoSize = true;
             this.llblForgotPassword.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llblForgotPassword.LinkColor = System.Drawing.Color.LightGray;
-            this.llblForgotPassword.Location = new System.Drawing.Point(6, 303);
+            this.llblForgotPassword.Location = new System.Drawing.Point(8, 345);
             this.llblForgotPassword.Name = "llblForgotPassword";
             this.llblForgotPassword.Size = new System.Drawing.Size(128, 20);
-            this.llblForgotPassword.TabIndex = 63;
+            this.llblForgotPassword.TabIndex = 72;
             this.llblForgotPassword.TabStop = true;
             this.llblForgotPassword.Text = "Forgot password?";
             this.llblForgotPassword.VisitedLinkColor = System.Drawing.Color.LightGray;
@@ -107,18 +92,22 @@ namespace Le_Sa.Account
             // 
             this.crBtnVisibility.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.crBtnVisibility.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnVisibility.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.crBtnVisibility.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.crBtnVisibility.BorderColor = System.Drawing.SystemColors.ScrollBar;
             this.crBtnVisibility.BorderRadius = 20;
-            this.crBtnVisibility.BorderSize = 0;
+            this.crBtnVisibility.BorderSize = 2;
             this.crBtnVisibility.FlatAppearance.BorderSize = 0;
             this.crBtnVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crBtnVisibility.ForeColor = System.Drawing.Color.White;
-            this.crBtnVisibility.Location = new System.Drawing.Point(231, 268);
+            this.crBtnVisibility.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnVisibility.Image = global::Le_Sa.Properties.Resources.hide_22px;
+            this.crBtnVisibility.Location = new System.Drawing.Point(228, 311);
             this.crBtnVisibility.Name = "crBtnVisibility";
             this.crBtnVisibility.Size = new System.Drawing.Size(27, 27);
-            this.crBtnVisibility.TabIndex = 58;
-            this.crBtnVisibility.TextColor = System.Drawing.Color.White;
+            this.crBtnVisibility.TabIndex = 68;
+            this.crBtnVisibility.TextColor = System.Drawing.SystemColors.ScrollBar;
             this.crBtnVisibility.UseVisualStyleBackColor = false;
+            this.crBtnVisibility.MouseDown += new System.Windows.Forms.MouseEventHandler(this.crBtnVisibility_MouseDown);
+            this.crBtnVisibility.MouseUp += new System.Windows.Forms.MouseEventHandler(this.crBtnVisibility_MouseUp);
             // 
             // cTBUsername
             // 
@@ -129,14 +118,14 @@ namespace Le_Sa.Account
             this.cTBUsername.BorderSize = 0;
             this.cTBUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cTBUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.cTBUsername.Location = new System.Drawing.Point(9, 196);
+            this.cTBUsername.Location = new System.Drawing.Point(10, 232);
             this.cTBUsername.Margin = new System.Windows.Forms.Padding(1);
             this.cTBUsername.Multiline = false;
             this.cTBUsername.Name = "cTBUsername";
-            this.cTBUsername.Padding = new System.Windows.Forms.Padding(4);
+            this.cTBUsername.Padding = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.cTBUsername.PasswordChar = false;
-            this.cTBUsername.Size = new System.Drawing.Size(246, 27);
-            this.cTBUsername.TabIndex = 57;
+            this.cTBUsername.Size = new System.Drawing.Size(245, 27);
+            this.cTBUsername.TabIndex = 67;
             this.cTBUsername.Texts = "";
             this.cTBUsername.UnderlinedStyle = false;
             // 
@@ -149,29 +138,16 @@ namespace Le_Sa.Account
             this.cTBPassword.BorderSize = 0;
             this.cTBPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cTBPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.cTBPassword.Location = new System.Drawing.Point(9, 268);
+            this.cTBPassword.Location = new System.Drawing.Point(10, 311);
             this.cTBPassword.Margin = new System.Windows.Forms.Padding(1);
             this.cTBPassword.Multiline = false;
             this.cTBPassword.Name = "cTBPassword";
-            this.cTBPassword.Padding = new System.Windows.Forms.Padding(4);
+            this.cTBPassword.Padding = new System.Windows.Forms.Padding(6, 4, 35, 4);
             this.cTBPassword.PasswordChar = true;
-            this.cTBPassword.Size = new System.Drawing.Size(220, 27);
-            this.cTBPassword.TabIndex = 59;
+            this.cTBPassword.Size = new System.Drawing.Size(245, 27);
+            this.cTBPassword.TabIndex = 69;
             this.cTBPassword.Texts = "";
             this.cTBPassword.UnderlinedStyle = false;
-            // 
-            // crPBDP
-            // 
-            this.crPBDP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.crPBDP.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.crPBDP.BorderColor = System.Drawing.Color.Gray;
-            this.crPBDP.BorderRadius = 105;
-            this.crPBDP.BorderSize = 2;
-            this.crPBDP.Location = new System.Drawing.Point(81, 47);
-            this.crPBDP.Name = "crPBDP";
-            this.crPBDP.Size = new System.Drawing.Size(105, 105);
-            this.crPBDP.TabIndex = 62;
-            this.crPBDP.TabStop = false;
             // 
             // crBtnContinue
             // 
@@ -180,43 +156,41 @@ namespace Le_Sa.Account
             this.crBtnContinue.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.crBtnContinue.BorderRadius = 20;
             this.crBtnContinue.BorderSize = 0;
-            this.crBtnContinue.Enabled = false;
             this.crBtnContinue.FlatAppearance.BorderSize = 0;
             this.crBtnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crBtnContinue.Font = new System.Drawing.Font("Microsoft Tai Le", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.crBtnContinue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(22)))));
-            this.crBtnContinue.Location = new System.Drawing.Point(9, 384);
+            this.crBtnContinue.Location = new System.Drawing.Point(12, 425);
             this.crBtnContinue.Name = "crBtnContinue";
-            this.crBtnContinue.Size = new System.Drawing.Size(249, 31);
-            this.crBtnContinue.TabIndex = 60;
+            this.crBtnContinue.Size = new System.Drawing.Size(241, 31);
+            this.crBtnContinue.TabIndex = 70;
             this.crBtnContinue.Text = "Continue";
             this.crBtnContinue.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.crBtnContinue.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(22)))));
             this.crBtnContinue.UseVisualStyleBackColor = false;
+            this.crBtnContinue.Click += new System.EventHandler(this.crBtnContinue_Click);
             // 
             // formLogin
             // 
+            this.AcceptButton = this.crBtnContinue;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(265, 424);
+            this.ClientSize = new System.Drawing.Size(265, 490);
             this.Controls.Add(this.crBtnVisibility);
             this.Controls.Add(this.cTBUsername);
             this.Controls.Add(this.cTBPassword);
-            this.Controls.Add(this.crPBDP);
             this.Controls.Add(this.crBtnContinue);
             this.Controls.Add(this.lblUsername);
-            this.Controls.Add(this.lblLogin);
+            this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.lblWarning);
             this.Controls.Add(this.llblForgotPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(265, 424);
+            this.MaximumSize = new System.Drawing.Size(265, 490);
             this.MinimumSize = new System.Drawing.Size(265, 424);
             this.Name = "formLogin";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formLogin";
-            ((System.ComponentModel.ISupportInitialize)(this.crPBDP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,12 +201,10 @@ namespace Le_Sa.Account
         private CustRoundedButton crBtnVisibility;
         private CustomControls.CustomTextBox cTBUsername;
         private CustomControls.CustomTextBox cTBPassword;
-        private CustRoundedPictureBox crPBDP;
         private CustRoundedButton crBtnContinue;
         private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.Label lblLogin;
+        private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Label lblWarning;
         private System.Windows.Forms.LinkLabel llblForgotPassword;
     }
 }
