@@ -38,34 +38,38 @@ namespace Le_Sa.Account
 
         private void crBtnContinue_Click(object sender, EventArgs e)
         {
-            if (cTBUsername.Texts == null || cTBPassword.Texts == null )
+            string uipass = cTBPassword.Texts.Trim();
+            string uiuser = cTBUsername.Texts.Trim();
+            if (cTBUsername.Texts == "" || cTBPassword.Texts == "")
             {
                 login_error("Please enter USERNAME and PASSWORD", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            SqlConnection con = new SqlConnection(db);
-            con.Open();
-            string username = new SqlCommand("SELECT username FROM tbl_user WHERE username = '" + cTBUsername.Texts + "'", con).ExecuteScalar() as string;
-            con.Close();
-            if (cTBUsername.Texts.Equals(username))
+            else
             {
+                SqlConnection con = new SqlConnection(db);
                 con.Open();
-                string password = new SqlCommand("SELECT password FROM tbl_user WHERE username = '" + cTBUsername.Texts + "'", con).ExecuteScalar() as string;//Checks if the PASSWORD entered is similar to the PASSWORD of the USERNAME checked from the database  
+                string username = new SqlCommand("SELECT username FROM tbl_user WHERE username = '" + uiuser + "'", con).ExecuteScalar() as string;
                 con.Close();
-                if (cTBPassword.Texts.Equals(password))
+                if (cTBUsername.Texts.Equals(username))
                 {
-                    formDesktop desktop = new formDesktop();
-                    desktop.Show();
-                    this.Hide();
+                    con.Open();
+                    string password = new SqlCommand("SELECT password FROM tbl_user WHERE username = '" + uipass + "'", con).ExecuteScalar() as string;//Checks if the PASSWORD entered is similar to the PASSWORD of the USERNAME checked from the database  
+                    con.Close();
+                    if (uipass.Equals(password))
+                    {
+                        formDesktop desktop = new formDesktop();
+                        desktop.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        login_error("Wrong USERNAME or PASSWORD", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
                     login_error("Wrong USERNAME or PASSWORD", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            else
-            {
-                login_error("Wrong USERNAME or PASSWORD", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

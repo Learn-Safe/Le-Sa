@@ -46,7 +46,6 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblLogin = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.lblWarning = new System.Windows.Forms.Label();
             this.llblForgotPassword = new System.Windows.Forms.LinkLabel();
             this.pnlLoadingBack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -146,7 +145,6 @@
             this.custRoundedPanel1.Controls.Add(this.lblUsername);
             this.custRoundedPanel1.Controls.Add(this.lblLogin);
             this.custRoundedPanel1.Controls.Add(this.lblPassword);
-            this.custRoundedPanel1.Controls.Add(this.lblWarning);
             this.custRoundedPanel1.Controls.Add(this.llblForgotPassword);
             this.custRoundedPanel1.ForeColor = System.Drawing.Color.White;
             this.custRoundedPanel1.Location = new System.Drawing.Point(627, 12);
@@ -167,7 +165,7 @@
             this.crBtnVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crBtnVisibility.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.crBtnVisibility.Image = global::Le_Sa.Properties.Resources.hide_22px;
-            this.crBtnVisibility.Location = new System.Drawing.Point(235, 267);
+            this.crBtnVisibility.Location = new System.Drawing.Point(235, 276);
             this.crBtnVisibility.Name = "crBtnVisibility";
             this.crBtnVisibility.Size = new System.Drawing.Size(27, 27);
             this.crBtnVisibility.TabIndex = 58;
@@ -185,7 +183,7 @@
             this.cTBUsername.BorderSize = 0;
             this.cTBUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cTBUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.cTBUsername.Location = new System.Drawing.Point(16, 195);
+            this.cTBUsername.Location = new System.Drawing.Point(16, 204);
             this.cTBUsername.Margin = new System.Windows.Forms.Padding(1);
             this.cTBUsername.Multiline = false;
             this.cTBUsername.Name = "cTBUsername";
@@ -205,7 +203,7 @@
             this.cTBPassword.BorderSize = 0;
             this.cTBPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cTBPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.cTBPassword.Location = new System.Drawing.Point(16, 267);
+            this.cTBPassword.Location = new System.Drawing.Point(16, 276);
             this.cTBPassword.Margin = new System.Windows.Forms.Padding(1);
             this.cTBPassword.Multiline = false;
             this.cTBPassword.Name = "cTBPassword";
@@ -256,7 +254,7 @@
             this.lblUsername.BackColor = System.Drawing.Color.Transparent;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.ForeColor = System.Drawing.Color.White;
-            this.lblUsername.Location = new System.Drawing.Point(9, 166);
+            this.lblUsername.Location = new System.Drawing.Point(9, 175);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(105, 25);
             this.lblUsername.TabIndex = 55;
@@ -280,30 +278,18 @@
             this.lblPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.White;
-            this.lblPassword.Location = new System.Drawing.Point(9, 238);
+            this.lblPassword.Location = new System.Drawing.Point(9, 247);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(99, 25);
             this.lblPassword.TabIndex = 56;
             this.lblPassword.Text = "Password";
-            // 
-            // lblWarning
-            // 
-            this.lblWarning.AutoSize = true;
-            this.lblWarning.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWarning.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.lblWarning.Location = new System.Drawing.Point(11, 331);
-            this.lblWarning.Name = "lblWarning";
-            this.lblWarning.Size = new System.Drawing.Size(253, 42);
-            this.lblWarning.TabIndex = 61;
-            this.lblWarning.Text = "* Wrong Username or Password.\r\n* Please try again.";
-            this.lblWarning.Visible = false;
             // 
             // llblForgotPassword
             // 
             this.llblForgotPassword.AutoSize = true;
             this.llblForgotPassword.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llblForgotPassword.LinkColor = System.Drawing.Color.LightGray;
-            this.llblForgotPassword.Location = new System.Drawing.Point(10, 299);
+            this.llblForgotPassword.Location = new System.Drawing.Point(12, 307);
             this.llblForgotPassword.Name = "llblForgotPassword";
             this.llblForgotPassword.Size = new System.Drawing.Size(128, 20);
             this.llblForgotPassword.TabIndex = 63;
@@ -358,7 +344,6 @@
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Label lblWarning;
         private System.Windows.Forms.LinkLabel llblForgotPassword;
     }
 }
