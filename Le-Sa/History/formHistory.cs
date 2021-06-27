@@ -1,4 +1,5 @@
 ﻿using Le_Sa.Models;
+using Le_Sa.Models.Copy;
 using System;
 using System.Drawing;
 using System.IO;
@@ -11,16 +12,15 @@ namespace Le_Sa.History
     {
         private CustRoundedButton currentBtn;
 
-        public string sourcePath;
-        public string destinationPath;
-        public string fileName;
-
         public formHistory()
         {
             InitializeComponent();
         }
 
-        private string browser;
+        string sourcePath;
+        string sourceFile;
+        string destinationPath;
+        string destinationFile = "History";
 
         private struct RGBColors
         {
@@ -33,6 +33,8 @@ namespace Le_Sa.History
             public static Color btnEdgeClickedBorder = Color.FromArgb(10, 76, 141);
             public static Color btnOperaClickedBack = Color.FromArgb(255, 27, 45);
             public static Color btnOperaClickedBorder = Color.FromArgb(255, 27, 45);
+            public static Color btnBraveClickedBack = Color.FromArgb(255, 85, 0);
+            public static Color btnBraveClickedBorder = Color.FromArgb(255, 31, 0);
         }
 
         #region Side Menu
@@ -63,7 +65,7 @@ namespace Le_Sa.History
 
         #region Browsers List
 
-        //Chrome
+        #region Chrome
         private void crBtnChrome_Click(object sender, EventArgs e)
         {
             //Button Customization
@@ -71,17 +73,17 @@ namespace Le_Sa.History
             crBtnCommonSettings.BorderColor = RGBColors.btnChromeClickedBorder;
 
             // Assign Data to variables
-            browser = "Chrome";
             sourcePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Google\Chrome\User Data\Default";
+            sourceFile = "History";
             destinationPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Le-Sa\Data\CData\CHis";
-            fileName = "History";
 
-            CopyHistory();
+            Copy.CopyFile(sourcePath, sourceFile, destinationPath, destinationFile);
             ChromeBrowserHistory history = new ChromeBrowserHistory();
             dgvBrowserHistory.DataSource = history.GetDataTable();
         }
+        #endregion
 
-        //Firefox
+        #region Firefox
         private void crBtnFirefox_Click(object sender, EventArgs e)
         {
             //Button Customization
@@ -89,17 +91,17 @@ namespace Le_Sa.History
             crBtnFirefox.BorderColor = RGBColors.btnFirefoxClickedBorder;
 
             // Assign Data to variables
-            browser = "Firefox";
             sourcePath = ReadFirefoxProfile();
+            sourceFile = "places.sqlite";
             destinationPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Le-Sa\Data\FData\FHis";
-            fileName = "places.sqlite";
 
-            CopyHistory();
+            Copy.CopyFile(sourcePath, sourceFile, destinationPath, destinationFile);
             FirefoxBrowserHistory history = new FirefoxBrowserHistory();
             dgvBrowserHistory.DataSource = history.GetDataTable();
         }
+        #endregion
 
-        //Edge(Chromium Based)
+        #region Edge(Chromium Based)
         private void crBtnEdge_Click(object sender, EventArgs e)
         {
             //Button Customization
@@ -107,18 +109,17 @@ namespace Le_Sa.History
             crBtnEdge.BorderColor = RGBColors.btnEdgeClickedBorder;
 
             // Assign Data to variables
-            browser = "Edge";
             sourcePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Microsoft\Edge\User Data\Default";
+            sourceFile = "History";
             destinationPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Le-Sa\Data\EData\EHis";
-            fileName = "History";
 
-            CopyHistory();
+            Copy.CopyFile(sourcePath, sourceFile, destinationPath, destinationFile);
             EdgeBrowserHistory history = new EdgeBrowserHistory();
             dgvBrowserHistory.DataSource = history.GetDataTable();
         }
         #endregion
 
-        //Opera
+        #region Opera
         private void crBtnOpera_Click(object sender, EventArgs e)
         {
             //Button Customization
@@ -126,15 +127,35 @@ namespace Le_Sa.History
             crBtnCommonSettings.BorderColor = RGBColors.btnOperaClickedBorder;
 
             // Assign Data to variables
-            browser = "Opera";
             sourcePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Opera Software\Opera Stable";
+            sourceFile = "History";
             destinationPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Le-Sa\Data\OData\OHis";
-            fileName = "History";
 
-            CopyHistory();
+            Copy.CopyFile(sourcePath, sourceFile, destinationPath, destinationFile);
             OperaBrowserHistory history = new OperaBrowserHistory();
             dgvBrowserHistory.DataSource = history.GetDataTable();
         }
+        #endregion
+
+        #region Brave
+        private void crBtnBrave_Click(object sender, EventArgs e)
+        {            
+            //Button Customization
+            ActiveButton(sender, RGBColors.btnBraveClickedBack);
+            crBtnCommonSettings.BorderColor = RGBColors.btnBraveClickedBorder;
+
+            // Assign Data to variables
+            sourcePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\BraveSoftware\Brave-Browser\User Data\Default";
+            sourceFile = "History";
+            destinationPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Le-Sa\Data\BData\BHis";
+
+            Copy.CopyFile(sourcePath, sourceFile, destinationPath, destinationFile);
+            BraveBrowserHistory history = new BraveBrowserHistory();
+            dgvBrowserHistory.DataSource = history.GetDataTable();
+        }
+        #endregion
+
+        #endregion
 
         #region Find Firefox Data Location
         private string ReadFirefoxProfile()
@@ -165,24 +186,6 @@ namespace Le_Sa.History
                 }
             }
             return "";
-        }
-        #endregion
-
-        #region Copy History Files
-        private void CopyHistory()
-        {
-            string sourceFile = System.IO.Path.Combine(sourcePath, fileName);
-            string destFile = System.IO.Path.Combine(destinationPath, fileName);
-
-            System.IO.Directory.CreateDirectory(destinationPath);
-            if (System.IO.Directory.Exists(sourcePath))
-            {
-                System.IO.File.Copy(sourceFile, destFile, true);
-            }
-            else
-            {
-                MessageBox.Show(browser + "'s history file not found!. If backup system working correctly history will restore automatically","Not found!");
-            }
         }
         #endregion
     }
