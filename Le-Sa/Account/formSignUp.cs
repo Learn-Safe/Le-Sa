@@ -281,6 +281,7 @@ namespace Le_Sa.Account
 
                                 string successMsg = "User accout created successfully." + Environment.NewLine + "Thanks for choosing Le-Sa";
                                 MessageBox.Show(successMsg, "Account Created", MessageBoxButtons.OK);
+                                tmrOTP.Stop();
 
                                 formDesktop desktop = new formDesktop();
                                 desktop.Show();
