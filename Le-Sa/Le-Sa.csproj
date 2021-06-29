@@ -33,9 +33,10 @@
     <TargetCulture>en</TargetCulture>
     <ProductName>Le-Sa</ProductName>
     <PublisherName>Sathsara Bandara Jayasundara</PublisherName>
+    <SuiteName>Safe</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>6</ApplicationRevision>
-    <ApplicationVersion>0.1.0.%2a</ApplicationVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>0.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -53,6 +54,7 @@
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>true</RunCodeAnalysis>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -75,7 +77,7 @@
     <ManifestKeyFile>Le-Sa_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>false</GenerateManifests>
+    <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
