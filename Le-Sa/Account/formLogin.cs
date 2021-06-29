@@ -38,8 +38,6 @@ namespace Le_Sa.Account
 
         private void crBtnContinue_Click(object sender, EventArgs e)
         {
-            string uipass = cTBPassword.Texts.Trim();
-            string uiuser = cTBUsername.Texts.Trim();
             if (cTBUsername.Texts == "" || cTBPassword.Texts == "")
             {
                 login_error("Please enter USERNAME and PASSWORD", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
