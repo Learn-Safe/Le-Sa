@@ -48,14 +48,16 @@ namespace Le_Sa.Account
             {
                 SqlConnection con = new SqlConnection(db);
                 con.Open();
-                string username = new SqlCommand("SELECT username FROM tbl_user WHERE username = '" + uiuser + "'", con).ExecuteScalar() as string;
+                SqlCommand uname = new SqlCommand("SELECT username FROM tbl_user WHERE username = '" + cTBUsername.Texts + "'", con); //Checks if the USERNAME is in the database
+                string username = uname.ExecuteScalar() as string;
                 con.Close();
                 if (cTBUsername.Texts.Equals(username))
                 {
                     con.Open();
-                    string password = new SqlCommand("SELECT password FROM tbl_user WHERE username = '" + uipass + "'", con).ExecuteScalar() as string;//Checks if the PASSWORD entered is similar to the PASSWORD of the USERNAME checked from the database  
+                    SqlCommand pass = new SqlCommand("SELECT password FROM tbl_user WHERE username = '" + cTBUsername.Texts + "'", con);//Checks if the PASSWORD entered is similar to the PASSWORD of the USERNAME checked from the database  
+                    string password = pass.ExecuteScalar() as string;
                     con.Close();
-                    if (uipass.Equals(password))
+                    if (cTBPassword.Texts.Equals(password))
                     {
                         formDesktop desktop = new formDesktop();
                         desktop.Show();
@@ -63,12 +65,12 @@ namespace Le_Sa.Account
                     }
                     else
                     {
-                        login_error("Wrong USERNAME or PASSWORD", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Wrong USERNAME or PASSWORD", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //This messagebox appear if enter wrong PASSWORD
                     }
                 }
                 else
                 {
-                    login_error("Wrong USERNAME or PASSWORD", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Wrong USERNAME or PASSWORD", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //This messagebox appear if enter wrong USERNAME
                 }
             }
         }
