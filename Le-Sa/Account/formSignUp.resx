@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblInstructions.Text" xml:space="preserve">
+    <value>● Be a minimum of 8 characters in length
+
+● Contain at least  1 character from 4 
+of the following categories:
+    Uppercase letter (A-Z)
+    Lowercase letter (a-z)
+    Digit (0-9)
+    Special character 
+
+●Spaces are not allowed</value>
+  </data>
 </root>

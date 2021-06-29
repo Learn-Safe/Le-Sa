@@ -20,7 +20,7 @@ namespace Le_Sa.History
         string sourcePath;
         string sourceFile;
         string destinationPath;
-        string destinationFile = "History";
+        readonly string destinationFile = "History";
 
         private struct RGBColors
         {

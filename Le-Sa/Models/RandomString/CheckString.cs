@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,9 +17,14 @@ namespace Le_Sa.Models.RandomString
             const string lowerAlp = "abcdefghijklmnopqrstuvwxyz";
             const string numeral = "0123456789";
             const string punctuation = @"~!@#$%^&*():;[]{}<>,.?/\|";
+
+            if (testString.Length <= 4)
+            {
+                score -= 3;
+            }
             if (testString.Length >= minLength)
             {
-                score++;
+                score+= 2;
             }
 
             if (testString.Length >= 15)
@@ -53,32 +59,32 @@ namespace Le_Sa.Models.RandomString
             return target.IndexOfAny(list.ToCharArray()) != -1;
         }
 
-        public static string StrengthNaming(int score)
+        public static (string, Color) StrengthNaming(int score)
         {
-            string level;
-            if (score == 0 || score == 1)
+            (string, Color) level;
+            if (score <= 1)
             {
-                level = "None";
+                level = ("None", Color.FromArgb(255, 133, 133));
             }
             else if (score == 2)
             {
-                level = "Weak";
+                level = ("Weak", Color.FromArgb(255,153,153));
             }
             else if (score == 3)
             {
-                level = "Fair";
+                level = ("Fair", Color.FromArgb(255,204,153));
             }
             else if (score == 4)
             {
-                level = "Good";
+                level = ("Good",Color.FromArgb(255,255,153));
             }
             else if (score == 5)
             {
-                level = "Strong";
+                level = ("Strong", Color.FromArgb(169, 201, 146));
             }
             else
             {
-                level = "Excellent";
+                level = ("Excellent", Color.FromArgb(155,255,65));
             }
             return level;
         }

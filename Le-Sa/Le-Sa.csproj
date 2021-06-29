@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="packages\CefSharp.Common.91.1.160\build\CefSharp.Common.props" Condition="Exists('packages\CefSharp.Common.91.1.160\build\CefSharp.Common.props')" />
-  <Import Project="packages\cef.redist.x86.91.1.16\build\cef.redist.x86.props" Condition="Exists('packages\cef.redist.x86.91.1.16\build\cef.redist.x86.props')" />
-  <Import Project="packages\cef.redist.x64.91.1.16\build\cef.redist.x64.props" Condition="Exists('packages\cef.redist.x64.91.1.16\build\cef.redist.x64.props')" />
+  <Import Project="packages\CefSharp.Common.91.1.211\build\CefSharp.Common.props" Condition="Exists('packages\CefSharp.Common.91.1.211\build\CefSharp.Common.props')" />
+  <Import Project="packages\cef.redist.x86.91.1.21\build\cef.redist.x86.props" Condition="Exists('packages\cef.redist.x86.91.1.21\build\cef.redist.x86.props')" />
+  <Import Project="packages\cef.redist.x64.91.1.21\build\cef.redist.x64.props" Condition="Exists('packages\cef.redist.x64.91.1.21\build\cef.redist.x64.props')" />
   <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -34,7 +34,7 @@
     <ProductName>Le-Sa</ProductName>
     <PublisherName>Sathsara Bandara Jayasundara</PublisherName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>0.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -75,7 +75,7 @@
     <ManifestKeyFile>Le-Sa_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
@@ -84,7 +84,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <TargetZone>LocalIntranet</TargetZone>
+    <TargetZone>Custom</TargetZone>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
@@ -134,14 +134,17 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CefSharp, Version=91.1.160.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
-      <HintPath>packages\CefSharp.Common.91.1.160\lib\net452\CefSharp.dll</HintPath>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.10.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>packages\Portable.BouncyCastle.1.8.10\lib\net40\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="CefSharp.Core, Version=91.1.160.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
-      <HintPath>packages\CefSharp.Common.91.1.160\lib\net452\CefSharp.Core.dll</HintPath>
+    <Reference Include="CefSharp, Version=91.1.211.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>packages\CefSharp.Common.91.1.211\lib\net452\CefSharp.dll</HintPath>
     </Reference>
-    <Reference Include="CefSharp.WinForms, Version=91.1.160.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
-      <HintPath>packages\CefSharp.WinForms.91.1.160\lib\net452\CefSharp.WinForms.dll</HintPath>
+    <Reference Include="CefSharp.Core, Version=91.1.211.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>packages\CefSharp.Common.91.1.211\lib\net452\CefSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.WinForms, Version=91.1.211.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>packages\CefSharp.WinForms.91.1.211\lib\net452\CefSharp.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -153,6 +156,9 @@
       <HintPath>packages\FontAwesome.Sharp.5.15.3\lib\net48\FontAwesome.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -166,6 +172,7 @@
       <HintPath>packages\System.Data.SQLite.Linq.1.0.114.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
@@ -206,7 +213,8 @@
     <Compile Include="CustomControls\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Encryption\Encryptor.cs" />
+    <Compile Include="Models\Copy\Copy.cs" />
+    <Compile Include="Models\Encryption\Encryptor.cs" />
     <Compile Include="formDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,11 +239,14 @@
     <Compile Include="History\formHistory.Designer.cs">
       <DependentUpon>formHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\BrowseHistory.cs" />
-    <Compile Include="Models\ChromeBrowserHistory.cs" />
-    <Compile Include="Models\EdgeBrowserHistory.cs" />
-    <Compile Include="Models\FirefoxBrowserHistory.cs" />
-    <Compile Include="Models\OperaBrowserHistory.cs" />
+    <Compile Include="Models\History\BrowseHistory.cs" />
+    <Compile Include="Models\History\BraveBrowserHistory.cs" />
+    <Compile Include="Models\History\ChromeBrowserHistory.cs" />
+    <Compile Include="Models\History\EdgeBrowserHistory.cs" />
+    <Compile Include="Models\History\FirefoxBrowserHistory.cs" />
+    <Compile Include="Models\History\OperaBrowserHistory.cs" />
+    <Compile Include="Models\RandomString\RandomStringGenerator.cs" />
+    <Compile Include="Models\RandomString\CheckString.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -459,6 +470,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\user_90px.png" />
     <Content Include="Data\user.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -481,14 +493,14 @@
     <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
     <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
     <Error Condition="!Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.114.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.114.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
-    <Error Condition="!Exists('packages\cef.redist.x64.91.1.16\build\cef.redist.x64.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\cef.redist.x64.91.1.16\build\cef.redist.x64.props'))" />
-    <Error Condition="!Exists('packages\cef.redist.x86.91.1.16\build\cef.redist.x86.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\cef.redist.x86.91.1.16\build\cef.redist.x86.props'))" />
-    <Error Condition="!Exists('packages\CefSharp.Common.91.1.160\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\CefSharp.Common.91.1.160\build\CefSharp.Common.props'))" />
-    <Error Condition="!Exists('packages\CefSharp.Common.91.1.160\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\CefSharp.Common.91.1.160\build\CefSharp.Common.targets'))" />
+    <Error Condition="!Exists('packages\cef.redist.x64.91.1.21\build\cef.redist.x64.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\cef.redist.x64.91.1.21\build\cef.redist.x64.props'))" />
+    <Error Condition="!Exists('packages\cef.redist.x86.91.1.21\build\cef.redist.x86.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\cef.redist.x86.91.1.21\build\cef.redist.x86.props'))" />
+    <Error Condition="!Exists('packages\CefSharp.Common.91.1.211\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\CefSharp.Common.91.1.211\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('packages\CefSharp.Common.91.1.211\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\CefSharp.Common.91.1.211\build\CefSharp.Common.targets'))" />
   </Target>
   <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <Import Project="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.114.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.114.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
-  <Import Project="packages\CefSharp.Common.91.1.160\build\CefSharp.Common.targets" Condition="Exists('packages\CefSharp.Common.91.1.160\build\CefSharp.Common.targets')" />
+  <Import Project="packages\CefSharp.Common.91.1.211\build\CefSharp.Common.targets" Condition="Exists('packages\CefSharp.Common.91.1.211\build\CefSharp.Common.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

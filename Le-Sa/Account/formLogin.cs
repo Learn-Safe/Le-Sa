@@ -18,23 +18,23 @@ namespace Le_Sa.Account
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
-//            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+           Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         private readonly string db = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Sathsara\source\repos\sathsarabandaraj\Le-Sa\Le-Sa\Data\user.mdf;Integrated Security = True; Timeout=30";
 
-//        #region Rounded Corner
-//        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-//        private static extern IntPtr CreateRoundRectRgn
-//        (
-//            int nLeftRect,
-//            int nTopRect,
-//            int nRightRect,
-//            int nBottomRect,
-//            int nWidthEllipse,
-//            int nHeightEllipse
-//        );
-//        #endregion
+        #region Rounded Corner
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,
+            int nTopRect,
+            int nRightRect,
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeightEllipse
+        );
+        #endregion
 
         private void crBtnContinue_Click(object sender, EventArgs e)
         {
