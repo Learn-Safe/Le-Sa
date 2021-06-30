@@ -20,7 +20,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>C:\Users\Sathsara\Desktop\</PublishUrl>
+    <PublishUrl>C:\Program Files %28x86%29\Le-Sa\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -35,7 +35,7 @@
     <PublisherName>Sathsara Bandara Jayasundara</PublisherName>
     <SuiteName>Safe</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>0.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -157,7 +157,9 @@
     <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\FontAwesome.Sharp.5.15.3\lib\net48\FontAwesome.Sharp.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
@@ -200,6 +202,18 @@
     <Compile Include="Account\formSignUp.Designer.cs">
       <DependentUpon>formSignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="BrowserControls\formChrome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrowserControls\formChrome.Designer.cs">
+      <DependentUpon>formChrome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BrowserControls\formYouNeedAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrowserControls\formYouNeedAdmin.Designer.cs">
+      <DependentUpon>formYouNeedAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\CustRoundedPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -215,13 +229,14 @@
     <Compile Include="CustomControls\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\AdminCheck\Administrator.cs" />
     <Compile Include="Models\Copy\Copy.cs" />
     <Compile Include="Models\Encryption\Encryptor.cs" />
-    <Compile Include="formDashboard.cs">
+    <Compile Include="BrowserControls\formBrowserControls.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formDashboard.Designer.cs">
-      <DependentUpon>formDashboard.cs</DependentUpon>
+    <Compile Include="BrowserControls\formBrowserControls.Designer.cs">
+      <DependentUpon>formBrowserControls.cs</DependentUpon>
     </Compile>
     <Compile Include="formDesktop.cs">
       <SubType>Form</SubType>
@@ -249,6 +264,7 @@
     <Compile Include="Models\History\OperaBrowserHistory.cs" />
     <Compile Include="Models\RandomString\RandomStringGenerator.cs" />
     <Compile Include="Models\RandomString\CheckString.cs" />
+    <Compile Include="Models\Registry\ReadWriteRegistry.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -300,6 +316,12 @@
     <EmbeddedResource Include="Account\formSignUp.resx">
       <DependentUpon>formSignUp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BrowserControls\formChrome.resx">
+      <DependentUpon>formChrome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BrowserControls\formYouNeedAdmin.resx">
+      <DependentUpon>formYouNeedAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -319,8 +341,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".editorconfig" />
-    <EmbeddedResource Include="formDashboard.resx">
-      <DependentUpon>formDashboard.cs</DependentUpon>
+    <EmbeddedResource Include="BrowserControls\formBrowserControls.resx">
+      <DependentUpon>formBrowserControls.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formDesktop.resx">
       <DependentUpon>formDesktop.cs</DependentUpon>
@@ -339,6 +361,8 @@
     <None Include="app.manifest">
       <SubType>Designer</SubType>
     </None>
+    <None Include="BrowserControls\ChromePolicies\IncognitoMode\EnableIncognitoMode.reg" />
+    <None Include="BrowserControls\ChromePolicies\IncognitoMode\DisableIncognitoMode.reg" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -480,6 +504,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>user.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\browser_control_65.png" />
     <Content Include="x64\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -31,16 +31,14 @@ namespace Le_Sa
         {
             this.pnlDesktop = new System.Windows.Forms.Panel();
             this.pnlUser = new System.Windows.Forms.Panel();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.lblUserName = new System.Windows.Forms.Label();
-            this.pbUserPic = new System.Windows.Forms.PictureBox();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.crBtnHistory = new Le_Sa.CustRoundedButton();
-            this.custRoundedButton5 = new Le_Sa.CustRoundedButton();
-            this.custRoundedButton4 = new Le_Sa.CustRoundedButton();
             this.crBtnSettings = new Le_Sa.CustRoundedButton();
-            this.crBtnDashboard = new Le_Sa.CustRoundedButton();
+            this.crBtnBrowserControls = new Le_Sa.CustRoundedButton();
             this.pnlUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUserPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,13 +53,27 @@ namespace Le_Sa
             // 
             // pnlUser
             // 
+            this.pnlUser.Controls.Add(this.iconPictureBox1);
             this.pnlUser.Controls.Add(this.lblUserName);
-            this.pnlUser.Controls.Add(this.pbUserPic);
             this.pnlUser.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlUser.Location = new System.Drawing.Point(0, 0);
             this.pnlUser.Name = "pnlUser";
             this.pnlUser.Size = new System.Drawing.Size(240, 240);
             this.pnlUser.TabIndex = 0;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 150;
+            this.iconPictureBox1.Location = new System.Drawing.Point(45, 22);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(150, 150);
+            this.iconPictureBox1.TabIndex = 2;
+            this.iconPictureBox1.TabStop = false;
             // 
             // lblUserName
             // 
@@ -74,24 +86,12 @@ namespace Le_Sa
             this.lblUserName.TabIndex = 1;
             this.lblUserName.Text = "USERNAME";
             // 
-            // pbUserPic
-            // 
-            this.pbUserPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pbUserPic.Location = new System.Drawing.Point(55, 42);
-            this.pbUserPic.Name = "pbUserPic";
-            this.pbUserPic.Size = new System.Drawing.Size(130, 130);
-            this.pbUserPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbUserPic.TabIndex = 0;
-            this.pbUserPic.TabStop = false;
-            // 
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
             this.pnlMenu.Controls.Add(this.crBtnHistory);
-            this.pnlMenu.Controls.Add(this.custRoundedButton5);
-            this.pnlMenu.Controls.Add(this.custRoundedButton4);
             this.pnlMenu.Controls.Add(this.crBtnSettings);
-            this.pnlMenu.Controls.Add(this.crBtnDashboard);
+            this.pnlMenu.Controls.Add(this.crBtnBrowserControls);
             this.pnlMenu.Controls.Add(this.pnlUser);
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
@@ -112,55 +112,15 @@ namespace Le_Sa
             this.crBtnHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
             this.crBtnHistory.Image = global::Le_Sa.Properties.Resources.history_65px;
             this.crBtnHistory.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.crBtnHistory.Location = new System.Drawing.Point(125, 358);
+            this.crBtnHistory.Location = new System.Drawing.Point(12, 246);
             this.crBtnHistory.Name = "crBtnHistory";
-            this.crBtnHistory.Size = new System.Drawing.Size(105, 105);
+            this.crBtnHistory.Size = new System.Drawing.Size(216, 105);
             this.crBtnHistory.TabIndex = 10;
             this.crBtnHistory.Text = "History";
             this.crBtnHistory.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.crBtnHistory.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
             this.crBtnHistory.UseVisualStyleBackColor = false;
             this.crBtnHistory.Click += new System.EventHandler(this.crBtnHistory_Click);
-            // 
-            // custRoundedButton5
-            // 
-            this.custRoundedButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(76)))));
-            this.custRoundedButton5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(76)))));
-            this.custRoundedButton5.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.custRoundedButton5.BorderRadius = 20;
-            this.custRoundedButton5.BorderSize = 0;
-            this.custRoundedButton5.FlatAppearance.BorderSize = 0;
-            this.custRoundedButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.custRoundedButton5.Font = new System.Drawing.Font("Microsoft Tai Le", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.custRoundedButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
-            this.custRoundedButton5.Location = new System.Drawing.Point(12, 358);
-            this.custRoundedButton5.Name = "custRoundedButton5";
-            this.custRoundedButton5.Size = new System.Drawing.Size(105, 105);
-            this.custRoundedButton5.TabIndex = 9;
-            this.custRoundedButton5.Text = "custRoundedButton5";
-            this.custRoundedButton5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.custRoundedButton5.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
-            this.custRoundedButton5.UseVisualStyleBackColor = false;
-            // 
-            // custRoundedButton4
-            // 
-            this.custRoundedButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(76)))));
-            this.custRoundedButton4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(76)))));
-            this.custRoundedButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.custRoundedButton4.BorderRadius = 20;
-            this.custRoundedButton4.BorderSize = 0;
-            this.custRoundedButton4.FlatAppearance.BorderSize = 0;
-            this.custRoundedButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.custRoundedButton4.Font = new System.Drawing.Font("Microsoft Tai Le", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.custRoundedButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
-            this.custRoundedButton4.Location = new System.Drawing.Point(125, 246);
-            this.custRoundedButton4.Name = "custRoundedButton4";
-            this.custRoundedButton4.Size = new System.Drawing.Size(105, 105);
-            this.custRoundedButton4.TabIndex = 8;
-            this.custRoundedButton4.Text = "custRoundedButton4";
-            this.custRoundedButton4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.custRoundedButton4.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
-            this.custRoundedButton4.UseVisualStyleBackColor = false;
             // 
             // crBtnSettings
             // 
@@ -184,28 +144,28 @@ namespace Le_Sa
             this.crBtnSettings.UseVisualStyleBackColor = false;
             this.crBtnSettings.Click += new System.EventHandler(this.crBtnSettings_Click);
             // 
-            // crBtnDashboard
+            // crBtnBrowserControls
             // 
-            this.crBtnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(76)))));
-            this.crBtnDashboard.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(76)))));
-            this.crBtnDashboard.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.crBtnDashboard.BorderRadius = 20;
-            this.crBtnDashboard.BorderSize = 0;
-            this.crBtnDashboard.FlatAppearance.BorderSize = 0;
-            this.crBtnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crBtnDashboard.Font = new System.Drawing.Font("Microsoft Tai Le", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.crBtnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
-            this.crBtnDashboard.Image = global::Le_Sa.Properties.Resources.dashboard_65px;
-            this.crBtnDashboard.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.crBtnDashboard.Location = new System.Drawing.Point(11, 246);
-            this.crBtnDashboard.Name = "crBtnDashboard";
-            this.crBtnDashboard.Size = new System.Drawing.Size(105, 105);
-            this.crBtnDashboard.TabIndex = 0;
-            this.crBtnDashboard.Text = "Dashboard";
-            this.crBtnDashboard.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.crBtnDashboard.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
-            this.crBtnDashboard.UseVisualStyleBackColor = false;
-            this.crBtnDashboard.Click += new System.EventHandler(this.crBtnDashboard_Click);
+            this.crBtnBrowserControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(76)))));
+            this.crBtnBrowserControls.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(76)))));
+            this.crBtnBrowserControls.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.crBtnBrowserControls.BorderRadius = 20;
+            this.crBtnBrowserControls.BorderSize = 0;
+            this.crBtnBrowserControls.FlatAppearance.BorderSize = 0;
+            this.crBtnBrowserControls.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBtnBrowserControls.Font = new System.Drawing.Font("Microsoft Tai Le", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.crBtnBrowserControls.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
+            this.crBtnBrowserControls.Image = global::Le_Sa.Properties.Resources.browser_control_65;
+            this.crBtnBrowserControls.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.crBtnBrowserControls.Location = new System.Drawing.Point(12, 357);
+            this.crBtnBrowserControls.Name = "crBtnBrowserControls";
+            this.crBtnBrowserControls.Size = new System.Drawing.Size(216, 105);
+            this.crBtnBrowserControls.TabIndex = 0;
+            this.crBtnBrowserControls.Text = "Browser Controls";
+            this.crBtnBrowserControls.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.crBtnBrowserControls.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
+            this.crBtnBrowserControls.UseVisualStyleBackColor = false;
+            this.crBtnBrowserControls.Click += new System.EventHandler(this.crBtnBrowserControls_Click);
             // 
             // formDesktop
             // 
@@ -223,7 +183,7 @@ namespace Le_Sa
             this.Text = "Le-Sa";
             this.pnlUser.ResumeLayout(false);
             this.pnlUser.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUserPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.pnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -233,12 +193,10 @@ namespace Le_Sa
         private System.Windows.Forms.Panel pnlDesktop;
         private System.Windows.Forms.Panel pnlUser;
         private System.Windows.Forms.Label lblUserName;
-        private System.Windows.Forms.PictureBox pbUserPic;
         private System.Windows.Forms.Panel pnlMenu;
         private CustRoundedButton crBtnSettings;
-        private CustRoundedButton crBtnDashboard;
-        private CustRoundedButton custRoundedButton5;
-        private CustRoundedButton custRoundedButton4;
+        private CustRoundedButton crBtnBrowserControls;
         private CustRoundedButton crBtnHistory;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }

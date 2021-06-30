@@ -35,6 +35,7 @@ namespace Le_Sa
             public static Color btnsettingsClickedFore = Color.FromArgb(217,48,37);
         }
 
+        #region Side Menu
         #region Open Child Form
         private void OpenChildForm(Form childForm)
         {
@@ -53,7 +54,6 @@ namespace Le_Sa
         }
         #endregion  
 
-        #region Side Menu
         private void ActiveButton(object senderBtn, Color color)
         {
             if (senderBtn != null)
@@ -78,18 +78,18 @@ namespace Le_Sa
             }
         }
 
-        private void crBtnDashboard_Click(object sender, EventArgs e)
-        {
-            currentMenuItem = "Dashboard";
-            ActiveButton(sender, RGBColors.btnClickedFore);
-            OpenChildForm(new formDashboard());
-        }
-
         private void crBtnHistory_Click(object sender, EventArgs e)
         {
             currentMenuItem = "History";
             ActiveButton(sender, RGBColors.btnClickedFore);
             OpenChildForm(new formHistory());
+        }
+
+        private void crBtnBrowserControls_Click(object sender, EventArgs e)
+        {
+            currentMenuItem = "Browser Control";
+            ActiveButton(sender, RGBColors.btnClickedFore);
+            OpenChildForm(new formBrowserControls());
         }
 
         private void crBtnSettings_Click(object sender, EventArgs e)
@@ -99,5 +99,9 @@ namespace Le_Sa
             OpenChildForm(new formSettings());
         }
         #endregion
+
+        private void custRoundedButton5_Click(object sender, EventArgs e)
+        {
+                    }
     }
 }

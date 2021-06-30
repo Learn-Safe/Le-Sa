@@ -1,23 +1,10 @@
 ﻿using Le_Sa.Models.RandomString;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Net;
-using System.Net.Mail;
-using System.Security.Principal;
-using System.Diagnostics;
-using System.Threading;
-using Le_Sa.Models.Copy;
 using System.IO;
 using System.Data.SqlClient;
 using Le_Sa.Account;
+using Le_Sa.BrowserControls;
+using System.Windows.Forms;
 
 namespace Le_Sa
 {
@@ -32,7 +19,8 @@ namespace Le_Sa
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            string db = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Sathsara\source\repos\sathsarabandaraj\Le-Sa\Le-Sa\Data\user.mdf;Integrated Security = True; Timeout=30";
+            string fileName = Directory.GetCurrentDirectory() + @"\Data\user.mdf";
+            string db = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=" + fileName + "; Integrated Security = True; Timeout=30";
             try
             {
                 SqlConnection con = new SqlConnection(db);

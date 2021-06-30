@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -21,7 +22,8 @@ namespace Le_Sa.Account
            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
-        private readonly string db = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Sathsara\source\repos\sathsarabandaraj\Le-Sa\Le-Sa\Data\user.mdf;Integrated Security = True; Timeout=30";
+        private static readonly string fileName = Directory.GetCurrentDirectory() + @"\Data\user.mdf";
+        private static readonly string db = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=" + fileName + ";Integrated Security = True; Timeout=30";
 
         #region Rounded Corner
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
