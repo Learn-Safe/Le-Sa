@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Le_Sa.History;
 using System.Windows.Forms;
- 
+using Le_Sa.BrowserControls;
+
 namespace Le_Sa
 {
     public partial class formDesktop : Form

@@ -54,7 +54,6 @@ namespace Le_Sa.Account
         );
         #endregion
 
-
         #region Timer Event
         private void OnTimeEvent(object sender, System.Timers.ElapsedEventArgs e)
         {
