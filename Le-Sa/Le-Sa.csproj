@@ -223,6 +223,12 @@
     <Compile Include="CustomControls\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="formAdminWarning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formAdminWarning.Designer.cs">
+      <DependentUpon>formAdminWarning.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\AdminCheck\Addministrator.cs" />
     <Compile Include="Models\Copy\Copy.cs" />
     <Compile Include="Models\Encryption\Encryptor.cs" />
@@ -304,8 +310,14 @@
     <EmbeddedResource Include="Account\formSignUp.resx">
       <DependentUpon>formSignUp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BrowserControls\formBrowserControls.resx">
+      <DependentUpon>formBrowserControls.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formAdminWarning.resx">
+      <DependentUpon>formAdminWarning.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="History\formHistory.resx">
       <DependentUpon>formHistory.cs</DependentUpon>
