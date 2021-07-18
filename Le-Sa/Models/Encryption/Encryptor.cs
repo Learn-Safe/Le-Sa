@@ -7,7 +7,7 @@ namespace Le_Sa
 {
     class Encryptor
     {
-        public static string IV = "unfletnc=27h/1dd";
+        public static string IV = "k2K)86+fa;~g./D*";
         public static string Key = "saty123456789123gdtensbdtemvdt2w";
 
 

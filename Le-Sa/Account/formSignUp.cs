@@ -8,6 +8,7 @@ using System.Net.Mail;
 using Le_Sa.Models.Copy;
 using System.IO;
 using System.Data.SqlClient;
+using Le_Sa.Models.Email;
 
 namespace Le_Sa.Account
 {
@@ -89,29 +90,19 @@ namespace Le_Sa.Account
             }
             else
             {
+                crBtnSendOTP.Enabled = false;
                 otp = RandomStringGenerator.GenerateRandomString(6, true, false, true, false);
-                try
+                bool sendMsg = Email.SendMsg(cTBEmail.Texts.Trim(), "Le-Sa", "Use this One Time Password to verify your account 👉 " + otp + " 👈");
+
+                if (sendMsg == true)
                 {
-                    using (SmtpClient client = new SmtpClient("smtp.gmail.com", 587))
-                    {
-                        client.EnableSsl = true;
-                        client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                        client.UseDefaultCredentials = false;
-                        client.Credentials = new NetworkCredential("lesafe.soft@gmail.com", "znvxqikozbjqhere");
-                        MailMessage msgObj = new MailMessage();
-                        msgObj.To.Add(cTBEmail.Texts.Trim());
-                        msgObj.From = new MailAddress("lesafe.soft@gmail.com", "Le-Sa");
-                        msgObj.Subject = "OTP";
-                        msgObj.Body = "Use this One Time Password to verify your account 👉 " + otp + " 👈";
-                        client.Send(msgObj);
-                    }
-                    crBtnSendOTP.Enabled = false;
+                    tmrOTP.Start();
+                    MessageBox.Show("OTP Sent successfully to your email address ( " + cTBEmail.Texts.Trim() + " )" + Environment.NewLine + Environment.NewLine + "Please Check your inbox");
                 }
-                catch(Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Somthing went wrong ‼" + Environment.NewLine + "Please try again");
                 }
-                tmrOTP.Start();
             }
         }
         #endregion
