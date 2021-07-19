@@ -62,18 +62,21 @@ namespace Le_Sa.Account
             Invoke(new Action(() =>
             {
                 sec -= 1;
-                if (min == 00 && sec == 00)
-                {
-                    tmrOTP.Stop();
-                    otp = null;
-                    MessageBox.Show("OTP that sent to you is expired. You can't use it anymore. You can get a new otp now.", "OTP expired", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    lblOTPTimer.Text = "05:00";
-                    crBtnSendOTP.Enabled = true;
-                }
-                if (sec == 00)
+                if (min != 00 && sec == 00 || min > 00 && sec == -01)
                 {
                     sec = 59;
                     min -= 1;
+                }
+                if (min == 00 && sec == -01)
+                {
+                    tmrOTP.Stop();
+                    crBtnResendOTP.Visible = false;
+                    otp = null;
+                    MessageBox.Show("OTP that sent to you is expired. You can't use it anymore." + Environment.NewLine + " You can get a new otp now.", "OTP expired", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    min = 05;
+                    sec = 00;
+                    cTBEmail.Enabled = true;
+                    crBtnSendOTP.Enabled = true;
                 }
                 //Update lable
                 lblOTPTimer.Text = string.Format("{0}:{1}", min.ToString().PadLeft(2, '0'), sec.ToString().PadLeft(2, '0'));
@@ -91,18 +94,37 @@ namespace Le_Sa.Account
             else
             {
                 crBtnSendOTP.Enabled = false;
+                cTBEmail.Enabled = false;
                 otp = RandomStringGenerator.GenerateRandomString(6, true, false, true, false);
+
                 bool sendMsg = Email.SendMsg(cTBEmail.Texts.Trim(), "Le-Sa", "Use this One Time Password to verify your account 👉 " + otp + " 👈");
 
                 if (sendMsg == true)
                 {
                     tmrOTP.Start();
-                    MessageBox.Show("OTP Sent successfully to your email address ( " + cTBEmail.Texts.Trim() + " )" + Environment.NewLine + Environment.NewLine + "Please Check your inbox");
+                    MessageBox.Show("OTP Sent successfully to your email address ( " + cTBEmail.Texts.Trim() + " )" + Environment.NewLine + Environment.NewLine + "Please Check your inbox", "OTP Sent", MessageBoxButtons.OK);
+                    crBtnResendOTP.Visible = true;
                 }
                 else
                 {
-                    MessageBox.Show("Somthing went wrong ‼" + Environment.NewLine + "Please try again");
+                    cTBEmail.Enabled = true;
+                    crBtnSendOTP.Enabled = true;
                 }
+            }
+        }
+
+        private void crBtnResendOTP_Click(object sender, EventArgs e)
+        {
+            bool sendMsg = Email.SendMsg(cTBEmail.Texts.Trim(), "Le-Sa", "Use this One Time Password to verify your account 👉 " + otp + " 👈");
+
+            if (sendMsg == true)
+            {
+                MessageBox.Show("OTP Sent successfully to your email address ( " + cTBEmail.Texts.Trim() + " )" + Environment.NewLine + Environment.NewLine + "Please Check your inbox");
+            }
+            else
+            {
+                cTBEmail.Enabled = true;
+                crBtnSendOTP.Enabled = true;
             }
         }
         #endregion
@@ -145,7 +167,7 @@ namespace Le_Sa.Account
 
         private void crBtnGeneratePassword_Click(object sender, EventArgs e)
         {
-            string generatedPass = RandomStringGenerator.GenerateRandomString(12, true, true, true, true);
+            string generatedPass = RandomStringGenerator.GenerateRandomString(14, true, true, true, true);
             cTBPassword.Texts = generatedPass;
             cTBConfPass.Texts = generatedPass;
         }
@@ -219,9 +241,12 @@ namespace Le_Sa.Account
             cTBPhoneNumber.Texts = "";
             cTBEmail.Texts = "";
             cTBOTP.Texts = "";
+            otp = null;
 
             lblOTPTimer.Text = "00:00";
+            crBtnResendOTP.Visible = false;
             crBtnSendOTP.Enabled = true;
+            cTBEmail.Enabled = true;
             lblStrength.Visible = false;
         }
         #endregion

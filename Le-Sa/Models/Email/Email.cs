@@ -30,8 +30,9 @@ namespace Le_Sa.Models.Email
                 }
                 return true;
             }
-            catch
+            catch (Exception error)
             {
+                MessageBox.Show(error.Message + Environment.NewLine + "Please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }

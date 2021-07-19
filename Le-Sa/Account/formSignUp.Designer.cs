@@ -38,6 +38,7 @@ namespace Le_Sa.Account
             this.lblPasswordMust = new System.Windows.Forms.Label();
             this.lblOTPTimer = new System.Windows.Forms.Label();
             this.pnlBackground = new System.Windows.Forms.Panel();
+            this.crBtnResendOTP = new Le_Sa.CustRoundedButton();
             this.crBtnMinimize = new Le_Sa.CustRoundedButton();
             this.crBrnClose = new Le_Sa.CustRoundedButton();
             this.cBtnClear = new Le_Sa.CustRoundedButton();
@@ -62,6 +63,7 @@ namespace Le_Sa.Account
             this.lblPassword = new System.Windows.Forms.Label();
             this.crBtnPassVisibility = new Le_Sa.CustRoundedButton();
             this.cTBPassword = new Le_Sa.CustomControls.CustomTextBox();
+            this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.crPBDP)).BeginInit();
             this.crPnlPassword1.SuspendLayout();
             this.crPnlPassword0.SuspendLayout();
@@ -148,10 +150,11 @@ namespace Le_Sa.Account
             this.lblOTPTimer.Name = "lblOTPTimer";
             this.lblOTPTimer.Size = new System.Drawing.Size(49, 20);
             this.lblOTPTimer.TabIndex = 101;
-            this.lblOTPTimer.Text = "05:00";
+            this.lblOTPTimer.Text = "01:00";
             // 
             // pnlBackground
             // 
+            this.pnlBackground.Controls.Add(this.crBtnResendOTP);
             this.pnlBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBackground.Location = new System.Drawing.Point(0, 0);
             this.pnlBackground.Name = "pnlBackground";
@@ -159,6 +162,27 @@ namespace Le_Sa.Account
             this.pnlBackground.TabIndex = 102;
             this.pnlBackground.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBackground_MouseDown);
             this.pnlBackground.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBackground_MouseMove);
+            // 
+            // crBtnResendOTP
+            // 
+            this.crBtnResendOTP.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnResendOTP.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnResendOTP.BorderColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnResendOTP.BorderRadius = 10;
+            this.crBtnResendOTP.BorderSize = 0;
+            this.crBtnResendOTP.FlatAppearance.BorderSize = 0;
+            this.crBtnResendOTP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBtnResendOTP.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.crBtnResendOTP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.crBtnResendOTP.Location = new System.Drawing.Point(400, 389);
+            this.crBtnResendOTP.Name = "crBtnResendOTP";
+            this.crBtnResendOTP.Size = new System.Drawing.Size(108, 25);
+            this.crBtnResendOTP.TabIndex = 103;
+            this.crBtnResendOTP.Text = "Resend OTP";
+            this.crBtnResendOTP.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.crBtnResendOTP.UseVisualStyleBackColor = false;
+            this.crBtnResendOTP.Visible = false;
+            this.crBtnResendOTP.Click += new System.EventHandler(this.crBtnResendOTP_Click);
             // 
             // crBtnMinimize
             // 
@@ -642,6 +666,7 @@ namespace Le_Sa.Account
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formSignUp";
             this.Load += new System.EventHandler(this.formSignUp_Load);
+            this.pnlBackground.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.crPBDP)).EndInit();
             this.crPnlPassword1.ResumeLayout(false);
             this.crPnlPassword1.PerformLayout();
@@ -686,5 +711,6 @@ namespace Le_Sa.Account
         private CustRoundedButton crBtnMinimize;
         private System.Windows.Forms.Label lblOTPTimer;
         private System.Windows.Forms.Panel pnlBackground;
+        private CustRoundedButton crBtnResendOTP;
     }
 }
