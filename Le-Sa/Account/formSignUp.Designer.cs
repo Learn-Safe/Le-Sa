@@ -63,6 +63,7 @@ namespace Le_Sa.Account
             this.lblPassword = new System.Windows.Forms.Label();
             this.crBtnPassVisibility = new Le_Sa.CustRoundedButton();
             this.cTBPassword = new Le_Sa.CustomControls.CustomTextBox();
+            this.llblHaveAnAccount = new System.Windows.Forms.LinkLabel();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.crPBDP)).BeginInit();
             this.crPnlPassword1.SuspendLayout();
@@ -150,10 +151,11 @@ namespace Le_Sa.Account
             this.lblOTPTimer.Name = "lblOTPTimer";
             this.lblOTPTimer.Size = new System.Drawing.Size(49, 20);
             this.lblOTPTimer.TabIndex = 101;
-            this.lblOTPTimer.Text = "01:00";
+            this.lblOTPTimer.Text = "05:00";
             // 
             // pnlBackground
             // 
+            this.pnlBackground.Controls.Add(this.llblHaveAnAccount);
             this.pnlBackground.Controls.Add(this.crBtnResendOTP);
             this.pnlBackground.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBackground.Location = new System.Drawing.Point(0, 0);
@@ -633,6 +635,19 @@ namespace Le_Sa.Account
             this.cTBPassword.Texts = "";
             this.cTBPassword.UnderlinedStyle = false;
             // 
+            // llblHaveAnAccount
+            // 
+            this.llblHaveAnAccount.AutoSize = true;
+            this.llblHaveAnAccount.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llblHaveAnAccount.LinkColor = System.Drawing.Color.LightGray;
+            this.llblHaveAnAccount.Location = new System.Drawing.Point(16, 49);
+            this.llblHaveAnAccount.Name = "llblHaveAnAccount";
+            this.llblHaveAnAccount.Size = new System.Drawing.Size(189, 17);
+            this.llblHaveAnAccount.TabIndex = 103;
+            this.llblHaveAnAccount.TabStop = true;
+            this.llblHaveAnAccount.Text = "Have an account? Log in now";
+            this.llblHaveAnAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblHaveAnAccount_LinkClicked);
+            // 
             // formSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -667,6 +682,7 @@ namespace Le_Sa.Account
             this.Text = "formSignUp";
             this.Load += new System.EventHandler(this.formSignUp_Load);
             this.pnlBackground.ResumeLayout(false);
+            this.pnlBackground.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.crPBDP)).EndInit();
             this.crPnlPassword1.ResumeLayout(false);
             this.crPnlPassword1.PerformLayout();
@@ -712,5 +728,6 @@ namespace Le_Sa.Account
         private System.Windows.Forms.Label lblOTPTimer;
         private System.Windows.Forms.Panel pnlBackground;
         private CustRoundedButton crBtnResendOTP;
+        private System.Windows.Forms.LinkLabel llblHaveAnAccount;
     }
 }

@@ -1,4 +1,8 @@
-﻿using System;
+﻿using FireSharp.Config;
+using FireSharp.Interfaces;
+using FireSharp.Response;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,11 +23,8 @@ namespace Le_Sa.Account
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
-           Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
-
-        private static readonly string fileName = Directory.GetCurrentDirectory() + @"\Data\user.mdf";
-        private static readonly string db = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=" + fileName + ";Integrated Security = True; Timeout=30";
 
         #region Rounded Corner
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -38,46 +39,55 @@ namespace Le_Sa.Account
         );
         #endregion
 
-        private void crBtnContinue_Click(object sender, EventArgs e)
+        IFirebaseConfig ifc = new FirebaseConfig()
         {
-            if (cTBUsername.Texts == "" || cTBPassword.Texts == "")
+            AuthSecret = "K9Ul4asnJqIMFlBlpm0AkjcEnwWagBxs4Iy0xZes",
+            BasePath = "https://le-sa-f718d-default-rtdb.firebaseio.com/"
+        };
+
+        IFirebaseClient client;
+
+        private void formLogin_Load(object sender, EventArgs e)
+        {
+            cTBUsername.Texts = Encryptor.Encrypt("K9Ul4asnJqIMFlBlpm0AkjcEnwWagBxs4Iy0xZes");
+            try
             {
-                login_error("Please enter USERNAME and PASSWORD", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                client = new FireSharp.FirebaseClient(ifc);
             }
-            else
+            catch (Exception error)
             {
-                SqlConnection con = new SqlConnection(db);
-                con.Open();
-                SqlCommand uname = new SqlCommand("SELECT username FROM tbl_user WHERE username = '" + cTBUsername.Texts + "'", con); //Checks if the USERNAME is in the database
-                string username = uname.ExecuteScalar() as string;
-                con.Close();
-                if (cTBUsername.Texts.Equals(username))
-                {
-                    con.Open();
-                    SqlCommand pass = new SqlCommand("SELECT password FROM tbl_user WHERE username = '" + cTBUsername.Texts + "'", con);//Checks if the PASSWORD entered is similar to the PASSWORD of the USERNAME checked from the database  
-                    string password = pass.ExecuteScalar() as string;
-                    con.Close();
-                    if (cTBPassword.Texts.Equals(password))
-                    {
-                        formDesktop desktop = new formDesktop();
-                        desktop.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Wrong USERNAME or PASSWORD", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //This messagebox appear if enter wrong PASSWORD
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Wrong USERNAME or PASSWORD", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //This messagebox appear if enter wrong USERNAME
-                }
+                MessageBox.Show(error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void login_error(string message, string caption,MessageBoxButtons buttons, MessageBoxIcon icon)
+        private void crBtnContinue_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(message, caption, buttons, icon); //This messagebox appear if enter wrong credentials
+            if (string.IsNullOrEmpty(cTBUsername.Texts) || string.IsNullOrEmpty(cTBPassword.Texts))
+            {
+                MessageBox.Show("Please enter USERNAME and PASSWORD", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                FirebaseResponse res = client.Get(@"Users/" + cTBUsername.Texts);
+                User ResUser = res.ResultAs<User>();
+                User UserInput = new User() // USER INPUT
+                {
+                    username = cTBUsername.Texts,
+                    password = cTBPassword.Texts
+                };
+
+                if (User.IsEqual(ResUser, UserInput))
+                {
+                    formDesktop desktop = new formDesktop();
+                    desktop.Show();
+                    this.Hide();
+                }
+
+                else
+                {
+                    User.ShowError();
+                }
+            }
         }
 
         private void crBtnVisibility_MouseDown(object sender, MouseEventArgs e)

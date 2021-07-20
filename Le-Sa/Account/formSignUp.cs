@@ -3,12 +3,12 @@ using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using System.Net;
-using System.Net.Mail;
 using Le_Sa.Models.Copy;
 using System.IO;
-using System.Data.SqlClient;
 using Le_Sa.Models.Email;
+using FireSharp.Response;
+using FireSharp.Interfaces;
+using FireSharp.Config;
 
 namespace Le_Sa.Account
 {
@@ -30,17 +30,31 @@ namespace Le_Sa.Account
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
+        IFirebaseConfig ifc = new FirebaseConfig()
+        {
+            AuthSecret = "K9Ul4asnJqIMFlBlpm0AkjcEnwWagBxs4Iy0xZes",
+            BasePath = "https://le-sa-f718d-default-rtdb.firebaseio.com/"
+        };
+
+        IFirebaseClient client;
+
         private void formSignUp_Load(object sender, EventArgs e)
         {
+            try
+            {
+                client = new FireSharp.FirebaseClient(ifc);
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show(error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             tmrOTP = new System.Timers.Timer
             {
                 Interval = 1000//1s
             };
             tmrOTP.Elapsed += OnTimeEvent;
         }
-
-        private static readonly string fileName = Directory.GetCurrentDirectory() + @"\Data\user.mdf";
-        private static readonly string db = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=" + fileName + ";Integrated Security = True; Timeout=30";
 
         #region Rounded Corner
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -87,7 +101,7 @@ namespace Le_Sa.Account
         #region OTP
         private void crBtnSendOTP_Click(object sender, EventArgs e)
         {
-            if (cTBEmail.Texts.Trim() == "")
+            if (string.IsNullOrEmpty(cTBEmail.Texts))
             {
                 MessageBox.Show("Please fill Email fields before strength check", "Fields are empty", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -96,13 +110,13 @@ namespace Le_Sa.Account
                 crBtnSendOTP.Enabled = false;
                 cTBEmail.Enabled = false;
                 otp = RandomStringGenerator.GenerateRandomString(6, true, false, true, false);
-
-                bool sendMsg = Email.SendMsg(cTBEmail.Texts.Trim(), "Le-Sa", "Use this One Time Password to verify your account 👉 " + otp + " 👈");
+                cTBOTP.Texts = otp;
+                bool sendMsg = Email.SendMsg(cTBEmail.Texts, "Le-Sa", "Use this One Time Password to verify your account 👉 " + otp + " 👈");
 
                 if (sendMsg == true)
                 {
                     tmrOTP.Start();
-                    MessageBox.Show("OTP Sent successfully to your email address ( " + cTBEmail.Texts.Trim() + " )" + Environment.NewLine + Environment.NewLine + "Please Check your inbox", "OTP Sent", MessageBoxButtons.OK);
+                    MessageBox.Show("OTP Sent successfully to your email address ( " + cTBEmail.Texts + " )" + Environment.NewLine + Environment.NewLine + "Please Check your inbox", "OTP Sent", MessageBoxButtons.OK);
                     crBtnResendOTP.Visible = true;
                 }
                 else
@@ -115,11 +129,11 @@ namespace Le_Sa.Account
 
         private void crBtnResendOTP_Click(object sender, EventArgs e)
         {
-            bool sendMsg = Email.SendMsg(cTBEmail.Texts.Trim(), "Le-Sa", "Use this One Time Password to verify your account 👉 " + otp + " 👈");
+            bool sendMsg = Email.SendMsg(cTBEmail.Texts, "Le-Sa", "Use this One Time Password to verify your account 👉 " + otp + " 👈");
 
             if (sendMsg == true)
             {
-                MessageBox.Show("OTP Sent successfully to your email address ( " + cTBEmail.Texts.Trim() + " )" + Environment.NewLine + Environment.NewLine + "Please Check your inbox");
+                MessageBox.Show("OTP Sent successfully to your email address ( " + cTBEmail.Texts + " )" + Environment.NewLine + Environment.NewLine + "Please Check your inbox");
             }
             else
             {
@@ -211,12 +225,14 @@ namespace Le_Sa.Account
         #region Password Strength
         private void crBtnStrength_Click(object sender, EventArgs e)
         {
-            if (cTBPassword.Texts.Trim() == "" || cTBConfPass.Texts.Trim() == "")
+            if (cTBPassword.Texts == "" || cTBConfPass.Texts == "")
             {
+                lblStrength.Visible = false;
                 MessageBox.Show("Please fill password fields before strength check", "Fields are empty", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (cTBPassword.Texts.Trim() != cTBConfPass.Texts.Trim())
+            else if (cTBPassword.Texts != cTBConfPass.Texts)
             {
+                lblStrength.Visible = false;
                 MessageBox.Show("Passwords didn't match!", "Confirmation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
@@ -254,7 +270,7 @@ namespace Le_Sa.Account
         #region Create account
         private void crBtnContinue_Click(object sender, EventArgs e)
         {
-            if (cTBUsername.Texts.Trim() == "" || cTBPassword.Texts.Trim() == "" || cTBConfPass.Texts.Trim() == "" || cTBEmail.Texts.Trim() == "" || cTBPhoneNumber.Texts.Trim() == "" || cTBOTP.Texts.Trim() == "")
+            if (string.IsNullOrEmpty(cTBUsername.Texts) || string.IsNullOrEmpty(cTBPassword.Texts) || string.IsNullOrEmpty(cTBConfPass.Texts) || string.IsNullOrEmpty(cTBEmail.Texts) || string.IsNullOrEmpty(cTBPhoneNumber.Texts) || string.IsNullOrEmpty(cTBOTP.Texts))
             {
                 MessageBox.Show("Please fill all fields", "Fields are empty", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -266,13 +282,13 @@ namespace Le_Sa.Account
                 }
                 else
                 {
-                    if (cTBPassword.Texts.Trim() != cTBConfPass.Texts.Trim())
+                    if (cTBPassword.Texts != cTBConfPass.Texts)
                     {
                         MessageBox.Show("Passwords didn't match!", "Confirmation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        if (cTBOTP.Texts.Trim() != otp)
+                        if (cTBOTP.Texts != otp)
                         {
                             MessageBox.Show("OTP didn't match!", "Confirmation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
@@ -280,19 +296,41 @@ namespace Le_Sa.Account
                         {
                             try
                             {
-                                SqlConnection con = new SqlConnection(db);
-                                con.Open();
-                                SqlCommand insertUD = new SqlCommand("INSERT INTO tbl_user(email,username,password,phoneNumber)Values('" + cTBEmail.Texts + "','" + cTBUsername.Texts + "','" + cTBPassword.Texts + "','" + cTBPhoneNumber.Texts + "')", con); //insert user data into database
-                                insertUD.ExecuteNonQuery();
-                                con.Close();
+                                FirebaseResponse res = client.Get(@"Users/" + cTBUsername.Texts);
+                                User ResUser = res.ResultAs<User>();
+                                User UserInput = new User() // USER INPUT
+                                {
+                                    username = cTBUsername.Texts
+                                };
 
-                                string successMsg = "User accout created successfully." + Environment.NewLine + "Thanks for choosing Le-Sa";
-                                MessageBox.Show(successMsg, "Account Created", MessageBoxButtons.OK);
-                                tmrOTP.Stop();
+                                if (User.IsTaken(ResUser, UserInput)) // Check username availability
+                                {
+                                    User.ShowError();
+                                }
+                                else
+                                {
 
-                                formDesktop desktop = new formDesktop();
-                                desktop.Show();
-                                this.Hide();
+                                    User userData = new User()
+                                    {
+                                        username = cTBUsername.Texts,
+                                        password = cTBPassword.Texts,
+                                        email = cTBEmail.Texts,
+                                        phone_no = cTBPhoneNumber.Texts,
+                                        status = true,
+                                        start = "none",
+                                        duration = "none",
+                                        login_count = 0
+                                    };
+
+                                    SetResponse set = client.Set(@"Users/" + cTBUsername.Texts, userData);
+
+                                    tmrOTP.Stop();
+                                    MessageBox.Show("User accout created successfully." + Environment.NewLine + "Thanks for choosing Le-Sa", "Account Created", MessageBoxButtons.OK);
+
+                                    formDesktop desktop = new formDesktop();
+                                    desktop.Show();
+                                    this.Hide();
+                                }
                             }
                             catch(Exception insert)
                             {
@@ -359,5 +397,11 @@ namespace Le_Sa.Account
         }
         #endregion
 
+        private void llblHaveAnAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            formLogin login = new formLogin();
+            login.Show();
+            this.Hide();
+        }
     }
 }
