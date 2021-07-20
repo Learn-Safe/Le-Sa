@@ -56,6 +56,13 @@ namespace Le_Sa.Account
             tmrOTP.Elapsed += OnTimeEvent;
         }
 
+        private void llblHaveAnAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            formLogin login = new formLogin();
+            login.Show();
+            this.Hide();
+        }
+
         #region Rounded Corner
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -110,7 +117,6 @@ namespace Le_Sa.Account
                 crBtnSendOTP.Enabled = false;
                 cTBEmail.Enabled = false;
                 otp = RandomStringGenerator.GenerateRandomString(6, true, false, true, false);
-                cTBOTP.Texts = otp;
                 bool sendMsg = Email.SendMsg(cTBEmail.Texts, "Le-Sa", "Use this One Time Password to verify your account 👉 " + otp + " 👈");
 
                 if (sendMsg == true)
@@ -397,11 +403,5 @@ namespace Le_Sa.Account
         }
         #endregion
 
-        private void llblHaveAnAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            formLogin login = new formLogin();
-            login.Show();
-            this.Hide();
-        }
     }
 }

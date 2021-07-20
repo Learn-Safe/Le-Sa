@@ -49,7 +49,6 @@ namespace Le_Sa.Account
 
         private void formLogin_Load(object sender, EventArgs e)
         {
-            cTBUsername.Texts = Encryptor.Encrypt("K9Ul4asnJqIMFlBlpm0AkjcEnwWagBxs4Iy0xZes");
             try
             {
                 client = new FireSharp.FirebaseClient(ifc);
