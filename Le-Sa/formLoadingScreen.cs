@@ -1,4 +1,7 @@
-﻿using Le_Sa.Account;
+﻿using FireSharp.Config;
+using FireSharp.Interfaces;
+using FireSharp.Response;
+using Le_Sa.Account;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -23,8 +26,7 @@ namespace Le_Sa
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
-        private readonly string db = @"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Sathsara\source\repos\sathsarabandaraj\Le-Sa\Le-Sa\Data\user.mdf;Integrated Security = True; Timeout=30";
-
+        #region Round Corners
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -35,6 +37,15 @@ namespace Le_Sa
             int nWidthEllipse,
             int nHeightEllipse
         );
+        #endregion
+
+        IFirebaseConfig ifc = new FirebaseConfig()
+        {
+            AuthSecret = "K9Ul4asnJqIMFlBlpm0AkjcEnwWagBxs4Iy0xZes",
+            BasePath = "https://le-sa-f718d-default-rtdb.firebaseio.com/"
+        };
+
+        IFirebaseClient client;
 
         private void timerLoading_Tick(object sender, EventArgs e)
         {
@@ -42,6 +53,18 @@ namespace Le_Sa
             if (pnlLoadingFront.Width >= 925)
             {
                 timerLoading.Stop();
+            }
+        }
+
+        private void formLoadingScreen_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                client = new FireSharp.FirebaseClient(ifc);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -53,31 +76,34 @@ namespace Le_Sa
             }
             else
             {
-                SqlConnection con = new SqlConnection(db);
-                con.Open();
-                SqlCommand uname = new SqlCommand("SELECT username FROM tbl_user WHERE username = '" + cTBUsername.Texts + "'", con); //Checks if the USERNAME is in the database
-                string username = uname.ExecuteScalar() as string;
-                con.Close();
-                if (cTBUsername.Texts.Equals(username))
+                FirebaseResponse res = client.Get(@"Users/" + cTBUsername.Texts);
+                User ResUser = res.ResultAs<User>();
+
+                /*File.WriteAllText(@"C:\Users\saths\Desktop\user.json", JsonConvert.SerializeObject(ResUser));
+
+                // serialize JSON directly to a file
+                using (StreamWriter file = File.CreateText(@"C:\Users\saths\Desktop\user.json"))
                 {
-                    con.Open();
-                    SqlCommand pass = new SqlCommand("SELECT password FROM tbl_user WHERE username = '" + cTBUsername.Texts + "'", con);//Checks if the PASSWORD entered is similar to the PASSWORD of the USERNAME checked from the database  
-                    string password = pass.ExecuteScalar() as string;
-                    con.Close();
-                    if (cTBPassword.Texts.Equals(password))
-                    {
-                        formDesktop desktop = new formDesktop();
-                        desktop.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Wrong USERNAME or PASSWORD", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    JsonSerializer serializer = new JsonSerializer();
+                    serializer.Serialize(file, ResUser);
+                }*/
+
+                User UserInput = new User() // USER INPUT
+                {
+                    username = cTBUsername.Texts,
+                    password = cTBPassword.Texts
+                };
+
+                if (User.IsEqual(ResUser, UserInput))
+                {
+                    formDesktop desktop = new formDesktop();
+                    desktop.Show();
+                    this.Hide();
                 }
+
                 else
                 {
-                    MessageBox.Show("Wrong USERNAME or PASSWORD", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                    User.ShowError();
                 }
             }
         }
@@ -92,6 +118,13 @@ namespace Le_Sa
         {
             crBtnVisibility.Image = Properties.Resources.hide_22px;
             cTBPassword.PasswordChar = true;
+        }
+
+        private void llblHaveAnAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            formSignUp signUp = new formSignUp();
+            signUp.Show();
+            this.Hide();
         }
     }
 }

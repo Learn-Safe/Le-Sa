@@ -38,6 +38,7 @@ namespace Le_Sa.Account
             this.lblPasswordMust = new System.Windows.Forms.Label();
             this.lblOTPTimer = new System.Windows.Forms.Label();
             this.pnlBackground = new System.Windows.Forms.Panel();
+            this.llblHaveAnAccount = new System.Windows.Forms.LinkLabel();
             this.crBtnResendOTP = new Le_Sa.CustRoundedButton();
             this.crBtnMinimize = new Le_Sa.CustRoundedButton();
             this.crBrnClose = new Le_Sa.CustRoundedButton();
@@ -63,7 +64,7 @@ namespace Le_Sa.Account
             this.lblPassword = new System.Windows.Forms.Label();
             this.crBtnPassVisibility = new Le_Sa.CustRoundedButton();
             this.cTBPassword = new Le_Sa.CustomControls.CustomTextBox();
-            this.llblHaveAnAccount = new System.Windows.Forms.LinkLabel();
+            this.custRoundedButton1 = new Le_Sa.CustRoundedButton();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.crPBDP)).BeginInit();
             this.crPnlPassword1.SuspendLayout();
@@ -155,6 +156,7 @@ namespace Le_Sa.Account
             // 
             // pnlBackground
             // 
+            this.pnlBackground.Controls.Add(this.custRoundedButton1);
             this.pnlBackground.Controls.Add(this.llblHaveAnAccount);
             this.pnlBackground.Controls.Add(this.crBtnResendOTP);
             this.pnlBackground.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -164,6 +166,19 @@ namespace Le_Sa.Account
             this.pnlBackground.TabIndex = 102;
             this.pnlBackground.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBackground_MouseDown);
             this.pnlBackground.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBackground_MouseMove);
+            // 
+            // llblHaveAnAccount
+            // 
+            this.llblHaveAnAccount.AutoSize = true;
+            this.llblHaveAnAccount.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llblHaveAnAccount.LinkColor = System.Drawing.Color.LightGray;
+            this.llblHaveAnAccount.Location = new System.Drawing.Point(16, 49);
+            this.llblHaveAnAccount.Name = "llblHaveAnAccount";
+            this.llblHaveAnAccount.Size = new System.Drawing.Size(189, 17);
+            this.llblHaveAnAccount.TabIndex = 103;
+            this.llblHaveAnAccount.TabStop = true;
+            this.llblHaveAnAccount.Text = "Have an account? Log in now";
+            this.llblHaveAnAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblHaveAnAccount_LinkClicked);
             // 
             // crBtnResendOTP
             // 
@@ -635,18 +650,24 @@ namespace Le_Sa.Account
             this.cTBPassword.Texts = "";
             this.cTBPassword.UnderlinedStyle = false;
             // 
-            // llblHaveAnAccount
+            // custRoundedButton1
             // 
-            this.llblHaveAnAccount.AutoSize = true;
-            this.llblHaveAnAccount.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblHaveAnAccount.LinkColor = System.Drawing.Color.LightGray;
-            this.llblHaveAnAccount.Location = new System.Drawing.Point(16, 49);
-            this.llblHaveAnAccount.Name = "llblHaveAnAccount";
-            this.llblHaveAnAccount.Size = new System.Drawing.Size(189, 17);
-            this.llblHaveAnAccount.TabIndex = 103;
-            this.llblHaveAnAccount.TabStop = true;
-            this.llblHaveAnAccount.Text = "Have an account? Log in now";
-            this.llblHaveAnAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblHaveAnAccount_LinkClicked);
+            this.custRoundedButton1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.custRoundedButton1.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
+            this.custRoundedButton1.BorderColor = System.Drawing.SystemColors.ScrollBar;
+            this.custRoundedButton1.BorderRadius = 20;
+            this.custRoundedButton1.BorderSize = 0;
+            this.custRoundedButton1.FlatAppearance.BorderSize = 0;
+            this.custRoundedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.custRoundedButton1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.custRoundedButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.custRoundedButton1.Location = new System.Drawing.Point(131, 79);
+            this.custRoundedButton1.Name = "custRoundedButton1";
+            this.custRoundedButton1.Size = new System.Drawing.Size(178, 27);
+            this.custRoundedButton1.TabIndex = 103;
+            this.custRoundedButton1.Text = "Select Profile Picture";
+            this.custRoundedButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.custRoundedButton1.UseVisualStyleBackColor = false;
             // 
             // formSignUp
             // 
@@ -729,5 +750,6 @@ namespace Le_Sa.Account
         private System.Windows.Forms.Panel pnlBackground;
         private CustRoundedButton crBtnResendOTP;
         private System.Windows.Forms.LinkLabel llblHaveAnAccount;
+        private CustRoundedButton custRoundedButton1;
     }
 }
