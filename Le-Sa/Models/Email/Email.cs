@@ -20,10 +20,10 @@ namespace Le_Sa.Models.Email
                     client.EnableSsl = true;
                     client.DeliveryMethod = SmtpDeliveryMethod.Network;
                     client.UseDefaultCredentials = false;
-                    client.Credentials = new NetworkCredential("lesafe.soft@gmail.com", "znvxqikozbjqhere");
+                    client.Credentials = new NetworkCredential("contact.lesafe.soft@gmail.com", "czyoduvstcrfriss");
                     MailMessage msgObj = new MailMessage();
                     msgObj.To.Add(to);
-                    msgObj.From = new MailAddress("lesafe.soft@gmail.com", from);
+                    msgObj.From = new MailAddress("contact.lesafe.soft@gmail.com", from);
                     msgObj.Subject = "OTP";
                     msgObj.Body = message;
                     client.Send(msgObj);
