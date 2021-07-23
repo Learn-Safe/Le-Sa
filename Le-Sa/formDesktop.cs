@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Le_Sa.History;
 using System.Windows.Forms;
 using Le_Sa.BrowserControls;
+using System.IO;
 
 namespace Le_Sa
 {
@@ -16,6 +17,7 @@ namespace Le_Sa
     {
         private CustRoundedButton currentBtn;
         private Form currentChildForm;
+        string DPLoc;
 
         public formDesktop()
         {
@@ -25,6 +27,26 @@ namespace Le_Sa
 
         readonly String titlebarText = "Le-Sa | ";
         String currentMenuItem = "";
+
+        private void formDesktop_Load(object sender, EventArgs e)
+        {
+            DPLoc = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Le-Sa\User Data\DP\";
+            try
+            {
+                if (File.Exists(DPLoc))
+                {
+                    cRPBDP.ImageLocation = DPLoc;
+                }
+                else
+                {
+                    cRPBDP.Image = Properties.Resources.user_90px;
+                }
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show(error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private struct RGBColors
         {
@@ -100,9 +122,5 @@ namespace Le_Sa
             OpenChildForm(new formSettings());
         }
         #endregion
-
-        private void custRoundedButton5_Click(object sender, EventArgs e)
-        {
-                    }
     }
 }

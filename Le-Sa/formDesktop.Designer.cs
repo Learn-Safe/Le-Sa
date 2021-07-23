@@ -31,15 +31,15 @@ namespace Le_Sa
         {
             this.pnlDesktop = new System.Windows.Forms.Panel();
             this.pnlUser = new System.Windows.Forms.Panel();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.lblUserName = new System.Windows.Forms.Label();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.crBtnHistory = new Le_Sa.CustRoundedButton();
             this.crBtnSettings = new Le_Sa.CustRoundedButton();
             this.crBtnBrowserControls = new Le_Sa.CustRoundedButton();
+            this.cRPBDP = new Le_Sa.CustRoundedPictureBox();
             this.pnlUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.pnlMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cRPBDP)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlDesktop
@@ -53,27 +53,13 @@ namespace Le_Sa
             // 
             // pnlUser
             // 
-            this.pnlUser.Controls.Add(this.iconPictureBox1);
+            this.pnlUser.Controls.Add(this.cRPBDP);
             this.pnlUser.Controls.Add(this.lblUserName);
             this.pnlUser.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlUser.Location = new System.Drawing.Point(0, 0);
             this.pnlUser.Name = "pnlUser";
             this.pnlUser.Size = new System.Drawing.Size(240, 240);
             this.pnlUser.TabIndex = 0;
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 150;
-            this.iconPictureBox1.Location = new System.Drawing.Point(45, 22);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(150, 150);
-            this.iconPictureBox1.TabIndex = 2;
-            this.iconPictureBox1.TabStop = false;
             // 
             // lblUserName
             // 
@@ -167,6 +153,21 @@ namespace Le_Sa
             this.crBtnBrowserControls.UseVisualStyleBackColor = false;
             this.crBtnBrowserControls.Click += new System.EventHandler(this.crBtnBrowserControls_Click);
             // 
+            // cRPBDP
+            // 
+            this.cRPBDP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(76)))));
+            this.cRPBDP.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(76)))));
+            this.cRPBDP.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(44)))), ((int)(((byte)(90)))));
+            this.cRPBDP.BorderRadius = 150;
+            this.cRPBDP.BorderSize = 3;
+            this.cRPBDP.Image = global::Le_Sa.Properties.Resources.user_90px;
+            this.cRPBDP.Location = new System.Drawing.Point(45, 27);
+            this.cRPBDP.Name = "cRPBDP";
+            this.cRPBDP.Size = new System.Drawing.Size(150, 150);
+            this.cRPBDP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cRPBDP.TabIndex = 2;
+            this.cRPBDP.TabStop = false;
+            // 
             // formDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,10 +182,11 @@ namespace Le_Sa
             this.Name = "formDesktop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Le-Sa";
+            this.Load += new System.EventHandler(this.formDesktop_Load);
             this.pnlUser.ResumeLayout(false);
             this.pnlUser.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.pnlMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cRPBDP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -197,6 +199,6 @@ namespace Le_Sa
         private CustRoundedButton crBtnSettings;
         private CustRoundedButton crBtnBrowserControls;
         private CustRoundedButton crBtnHistory;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private CustRoundedPictureBox cRPBDP;
     }
 }
