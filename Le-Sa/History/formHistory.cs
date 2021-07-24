@@ -1,5 +1,8 @@
 ﻿using Le_Sa.Models;
 using Le_Sa.Models.Copy;
+using Le_Sa.Models.History;
+using Le_Sa.Models.Registry;
+using Microsoft.Win32;
 using System;
 using System.Drawing;
 using System.IO;
@@ -21,6 +24,36 @@ namespace Le_Sa.History
         string sourceFile;
         string destinationPath;
         readonly string destinationFile = "History";
+        private string[] browserList;
+
+        private void formHistory_Load(object sender, EventArgs e)
+        {
+            if (Environment.Is64BitOperatingSystem)
+            {
+                browserList = ReadWriteRegistry.KeyNames(Registry.LocalMachine, @"SOFTWARE\Clients\StartMenuInternet").Item2;
+                IsBrowserInstalled();
+            }
+            else
+            {
+                browserList = ReadWriteRegistry.KeyNames(Registry.LocalMachine, @"SOFTWARE\WOW6432Node\Clients\StartMenuInternet").Item2;
+                IsBrowserInstalled();
+            }
+        }
+
+        public void IsBrowserInstalled()
+        {
+            foreach (var crBtn in pnlDashboard.Controls.OfType<CustRoundedButton>())
+            {
+                if (browserList.Any(crBtn.Tag.ToString().Contains))
+                {
+                    crBtn.Enabled = true;
+                }
+                else
+                {
+                    crBtn.Enabled = false;
+                }
+            }
+        }
 
         private struct RGBColors
         {
@@ -35,9 +68,11 @@ namespace Le_Sa.History
             public static Color btnOperaClickedBorder = Color.FromArgb(255, 27, 45);
             public static Color btnBraveClickedBack = Color.FromArgb(255, 85, 0);
             public static Color btnBraveClickedBorder = Color.FromArgb(255, 31, 0);
+            public static Color btnVivaldiClickedBack = Color.FromArgb(255, 97, 100);
+            public static Color btnVivaldiClickedBorder = Color.FromArgb(239, 57, 57);
         }
 
-        #region Side Menu
+        #region Top Bar
         private void ActiveButton(object senderBtn, Color color)
         {
             if (senderBtn != null)
@@ -139,7 +174,7 @@ namespace Le_Sa.History
 
         #region Brave
         private void crBtnBrave_Click(object sender, EventArgs e)
-        {            
+        {
             //Button Customization
             ActiveButton(sender, RGBColors.btnBraveClickedBack);
             crBtnCommonSettings.BorderColor = RGBColors.btnBraveClickedBorder;
@@ -151,6 +186,24 @@ namespace Le_Sa.History
 
             Copy.CopyFile(sourcePath, sourceFile, destinationPath, destinationFile);
             BraveBrowserHistory history = new BraveBrowserHistory();
+            dgvBrowserHistory.DataSource = history.GetDataTable();
+        }
+        #endregion
+
+        #region Vivaldi
+        private void crBtnVivaldi_Click(object sender, EventArgs e)
+        {
+            //Button Customization
+            ActiveButton(sender, RGBColors.btnVivaldiClickedBack);
+            crBtnCommonSettings.BorderColor = RGBColors.btnVivaldiClickedBorder;
+
+            // Assign Data to variables
+            sourcePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Vivaldi\User Data\Default";
+            sourceFile = "History";
+            destinationPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Le-Sa\Data\VData\VHis";
+
+            Copy.CopyFile(sourcePath, sourceFile, destinationPath, destinationFile);
+            VivaldiBrowserHistory history = new VivaldiBrowserHistory();
             dgvBrowserHistory.DataSource = history.GetDataTable();
         }
         #endregion

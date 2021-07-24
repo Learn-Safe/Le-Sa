@@ -32,6 +32,7 @@ namespace Le_Sa.History
             this.pnlDashboard = new System.Windows.Forms.Panel();
             this.pnlDesktop = new System.Windows.Forms.Panel();
             this.dgvBrowserHistory = new System.Windows.Forms.DataGridView();
+            this.crBtnVivaldi = new Le_Sa.CustRoundedButton();
             this.crBtnBrave = new Le_Sa.CustRoundedButton();
             this.crBtnOpera = new Le_Sa.CustRoundedButton();
             this.crBtnEdge = new Le_Sa.CustRoundedButton();
@@ -46,6 +47,7 @@ namespace Le_Sa.History
             // 
             this.pnlDashboard.AutoScroll = true;
             this.pnlDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(75)))));
+            this.pnlDashboard.Controls.Add(this.crBtnVivaldi);
             this.pnlDashboard.Controls.Add(this.crBtnBrave);
             this.pnlDashboard.Controls.Add(this.crBtnOpera);
             this.pnlDashboard.Controls.Add(this.crBtnEdge);
@@ -83,6 +85,28 @@ namespace Le_Sa.History
             this.dgvBrowserHistory.Size = new System.Drawing.Size(694, 521);
             this.dgvBrowserHistory.TabIndex = 0;
             // 
+            // crBtnVivaldi
+            // 
+            this.crBtnVivaldi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
+            this.crBtnVivaldi.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
+            this.crBtnVivaldi.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
+            this.crBtnVivaldi.BorderRadius = 20;
+            this.crBtnVivaldi.BorderSize = 0;
+            this.crBtnVivaldi.FlatAppearance.BorderSize = 0;
+            this.crBtnVivaldi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBtnVivaldi.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.crBtnVivaldi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
+            this.crBtnVivaldi.Location = new System.Drawing.Point(436, 5);
+            this.crBtnVivaldi.Name = "crBtnVivaldi";
+            this.crBtnVivaldi.Size = new System.Drawing.Size(77, 30);
+            this.crBtnVivaldi.TabIndex = 5;
+            this.crBtnVivaldi.Tag = "Vivaldi";
+            this.crBtnVivaldi.Text = "Vivaldi";
+            this.crBtnVivaldi.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.crBtnVivaldi.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
+            this.crBtnVivaldi.UseVisualStyleBackColor = false;
+            this.crBtnVivaldi.Click += new System.EventHandler(this.crBtnVivaldi_Click);
+            // 
             // crBtnBrave
             // 
             this.crBtnBrave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
@@ -98,7 +122,9 @@ namespace Le_Sa.History
             this.crBtnBrave.Name = "crBtnBrave";
             this.crBtnBrave.Size = new System.Drawing.Size(77, 30);
             this.crBtnBrave.TabIndex = 4;
+            this.crBtnBrave.Tag = "Brave";
             this.crBtnBrave.Text = "Brave";
+            this.crBtnBrave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.crBtnBrave.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
             this.crBtnBrave.UseVisualStyleBackColor = false;
             this.crBtnBrave.Click += new System.EventHandler(this.crBtnBrave_Click);
@@ -118,7 +144,9 @@ namespace Le_Sa.History
             this.crBtnOpera.Name = "crBtnOpera";
             this.crBtnOpera.Size = new System.Drawing.Size(77, 30);
             this.crBtnOpera.TabIndex = 3;
+            this.crBtnOpera.Tag = "Opera.exe";
             this.crBtnOpera.Text = "Opera";
+            this.crBtnOpera.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.crBtnOpera.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
             this.crBtnOpera.UseVisualStyleBackColor = false;
             this.crBtnOpera.Click += new System.EventHandler(this.crBtnOpera_Click);
@@ -138,7 +166,9 @@ namespace Le_Sa.History
             this.crBtnEdge.Name = "crBtnEdge";
             this.crBtnEdge.Size = new System.Drawing.Size(77, 30);
             this.crBtnEdge.TabIndex = 2;
+            this.crBtnEdge.Tag = "Microsoft Edge";
             this.crBtnEdge.Text = "Edge";
+            this.crBtnEdge.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.crBtnEdge.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
             this.crBtnEdge.UseVisualStyleBackColor = false;
             this.crBtnEdge.Click += new System.EventHandler(this.crBtnEdge_Click);
@@ -158,7 +188,9 @@ namespace Le_Sa.History
             this.crBtnFirefox.Name = "crBtnFirefox";
             this.crBtnFirefox.Size = new System.Drawing.Size(80, 30);
             this.crBtnFirefox.TabIndex = 1;
+            this.crBtnFirefox.Tag = "Firefox-308046B0AF4A39CB";
             this.crBtnFirefox.Text = "Firefox";
+            this.crBtnFirefox.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.crBtnFirefox.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
             this.crBtnFirefox.UseVisualStyleBackColor = false;
             this.crBtnFirefox.Click += new System.EventHandler(this.crBtnFirefox_Click);
@@ -178,7 +210,9 @@ namespace Le_Sa.History
             this.crBtnCommonSettings.Name = "crBtnCommonSettings";
             this.crBtnCommonSettings.Size = new System.Drawing.Size(90, 30);
             this.crBtnCommonSettings.TabIndex = 0;
+            this.crBtnCommonSettings.Tag = "Google Chrome";
             this.crBtnCommonSettings.Text = "Chrome";
+            this.crBtnCommonSettings.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.crBtnCommonSettings.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
             this.crBtnCommonSettings.UseVisualStyleBackColor = false;
             this.crBtnCommonSettings.Click += new System.EventHandler(this.crBtnChrome_Click);
@@ -194,6 +228,7 @@ namespace Le_Sa.History
             this.MinimumSize = new System.Drawing.Size(694, 561);
             this.Name = "formHistory";
             this.Text = "formHistory";
+            this.Load += new System.EventHandler(this.formHistory_Load);
             this.pnlDashboard.ResumeLayout(false);
             this.pnlDesktop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBrowserHistory)).EndInit();
@@ -211,5 +246,6 @@ namespace Le_Sa.History
         private CustRoundedButton crBtnEdge;
         private CustRoundedButton crBtnOpera;
         private CustRoundedButton crBtnBrave;
+        private CustRoundedButton crBtnVivaldi;
     }
 }
