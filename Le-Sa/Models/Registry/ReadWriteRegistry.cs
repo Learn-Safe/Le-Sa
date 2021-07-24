@@ -37,12 +37,12 @@ namespace Le_Sa.Models.Registry
             }
         }
 
-        public static (bool, object) KeyNames(RegistryKey BaseFolder, string SubFolder,string Key)
+        public static (bool, string[]) KeyNames(RegistryKey BaseFolder, string SubFolder)
         {
             try
             {
                 RegistryKey KeyNames = BaseFolder.OpenSubKey(SubFolder);
-                return (true, KeyNames.GetValue(Key));
+                return (true, KeyNames.GetSubKeyNames());
             }
             catch
             {
