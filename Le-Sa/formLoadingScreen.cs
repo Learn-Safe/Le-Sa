@@ -39,7 +39,7 @@ namespace Le_Sa
         );
         #endregion
 
-        IFirebaseConfig ifc = new FirebaseConfig()
+        readonly IFirebaseConfig ifc = new FirebaseConfig()
         {
             AuthSecret = "K9Ul4asnJqIMFlBlpm0AkjcEnwWagBxs4Iy0xZes",
             BasePath = "https://le-sa-f718d-default-rtdb.firebaseio.com/"

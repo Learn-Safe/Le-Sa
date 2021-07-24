@@ -30,7 +30,7 @@ namespace Le_Sa.Account
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
-        IFirebaseConfig ifc = new FirebaseConfig()
+        readonly IFirebaseConfig ifc = new FirebaseConfig()
         {
             AuthSecret = "K9Ul4asnJqIMFlBlpm0AkjcEnwWagBxs4Iy0xZes",
             BasePath = "https://le-sa-f718d-default-rtdb.firebaseio.com/"
