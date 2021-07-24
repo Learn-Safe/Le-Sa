@@ -1,5 +1,7 @@
 ﻿using Le_Sa.Models.AdminCheck;
+using Le_Sa.Models.Registry;
 using Le_Sa.Properties;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +18,7 @@ namespace Le_Sa.BrowserControls
     {
         private CustRoundedButton currentTBtn;
         private Form currentChildForm;
+        private string[] browserList;
 
         public formBrowserControls()
         {
@@ -26,6 +29,7 @@ namespace Le_Sa.BrowserControls
         {
             if (AdminCheck.IsAdmin() != true)
             {
+                pnlDashboard.Enabled = false;
                 Form warning = new formAdminWarning("PLEASE RESTART THE APPLICATION WITH\r\nADMINISTRATOR PRIVILEGES \r\nTO CHANGE BROWSER CONTROLS")
                 {
                     TopLevel = false,
@@ -39,7 +43,39 @@ namespace Le_Sa.BrowserControls
             }
             else
             {
-                return;
+                if (Environment.Is64BitOperatingSystem)
+                {
+                    browserList = ReadWriteRegistry.KeyNames(Registry.LocalMachine, @"SOFTWARE\Clients\StartMenuInternet").Item2;
+                    IsBrowserInstalled();
+                }
+                else
+                {
+                    browserList = ReadWriteRegistry.KeyNames(Registry.LocalMachine, @"SOFTWARE\WOW6432Node\Clients\StartMenuInternet").Item2;
+                    IsBrowserInstalled();
+                }
+                browserList = ReadWriteRegistry.KeyNames(Registry.CurrentUser, @"SOFTWARE\Clients\StartMenuInternet").Item2;
+                IsBrowserInstalled();
+            }
+        }
+
+        public void IsBrowserInstalled()
+        {
+            foreach (var crBtn in pnlDashboard.Controls.OfType<CustRoundedButton>())
+            {
+                foreach (string browser in browserList)
+                {
+                    if (crBtn.Enabled == false)
+                    {
+                        if (browser == crBtn.Tag.ToString())
+                        {
+                            crBtn.Enabled = true;
+                        }
+                        else if (browser.Substring(0, 5) == crBtn.Tag.ToString().Substring(0, 5))
+                        {
+                            crBtn.Enabled = true;
+                        }
+                    }
+                }
             }
         }
 
@@ -56,6 +92,8 @@ namespace Le_Sa.BrowserControls
             public static Color btnOperaClickedBorder = Color.FromArgb(255, 27, 45);
             public static Color btnBraveClickedBack = Color.FromArgb(255, 85, 0);
             public static Color btnBraveClickedBorder = Color.FromArgb(255, 31, 0);
+            public static Color btnVivaldiClickedBack = Color.FromArgb(255, 97, 100);
+            public static Color btnVivaldiClickedBorder = Color.FromArgb(239, 57, 57);
         }
 
         #region Top Bar
