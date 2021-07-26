@@ -25,7 +25,6 @@ namespace Le_Sa.History
         string destinationPath;
         readonly string destinationFile = "History";
         private string[] browserList;
-
         private void formHistory_Load(object sender, EventArgs e)
         {
             if (Environment.Is64BitOperatingSystem)
@@ -38,19 +37,27 @@ namespace Le_Sa.History
                 browserList = ReadWriteRegistry.KeyNames(Registry.LocalMachine, @"SOFTWARE\WOW6432Node\Clients\StartMenuInternet").Item2;
                 IsBrowserInstalled();
             }
+            browserList = ReadWriteRegistry.KeyNames(Registry.CurrentUser, @"SOFTWARE\Clients\StartMenuInternet").Item2;
+            IsBrowserInstalled();
         }
 
         public void IsBrowserInstalled()
         {
             foreach (var crBtn in pnlDashboard.Controls.OfType<CustRoundedButton>())
             {
-                if (browserList.Any(crBtn.Tag.ToString().Contains))
+                foreach (string browser in browserList)
                 {
-                    crBtn.Enabled = true;
-                }
-                else
-                {
-                    crBtn.Enabled = false;
+                    if (crBtn.Enabled == false)
+                    {
+                        if (browser == crBtn.Tag.ToString())
+                        {
+                            crBtn.Enabled = true;
+                        }
+                        else if (browser.Substring(0, 5) == crBtn.Tag.ToString().Substring(0, 5))
+                        {
+                            crBtn.Enabled = true;
+                        }
+                    }
                 }
             }
         }

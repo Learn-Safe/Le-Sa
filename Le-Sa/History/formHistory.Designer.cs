@@ -92,6 +92,7 @@ namespace Le_Sa.History
             this.crBtnVivaldi.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.crBtnVivaldi.BorderRadius = 20;
             this.crBtnVivaldi.BorderSize = 0;
+            this.crBtnVivaldi.Enabled = false;
             this.crBtnVivaldi.FlatAppearance.BorderSize = 0;
             this.crBtnVivaldi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crBtnVivaldi.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -114,6 +115,7 @@ namespace Le_Sa.History
             this.crBtnBrave.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.crBtnBrave.BorderRadius = 20;
             this.crBtnBrave.BorderSize = 0;
+            this.crBtnBrave.Enabled = false;
             this.crBtnBrave.FlatAppearance.BorderSize = 0;
             this.crBtnBrave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crBtnBrave.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -136,6 +138,7 @@ namespace Le_Sa.History
             this.crBtnOpera.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(27)))), ((int)(((byte)(45)))));
             this.crBtnOpera.BorderRadius = 20;
             this.crBtnOpera.BorderSize = 0;
+            this.crBtnOpera.Enabled = false;
             this.crBtnOpera.FlatAppearance.BorderSize = 0;
             this.crBtnOpera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crBtnOpera.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -144,7 +147,7 @@ namespace Le_Sa.History
             this.crBtnOpera.Name = "crBtnOpera";
             this.crBtnOpera.Size = new System.Drawing.Size(77, 30);
             this.crBtnOpera.TabIndex = 3;
-            this.crBtnOpera.Tag = "Opera.exe";
+            this.crBtnOpera.Tag = "OperaStable";
             this.crBtnOpera.Text = "Opera";
             this.crBtnOpera.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.crBtnOpera.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
@@ -158,6 +161,7 @@ namespace Le_Sa.History
             this.crBtnEdge.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(76)))), ((int)(((byte)(141)))));
             this.crBtnEdge.BorderRadius = 20;
             this.crBtnEdge.BorderSize = 0;
+            this.crBtnEdge.Enabled = false;
             this.crBtnEdge.FlatAppearance.BorderSize = 0;
             this.crBtnEdge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crBtnEdge.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -180,6 +184,7 @@ namespace Le_Sa.History
             this.crBtnFirefox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(48)))), ((int)(((byte)(82)))));
             this.crBtnFirefox.BorderRadius = 20;
             this.crBtnFirefox.BorderSize = 0;
+            this.crBtnFirefox.Enabled = false;
             this.crBtnFirefox.FlatAppearance.BorderSize = 0;
             this.crBtnFirefox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crBtnFirefox.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -202,6 +207,7 @@ namespace Le_Sa.History
             this.crBtnCommonSettings.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
             this.crBtnCommonSettings.BorderRadius = 20;
             this.crBtnCommonSettings.BorderSize = 0;
+            this.crBtnCommonSettings.Enabled = false;
             this.crBtnCommonSettings.FlatAppearance.BorderSize = 0;
             this.crBtnCommonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crBtnCommonSettings.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
