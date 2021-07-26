@@ -35,7 +35,6 @@ namespace Le_Sa.Account
             AuthSecret = "K9Ul4asnJqIMFlBlpm0AkjcEnwWagBxs4Iy0xZes",
             BasePath = "https://le-sa-f718d-default-rtdb.firebaseio.com/"
         };
-
         IFirebaseClient client;
 
         private void formSignUp_Load(object sender, EventArgs e)
@@ -44,7 +43,7 @@ namespace Le_Sa.Account
             {
                 client = new FireSharp.FirebaseClient(ifc);
             }
-            catch(Exception error)
+            catch (Exception error)
             {
                 MessageBox.Show(error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -284,7 +283,7 @@ namespace Le_Sa.Account
             {
                 if (cTBUsername.Texts.Length <= 3)
                 {
-                    MessageBox.Show("Username must be a minimum of 4 characters", "Username is too short", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Username must be a minimum of 6 characters", "Username is too short", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -301,53 +300,61 @@ namespace Le_Sa.Account
                         }
                         else
                         {
-                            if (cTBOTP.Texts != otp)
+                            if (CheckString.StrengthScore(cTBPassword.Texts, true, true, true, true) < 5)
                             {
-                                MessageBox.Show("OTP didn't match!", "Confirmation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("Password strength must be Strong or Excellent.\r\nYou can generate new password by clicking Generate Password button.\r\nUse Check Strength button to check your password strength.", "Weak Password", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             }
                             else
                             {
-                                try
+
+                                if (cTBOTP.Texts != otp)
                                 {
-                                    FirebaseResponse res = client.Get(@"Users/" + cTBUsername.Texts);
-                                    User ResUser = res.ResultAs<User>();
-                                    User UserInput = new User() // USER INPUT
+                                    MessageBox.Show("OTP didn't match!", "Confirmation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
+                                else
+                                {
+                                    try
                                     {
-                                        username = cTBUsername.Texts
-                                    };
-
-                                    if (User.IsTaken(ResUser, UserInput)) // Check username availability
-                                    {
-                                        User.ShowError();
-                                    }
-                                    else
-                                    {
-
-                                        User userData = new User()
+                                        FirebaseResponse res = client.Get(@"Users/" + cTBUsername.Texts);
+                                        User ResUser = res.ResultAs<User>();
+                                        User UserInput = new User() // USER INPUT
                                         {
-                                            username = cTBUsername.Texts,
-                                            password = cTBPassword.Texts,
-                                            email = cTBEmail.Texts,
-                                            phone_no = cTBPhoneNumber.Texts,
-                                            status = true,
-                                            start = "none",
-                                            duration = "none",
-                                            login_count = 0
+                                            username = cTBUsername.Texts
                                         };
 
-                                        SetResponse set = client.Set(@"users/" + cTBUsername.Texts, userData);
+                                        if (User.IsTaken(ResUser, UserInput)) // Check username availability
+                                        {
+                                            User.ShowError();
+                                        }
+                                        else
+                                        {
 
-                                        tmrOTP.Stop();
-                                        MessageBox.Show("User accout created successfully." + Environment.NewLine + "Thanks for choosing Le-Sa", "Account Created", MessageBoxButtons.OK);
+                                            User userData = new User()
+                                            {
+                                                username = cTBUsername.Texts,
+                                                password = cTBPassword.Texts,
+                                                email = cTBEmail.Texts,
+                                                phone_no = cTBPhoneNumber.Texts,
+                                                status = true,
+                                                start = "none",
+                                                duration = "none",
+                                                login_count = 0
+                                            };
 
-                                        formDesktop desktop = new formDesktop();
-                                        desktop.Show();
-                                        this.Hide();
+                                            SetResponse set = client.Set(@"users/" + cTBUsername.Texts, userData);
+
+                                            tmrOTP.Stop();
+                                            MessageBox.Show("User accout created successfully." + Environment.NewLine + "Thanks for choosing Le-Sa", "Account Created", MessageBoxButtons.OK);
+
+                                            formDesktop desktop = new formDesktop();
+                                            desktop.Show();
+                                            this.Hide();
+                                        }
                                     }
-                                }
-                                catch (Exception insert)
-                                {
-                                    MessageBox.Show(insert.Message, insert.StackTrace);
+                                    catch (Exception insert)
+                                    {
+                                        MessageBox.Show(insert.Message, insert.StackTrace);
+                                    }
                                 }
                             }
                         }
