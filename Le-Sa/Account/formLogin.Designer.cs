@@ -37,6 +37,7 @@ namespace Le_Sa.Account
             this.cTBUsername = new Le_Sa.CustomControls.CustomTextBox();
             this.cTBPassword = new Le_Sa.CustomControls.CustomTextBox();
             this.crBtnContinue = new Le_Sa.CustRoundedButton();
+            this.llblHaveAnAccount = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // lblUsername
@@ -87,6 +88,7 @@ namespace Le_Sa.Account
             this.llblForgotPassword.TabStop = true;
             this.llblForgotPassword.Text = "Forgot password?";
             this.llblForgotPassword.VisitedLinkColor = System.Drawing.Color.LightGray;
+            this.llblForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblForgotPassword_LinkClicked);
             // 
             // crBtnVisibility
             // 
@@ -170,6 +172,21 @@ namespace Le_Sa.Account
             this.crBtnContinue.UseVisualStyleBackColor = false;
             this.crBtnContinue.Click += new System.EventHandler(this.crBtnContinue_Click);
             // 
+            // llblHaveAnAccount
+            // 
+            this.llblHaveAnAccount.ActiveLinkColor = System.Drawing.Color.White;
+            this.llblHaveAnAccount.AutoSize = true;
+            this.llblHaveAnAccount.Font = new System.Drawing.Font("Malgun Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llblHaveAnAccount.LinkColor = System.Drawing.Color.LightGray;
+            this.llblHaveAnAccount.Location = new System.Drawing.Point(6, 461);
+            this.llblHaveAnAccount.Name = "llblHaveAnAccount";
+            this.llblHaveAnAccount.Size = new System.Drawing.Size(241, 20);
+            this.llblHaveAnAccount.TabIndex = 73;
+            this.llblHaveAnAccount.TabStop = true;
+            this.llblHaveAnAccount.Text = "Don\'t have an account?   Sign Up";
+            this.llblHaveAnAccount.VisitedLinkColor = System.Drawing.Color.LightGray;
+            this.llblHaveAnAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblHaveAnAccount_LinkClicked);
+            // 
             // formLogin
             // 
             this.AcceptButton = this.crBtnContinue;
@@ -177,6 +194,7 @@ namespace Le_Sa.Account
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(265, 490);
+            this.Controls.Add(this.llblHaveAnAccount);
             this.Controls.Add(this.crBtnVisibility);
             this.Controls.Add(this.cTBUsername);
             this.Controls.Add(this.cTBPassword);
@@ -207,5 +225,6 @@ namespace Le_Sa.Account
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.LinkLabel llblForgotPassword;
+        private System.Windows.Forms.LinkLabel llblHaveAnAccount;
     }
 }

@@ -64,7 +64,6 @@ namespace Le_Sa.Account
             this.lblPassword = new System.Windows.Forms.Label();
             this.crBtnPassVisibility = new Le_Sa.CustRoundedButton();
             this.cTBPassword = new Le_Sa.CustomControls.CustomTextBox();
-            this.custRoundedButton1 = new Le_Sa.CustRoundedButton();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.crPBDP)).BeginInit();
             this.crPnlPassword1.SuspendLayout();
@@ -156,7 +155,6 @@ namespace Le_Sa.Account
             // 
             // pnlBackground
             // 
-            this.pnlBackground.Controls.Add(this.custRoundedButton1);
             this.pnlBackground.Controls.Add(this.llblHaveAnAccount);
             this.pnlBackground.Controls.Add(this.crBtnResendOTP);
             this.pnlBackground.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -650,25 +648,6 @@ namespace Le_Sa.Account
             this.cTBPassword.Texts = "";
             this.cTBPassword.UnderlinedStyle = false;
             // 
-            // custRoundedButton1
-            // 
-            this.custRoundedButton1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.custRoundedButton1.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
-            this.custRoundedButton1.BorderColor = System.Drawing.SystemColors.ScrollBar;
-            this.custRoundedButton1.BorderRadius = 20;
-            this.custRoundedButton1.BorderSize = 0;
-            this.custRoundedButton1.FlatAppearance.BorderSize = 0;
-            this.custRoundedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.custRoundedButton1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.custRoundedButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.custRoundedButton1.Location = new System.Drawing.Point(131, 79);
-            this.custRoundedButton1.Name = "custRoundedButton1";
-            this.custRoundedButton1.Size = new System.Drawing.Size(178, 27);
-            this.custRoundedButton1.TabIndex = 103;
-            this.custRoundedButton1.Text = "Select Profile Picture";
-            this.custRoundedButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.custRoundedButton1.UseVisualStyleBackColor = false;
-            // 
             // formSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -750,6 +729,5 @@ namespace Le_Sa.Account
         private System.Windows.Forms.Panel pnlBackground;
         private CustRoundedButton crBtnResendOTP;
         private System.Windows.Forms.LinkLabel llblHaveAnAccount;
-        private CustRoundedButton custRoundedButton1;
     }
 }

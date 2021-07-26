@@ -70,6 +70,24 @@ namespace Le_Sa
         }
         /*error = "An account with this email address already exists." + Environment.NewLine + "Please try another email" + Environment.NewLine + "If you didn't create a account using this email address please submit an appeal to contact.lesafe.soft@gmail.com";*/
 
+        public static string userEmail(User user1 ,User user2)
+        {
+            if (user1 == null || user2 == null)
+            {
+                return null;
+            }
+
+            if (user1.username != user2.username)
+            {
+                error = "Username does not exist!";
+                return null;
+            }
+            else
+            {
+                return user1.email;
+            }
+
+        }
     }
 }
 

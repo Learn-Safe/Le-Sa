@@ -189,6 +189,7 @@ namespace Le_Sa.Account
             string generatedPass = RandomStringGenerator.GenerateRandomString(14, true, true, true, true);
             cTBPassword.Texts = generatedPass;
             cTBConfPass.Texts = generatedPass;
+            StrengthCheck();
         }
 
         private void crBtnPassVisibility_MouseDown(object sender, MouseEventArgs e)
@@ -242,12 +243,17 @@ namespace Le_Sa.Account
             }
             else
             {
-                int passwordScore = CheckString.StrengthScore(cTBPassword.Texts, true, true, true, true);
-                (string strengthLevel, Color strengthColor) = (CheckString.StrengthNaming(passwordScore).Item1, CheckString.StrengthNaming(passwordScore).Item2);
-                lblStrength.Text = strengthLevel;
-                lblStrength.ForeColor = strengthColor;
-                lblStrength.Visible = true;
+                StrengthCheck();
             }
+        }
+
+        private void StrengthCheck()
+        {
+            int passwordScore = CheckString.StrengthScore(cTBPassword.Texts, true, true, true, true);
+            (string strengthLevel, Color strengthColor) = (CheckString.StrengthNaming(passwordScore).Item1, CheckString.StrengthNaming(passwordScore).Item2);
+            lblStrength.Text = strengthLevel;
+            lblStrength.ForeColor = strengthColor;
+            lblStrength.Visible = true;
         }
         #endregion
 
@@ -315,7 +321,7 @@ namespace Le_Sa.Account
                                 {
                                     try
                                     {
-                                        FirebaseResponse res = client.Get(@"Users/" + cTBUsername.Texts);
+                                        FirebaseResponse res = client.Get(@"users/" + cTBUsername.Texts);
                                         User ResUser = res.ResultAs<User>();
                                         User UserInput = new User() // USER INPUT
                                         {
@@ -328,7 +334,6 @@ namespace Le_Sa.Account
                                         }
                                         else
                                         {
-
                                             User userData = new User()
                                             {
                                                 username = cTBUsername.Texts,
@@ -340,8 +345,9 @@ namespace Le_Sa.Account
                                                 duration = "none",
                                                 login_count = 0
                                             };
-
                                             SetResponse set = client.Set(@"users/" + cTBUsername.Texts, userData);
+
+                                            Properties.Settings.Default.username = cTBUsername.Texts;
 
                                             tmrOTP.Stop();
                                             MessageBox.Show("User accout created successfully." + Environment.NewLine + "Thanks for choosing Le-Sa", "Account Created", MessageBoxButtons.OK);
@@ -417,6 +423,5 @@ namespace Le_Sa.Account
             }
         }
         #endregion
-
     }
 }

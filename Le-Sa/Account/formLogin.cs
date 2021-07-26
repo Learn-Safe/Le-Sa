@@ -22,7 +22,6 @@ namespace Le_Sa.Account
         public formLogin()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
@@ -67,7 +66,7 @@ namespace Le_Sa.Account
             }
             else
             {
-                FirebaseResponse res = client.Get(@"Users/" + cTBUsername.Texts);
+                FirebaseResponse res = client.Get(@"users/" + cTBUsername.Texts);
                 User ResUser = res.ResultAs<User>();
                 User UserInput = new User() // USER INPUT
                 {
@@ -77,6 +76,7 @@ namespace Le_Sa.Account
 
                 if (User.IsEqual(ResUser, UserInput))
                 {
+                    Properties.Settings.Default.username = cTBUsername.Texts;
                     formDesktop desktop = new formDesktop();
                     desktop.Show();
                     this.Hide();
@@ -99,6 +99,20 @@ namespace Le_Sa.Account
         {
             crBtnVisibility.Image = Properties.Resources.hide_22px;
             cTBPassword.PasswordChar = true;
+        }
+
+        private void llblHaveAnAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            formSignUp signUp = new formSignUp();
+            signUp.Show();
+            this.Hide();
+        }
+
+        private void llblForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            formForgotPassword forgotPass = new formForgotPassword();
+            forgotPass.Show();
+            this.Hide();
         }
     }
 }
