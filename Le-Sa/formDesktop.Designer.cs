@@ -31,15 +31,15 @@ namespace Le_Sa
         {
             this.pnlDesktop = new System.Windows.Forms.Panel();
             this.pnlUser = new System.Windows.Forms.Panel();
+            this.cRPBDP = new Le_Sa.CustRoundedPictureBox();
             this.lblUserName = new System.Windows.Forms.Label();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.crBtnHistory = new Le_Sa.CustRoundedButton();
             this.crBtnSettings = new Le_Sa.CustRoundedButton();
             this.crBtnBrowserControls = new Le_Sa.CustRoundedButton();
-            this.cRPBDP = new Le_Sa.CustRoundedPictureBox();
             this.pnlUser.SuspendLayout();
-            this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cRPBDP)).BeginInit();
+            this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlDesktop
@@ -60,6 +60,21 @@ namespace Le_Sa
             this.pnlUser.Name = "pnlUser";
             this.pnlUser.Size = new System.Drawing.Size(240, 240);
             this.pnlUser.TabIndex = 0;
+            // 
+            // cRPBDP
+            // 
+            this.cRPBDP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(76)))));
+            this.cRPBDP.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(76)))));
+            this.cRPBDP.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(44)))), ((int)(((byte)(90)))));
+            this.cRPBDP.BorderRadius = 150;
+            this.cRPBDP.BorderSize = 3;
+            this.cRPBDP.Image = global::Le_Sa.Properties.Resources.user_90px;
+            this.cRPBDP.Location = new System.Drawing.Point(45, 27);
+            this.cRPBDP.Name = "cRPBDP";
+            this.cRPBDP.Size = new System.Drawing.Size(150, 150);
+            this.cRPBDP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cRPBDP.TabIndex = 2;
+            this.cRPBDP.TabStop = false;
             // 
             // lblUserName
             // 
@@ -153,21 +168,6 @@ namespace Le_Sa
             this.crBtnBrowserControls.UseVisualStyleBackColor = false;
             this.crBtnBrowserControls.Click += new System.EventHandler(this.crBtnBrowserControls_Click);
             // 
-            // cRPBDP
-            // 
-            this.cRPBDP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(76)))));
-            this.cRPBDP.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(76)))));
-            this.cRPBDP.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(44)))), ((int)(((byte)(90)))));
-            this.cRPBDP.BorderRadius = 150;
-            this.cRPBDP.BorderSize = 3;
-            this.cRPBDP.Image = global::Le_Sa.Properties.Resources.user_90px;
-            this.cRPBDP.Location = new System.Drawing.Point(45, 27);
-            this.cRPBDP.Name = "cRPBDP";
-            this.cRPBDP.Size = new System.Drawing.Size(150, 150);
-            this.cRPBDP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.cRPBDP.TabIndex = 2;
-            this.cRPBDP.TabStop = false;
-            // 
             // formDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,8 +185,8 @@ namespace Le_Sa
             this.Load += new System.EventHandler(this.formDesktop_Load);
             this.pnlUser.ResumeLayout(false);
             this.pnlUser.PerformLayout();
-            this.pnlMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cRPBDP)).EndInit();
+            this.pnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -31,6 +31,9 @@ namespace Le_Sa
         private void formDesktop_Load(object sender, EventArgs e)
         {
             DPLoc = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Le-Sa\User Data\DP\";
+            lblUserName.Text = Properties.Settings.Default.username;
+            lblUserName.Location = new Point(((pnlUser.Width / 2) - (lblUserName.Width / 2)), ((pnlUser.Height / 2) - (lblUserName.Height / 2) + 87));
+
             try
             {
                 if (File.Exists(DPLoc))
