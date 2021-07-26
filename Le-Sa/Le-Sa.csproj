@@ -290,6 +290,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\formForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\formForgotPassword.Designer.cs">
+      <DependentUpon>formForgotPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Account\formLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,6 +314,12 @@
     <Compile Include="BrowserControls\formBrowserControls.Designer.cs">
       <DependentUpon>formBrowserControls.cs</DependentUpon>
     </Compile>
+    <Compile Include="BrowserControls\formChromeControls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrowserControls\formChromeControls.Designer.cs">
+      <DependentUpon>formChromeControls.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\CustRoundedPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -322,19 +334,6 @@
     </Compile>
     <Compile Include="CustomControls\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Data.cs" />
-    <Compile Include="FireaseTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FireaseTest.Designer.cs">
-      <DependentUpon>FireaseTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FirestoreTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FirestoreTest.Designer.cs">
-      <DependentUpon>FirestoreTest.cs</DependentUpon>
     </Compile>
     <Compile Include="formAdminWarning.cs">
       <SubType>Form</SubType>
@@ -370,10 +369,12 @@
     <Compile Include="Models\History\EdgeBrowserHistory.cs" />
     <Compile Include="Models\History\FirefoxBrowserHistory.cs" />
     <Compile Include="Models\History\OperaBrowserHistory.cs" />
+    <Compile Include="Models\History\VivaldiBrowserHistory.cs" />
     <Compile Include="Models\RandomString\RandomStringGenerator.cs" />
     <Compile Include="Models\RandomString\CheckString.cs" />
     <Compile Include="Models\Registry\ReadWriteRegistry.cs" />
     <Compile Include="Account\User.cs" />
+    <Compile Include="Models\Serialization\BinarySerialization.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -384,12 +385,6 @@
     </Compile>
     <Compile Include="Settings\formDNSConfig.Designer.cs">
       <DependentUpon>formDNSConfig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Settings\formGoogleAccountHistory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Settings\formGoogleAccountHistory.Designer.cs">
-      <DependentUpon>formGoogleAccountHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings\formSettings.cs">
       <SubType>Form</SubType>
@@ -402,17 +397,14 @@
     <Compile Include="CustomControls\CustRoundedButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="test\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="test\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="userDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>userDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Account\formForgotPassword.resx">
+      <DependentUpon>formForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Account\formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -422,14 +414,11 @@
     <EmbeddedResource Include="BrowserControls\formBrowserControls.resx">
       <DependentUpon>formBrowserControls.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BrowserControls\formChromeControls.resx">
+      <DependentUpon>formChromeControls.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FireaseTest.resx">
-      <DependentUpon>FireaseTest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FirestoreTest.resx">
-      <DependentUpon>FirestoreTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formAdminWarning.resx">
       <DependentUpon>formAdminWarning.cs</DependentUpon>
@@ -439,12 +428,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Settings\formDNSConfig.resx">
       <DependentUpon>formDNSConfig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Settings\formGoogleAccountHistory.resx">
-      <DependentUpon>formGoogleAccountHistory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="test\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".editorconfig" />
     <EmbeddedResource Include="formDesktop.resx">
@@ -464,9 +447,6 @@
     <None Include="app.manifest">
       <SubType>Designer</SubType>
     </None>
-    <EmbeddedResource Include="le-sa-f718d-firebase-adminsdk-62ncd-0594cf1db4.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

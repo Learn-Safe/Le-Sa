@@ -59,7 +59,7 @@ namespace Le_Sa
             this.crBtnDNSConfig.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
             this.crBtnDNSConfig.Location = new System.Drawing.Point(5, 5);
             this.crBtnDNSConfig.Name = "crBtnDNSConfig";
-            this.crBtnDNSConfig.Size = new System.Drawing.Size(140, 30);
+            this.crBtnDNSConfig.Size = new System.Drawing.Size(122, 30);
             this.crBtnDNSConfig.TabIndex = 0;
             this.crBtnDNSConfig.Text = "DNS Settings";
             this.crBtnDNSConfig.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));

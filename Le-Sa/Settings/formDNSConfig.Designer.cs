@@ -29,16 +29,16 @@ namespace Le_Sa.Settings
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlDesktop = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlDesktop
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(694, 521);
-            this.panel1.TabIndex = 0;
+            this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDesktop.Location = new System.Drawing.Point(0, 0);
+            this.pnlDesktop.Name = "pnlDesktop";
+            this.pnlDesktop.Size = new System.Drawing.Size(694, 521);
+            this.pnlDesktop.TabIndex = 0;
             // 
             // formDNSConfig
             // 
@@ -46,7 +46,7 @@ namespace Le_Sa.Settings
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(694, 521);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlDesktop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(694, 521);
             this.Name = "formDNSConfig";
@@ -58,6 +58,6 @@ namespace Le_Sa.Settings
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlDesktop;
     }
 }

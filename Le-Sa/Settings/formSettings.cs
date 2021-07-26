@@ -19,6 +19,7 @@ namespace Le_Sa
 
         private struct RGBColors
         {
+            public static Color btnDefault = Color.FromArgb(21, 27, 56);
             public static Color desktopBackDefault = Color.FromArgb(34, 40, 74);
             public static Color normal = Color.FromArgb(52, 152, 219);
             public static Color settings = Color.FromArgb(231, 76, 60);
@@ -62,6 +63,7 @@ namespace Le_Sa
             {
                 //Button customization to default
                 currentBtn.ForeColor = RGBColors.menuItemDefault;
+                currentBtn.BackColor = RGBColors.btnDefault;
             }
         }
 

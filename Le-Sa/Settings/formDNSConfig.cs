@@ -18,7 +18,7 @@ namespace Le_Sa.Settings
             {
                 Dock = DockStyle.Fill
             };
-            this.panel1.Controls.Add(browser);
+            this.pnlDesktop.Controls.Add(browser);
         }
     }
 }
