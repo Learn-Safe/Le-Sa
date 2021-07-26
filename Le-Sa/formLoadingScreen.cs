@@ -76,7 +76,7 @@ namespace Le_Sa
             }
             else
             {
-                FirebaseResponse res = client.Get(@"Users/" + cTBUsername.Texts);
+                FirebaseResponse res = client.Get(@"users/" + cTBUsername.Texts);
                 User ResUser = res.ResultAs<User>();
 
                 /*File.WriteAllText(@"C:\Users\saths\Desktop\user.json", JsonConvert.SerializeObject(ResUser));
@@ -96,6 +96,7 @@ namespace Le_Sa
 
                 if (User.IsEqual(ResUser, UserInput))
                 {
+                    Properties.Settings.Default.username = cTBUsername.Texts;
                     formDesktop desktop = new formDesktop();
                     desktop.Show();
                     this.Hide();
@@ -124,6 +125,13 @@ namespace Le_Sa
         {
             formSignUp signUp = new formSignUp();
             signUp.Show();
+            this.Hide();
+        }
+
+        private void llblForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            formForgotPassword forgotPass = new formForgotPassword();
+            forgotPass.Show();
             this.Hide();
         }
     }

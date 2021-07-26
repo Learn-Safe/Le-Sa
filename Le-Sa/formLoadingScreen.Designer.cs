@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.custRoundedPanel1 = new Le_Sa.CustRoundedPanel();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.llblHaveAnAccount = new System.Windows.Forms.LinkLabel();
             this.crBtnVisibility = new Le_Sa.CustRoundedButton();
             this.cTBUsername = new Le_Sa.CustomControls.CustomTextBox();
@@ -46,7 +47,6 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.llblForgotPassword = new System.Windows.Forms.LinkLabel();
-            this.lblWelcome = new System.Windows.Forms.Label();
             this.pnlLoadingBack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.custRoundedPanel1.SuspendLayout();
@@ -151,6 +151,18 @@
             this.custRoundedPanel1.Size = new System.Drawing.Size(280, 420);
             this.custRoundedPanel1.TabIndex = 17;
             this.custRoundedPanel1.TextColor = System.Drawing.Color.White;
+            // 
+            // lblWelcome
+            // 
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
+            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.ForeColor = System.Drawing.Color.White;
+            this.lblWelcome.Location = new System.Drawing.Point(10, 7);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(186, 62);
+            this.lblWelcome.TabIndex = 65;
+            this.lblWelcome.Text = "Hello there,\r\nwelcome back\r\n";
             // 
             // llblHaveAnAccount
             // 
@@ -285,18 +297,7 @@
             this.llblForgotPassword.TabStop = true;
             this.llblForgotPassword.Text = "Forgot password?";
             this.llblForgotPassword.VisitedLinkColor = System.Drawing.Color.LightGray;
-            // 
-            // lblWelcome
-            // 
-            this.lblWelcome.AutoSize = true;
-            this.lblWelcome.BackColor = System.Drawing.Color.Transparent;
-            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.ForeColor = System.Drawing.Color.White;
-            this.lblWelcome.Location = new System.Drawing.Point(10, 7);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(186, 62);
-            this.lblWelcome.TabIndex = 65;
-            this.lblWelcome.Text = "Hello there,\r\nwelcome back\r\n";
+            this.llblForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblForgotPassword_LinkClicked);
             // 
             // formLoadingScreen
             // 
