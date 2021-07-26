@@ -30,6 +30,7 @@ namespace Le_Sa
         private void InitializeComponent()
         {
             this.pnlDashboard = new System.Windows.Forms.Panel();
+            this.crBtnGoogleAccountSettings = new Le_Sa.CustRoundedButton();
             this.crBtnDNSConfig = new Le_Sa.CustRoundedButton();
             this.pnlDesktop = new System.Windows.Forms.Panel();
             this.pnlDashboard.SuspendLayout();
@@ -39,12 +40,33 @@ namespace Le_Sa
             // 
             this.pnlDashboard.AutoScroll = true;
             this.pnlDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(75)))));
+            this.pnlDashboard.Controls.Add(this.crBtnGoogleAccountSettings);
             this.pnlDashboard.Controls.Add(this.crBtnDNSConfig);
             this.pnlDashboard.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlDashboard.Location = new System.Drawing.Point(0, 0);
             this.pnlDashboard.Name = "pnlDashboard";
             this.pnlDashboard.Size = new System.Drawing.Size(694, 40);
             this.pnlDashboard.TabIndex = 3;
+            // 
+            // crBtnGoogleAccountSettings
+            // 
+            this.crBtnGoogleAccountSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
+            this.crBtnGoogleAccountSettings.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
+            this.crBtnGoogleAccountSettings.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.crBtnGoogleAccountSettings.BorderRadius = 20;
+            this.crBtnGoogleAccountSettings.BorderSize = 0;
+            this.crBtnGoogleAccountSettings.FlatAppearance.BorderSize = 0;
+            this.crBtnGoogleAccountSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBtnGoogleAccountSettings.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.crBtnGoogleAccountSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
+            this.crBtnGoogleAccountSettings.Location = new System.Drawing.Point(133, 5);
+            this.crBtnGoogleAccountSettings.Name = "crBtnGoogleAccountSettings";
+            this.crBtnGoogleAccountSettings.Size = new System.Drawing.Size(198, 30);
+            this.crBtnGoogleAccountSettings.TabIndex = 1;
+            this.crBtnGoogleAccountSettings.Text = "Google Account Activities";
+            this.crBtnGoogleAccountSettings.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
+            this.crBtnGoogleAccountSettings.UseVisualStyleBackColor = false;
+            this.crBtnGoogleAccountSettings.Click += new System.EventHandler(this.crBtnGoogleAccountSettings_Click);
             // 
             // crBtnDNSConfig
             // 
@@ -59,7 +81,7 @@ namespace Le_Sa
             this.crBtnDNSConfig.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
             this.crBtnDNSConfig.Location = new System.Drawing.Point(5, 5);
             this.crBtnDNSConfig.Name = "crBtnDNSConfig";
-            this.crBtnDNSConfig.Size = new System.Drawing.Size(140, 30);
+            this.crBtnDNSConfig.Size = new System.Drawing.Size(122, 30);
             this.crBtnDNSConfig.TabIndex = 0;
             this.crBtnDNSConfig.Text = "DNS Settings";
             this.crBtnDNSConfig.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
@@ -98,5 +120,6 @@ namespace Le_Sa
         private System.Windows.Forms.Panel pnlDashboard;
         private CustRoundedButton crBtnDNSConfig;
         private System.Windows.Forms.Panel pnlDesktop;
+        private CustRoundedButton crBtnGoogleAccountSettings;
     }
 }
