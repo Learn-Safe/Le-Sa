@@ -29,29 +29,30 @@ namespace Le_Sa.Account
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formForgotPassword));
             this.pnlHeader = new System.Windows.Forms.Panel();
+            this.crBrnClose = new Le_Sa.CustRoundedButton();
             this.lblForgotPass = new System.Windows.Forms.Label();
             this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlNewPass = new System.Windows.Forms.Panel();
             this.lblStrength = new System.Windows.Forms.Label();
-            this.lblConfPass = new System.Windows.Forms.Label();
-            this.lblNewPass = new System.Windows.Forms.Label();
-            this.lblOTPTimer = new System.Windows.Forms.Label();
-            this.lblOTP = new System.Windows.Forms.Label();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.crBtnConfPassVisibility = new Le_Sa.CustRoundedButton();
-            this.crBtnPassVisibility = new Le_Sa.CustRoundedButton();
             this.crBtnStrength = new Le_Sa.CustRoundedButton();
             this.crBtnGeneratePassword = new Le_Sa.CustRoundedButton();
             this.crBtnChangePassword = new Le_Sa.CustRoundedButton();
+            this.lblConfPass = new System.Windows.Forms.Label();
             this.cTBConfPassword = new Le_Sa.CustomControls.CustomTextBox();
+            this.lblNewPass = new System.Windows.Forms.Label();
             this.cTBNewPassword = new Le_Sa.CustomControls.CustomTextBox();
             this.crBtnContinue = new Le_Sa.CustRoundedButton();
+            this.lblOTPTimer = new System.Windows.Forms.Label();
             this.cTBOTP = new Le_Sa.CustomControls.CustomTextBox();
+            this.lblOTP = new System.Windows.Forms.Label();
             this.crBtnResendOTP = new Le_Sa.CustRoundedButton();
             this.crBtnSendOTP = new Le_Sa.CustRoundedButton();
             this.cTBUsername = new Le_Sa.CustomControls.CustomTextBox();
-            this.crBrnClose = new Le_Sa.CustRoundedButton();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.crBtnConfPassVisibility = new Le_Sa.CustRoundedButton();
+            this.crBtnPassVisibility = new Le_Sa.CustRoundedButton();
             this.pnlHeader.SuspendLayout();
             this.pnlContent.SuspendLayout();
             this.pnlNewPass.SuspendLayout();
@@ -66,6 +67,26 @@ namespace Le_Sa.Account
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(252, 85);
             this.pnlHeader.TabIndex = 123;
+            // 
+            // crBrnClose
+            // 
+            this.crBrnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.crBrnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.crBrnClose.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.crBrnClose.BorderRadius = 30;
+            this.crBrnClose.BorderSize = 0;
+            this.crBrnClose.FlatAppearance.BorderSize = 0;
+            this.crBrnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBrnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.crBrnClose.ForeColor = System.Drawing.Color.White;
+            this.crBrnClose.Location = new System.Drawing.Point(220, 1);
+            this.crBrnClose.Name = "crBrnClose";
+            this.crBrnClose.Size = new System.Drawing.Size(30, 30);
+            this.crBrnClose.TabIndex = 124;
+            this.crBrnClose.Text = " X";
+            this.crBrnClose.TextColor = System.Drawing.Color.White;
+            this.crBrnClose.UseVisualStyleBackColor = false;
+            this.crBrnClose.Click += new System.EventHandler(this.crBrnClose_Click);
             // 
             // lblForgotPass
             // 
@@ -123,108 +144,6 @@ namespace Le_Sa.Account
             this.lblStrength.Name = "lblStrength";
             this.lblStrength.Size = new System.Drawing.Size(0, 21);
             this.lblStrength.TabIndex = 136;
-            // 
-            // lblConfPass
-            // 
-            this.lblConfPass.AutoSize = true;
-            this.lblConfPass.BackColor = System.Drawing.Color.Transparent;
-            this.lblConfPass.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfPass.ForeColor = System.Drawing.Color.White;
-            this.lblConfPass.Location = new System.Drawing.Point(5, 65);
-            this.lblConfPass.Name = "lblConfPass";
-            this.lblConfPass.Size = new System.Drawing.Size(179, 25);
-            this.lblConfPass.TabIndex = 132;
-            this.lblConfPass.Text = "Confirm Password";
-            // 
-            // lblNewPass
-            // 
-            this.lblNewPass.AutoSize = true;
-            this.lblNewPass.BackColor = System.Drawing.Color.Transparent;
-            this.lblNewPass.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewPass.ForeColor = System.Drawing.Color.White;
-            this.lblNewPass.Location = new System.Drawing.Point(5, 7);
-            this.lblNewPass.Name = "lblNewPass";
-            this.lblNewPass.Size = new System.Drawing.Size(146, 25);
-            this.lblNewPass.TabIndex = 130;
-            this.lblNewPass.Text = "New Password";
-            // 
-            // lblOTPTimer
-            // 
-            this.lblOTPTimer.AutoSize = true;
-            this.lblOTPTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOTPTimer.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblOTPTimer.Location = new System.Drawing.Point(197, 116);
-            this.lblOTPTimer.Name = "lblOTPTimer";
-            this.lblOTPTimer.Size = new System.Drawing.Size(49, 20);
-            this.lblOTPTimer.TabIndex = 126;
-            this.lblOTPTimer.Text = "05:00";
-            this.lblOTPTimer.Visible = false;
-            // 
-            // lblOTP
-            // 
-            this.lblOTP.AutoSize = true;
-            this.lblOTP.BackColor = System.Drawing.Color.Transparent;
-            this.lblOTP.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOTP.ForeColor = System.Drawing.Color.White;
-            this.lblOTP.Location = new System.Drawing.Point(5, 111);
-            this.lblOTP.Name = "lblOTP";
-            this.lblOTP.Size = new System.Drawing.Size(50, 25);
-            this.lblOTP.TabIndex = 124;
-            this.lblOTP.Text = "OTP";
-            // 
-            // lblUsername
-            // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.BackColor = System.Drawing.Color.Transparent;
-            this.lblUsername.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.ForeColor = System.Drawing.Color.White;
-            this.lblUsername.Location = new System.Drawing.Point(5, 10);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(105, 25);
-            this.lblUsername.TabIndex = 120;
-            this.lblUsername.Text = "Username";
-            // 
-            // crBtnConfPassVisibility
-            // 
-            this.crBtnConfPassVisibility.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnConfPassVisibility.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnConfPassVisibility.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.crBtnConfPassVisibility.BorderColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnConfPassVisibility.BorderRadius = 20;
-            this.crBtnConfPassVisibility.BorderSize = 2;
-            this.crBtnConfPassVisibility.FlatAppearance.BorderSize = 0;
-            this.crBtnConfPassVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crBtnConfPassVisibility.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnConfPassVisibility.Image = global::Le_Sa.Properties.Resources.hide_22px;
-            this.crBtnConfPassVisibility.Location = new System.Drawing.Point(221, 90);
-            this.crBtnConfPassVisibility.Name = "crBtnConfPassVisibility";
-            this.crBtnConfPassVisibility.Size = new System.Drawing.Size(27, 27);
-            this.crBtnConfPassVisibility.TabIndex = 138;
-            this.crBtnConfPassVisibility.TextColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnConfPassVisibility.UseVisualStyleBackColor = false;
-            this.crBtnConfPassVisibility.MouseDown += new System.Windows.Forms.MouseEventHandler(this.crBtnPassVisibility_MouseDown);
-            this.crBtnConfPassVisibility.MouseUp += new System.Windows.Forms.MouseEventHandler(this.crBtnConfPassVisibility_MouseUp);
-            // 
-            // crBtnPassVisibility
-            // 
-            this.crBtnPassVisibility.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnPassVisibility.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnPassVisibility.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.crBtnPassVisibility.BorderColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnPassVisibility.BorderRadius = 20;
-            this.crBtnPassVisibility.BorderSize = 2;
-            this.crBtnPassVisibility.FlatAppearance.BorderSize = 0;
-            this.crBtnPassVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crBtnPassVisibility.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnPassVisibility.Image = global::Le_Sa.Properties.Resources.hide_22px;
-            this.crBtnPassVisibility.Location = new System.Drawing.Point(221, 32);
-            this.crBtnPassVisibility.Name = "crBtnPassVisibility";
-            this.crBtnPassVisibility.Size = new System.Drawing.Size(27, 27);
-            this.crBtnPassVisibility.TabIndex = 137;
-            this.crBtnPassVisibility.TextColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnPassVisibility.UseVisualStyleBackColor = false;
-            this.crBtnPassVisibility.MouseDown += new System.Windows.Forms.MouseEventHandler(this.crBtnPassVisibility_MouseDown);
-            this.crBtnPassVisibility.MouseUp += new System.Windows.Forms.MouseEventHandler(this.crBtnConfPassVisibility_MouseUp);
             // 
             // crBtnStrength
             // 
@@ -287,6 +206,18 @@ namespace Le_Sa.Account
             this.crBtnChangePassword.UseVisualStyleBackColor = false;
             this.crBtnChangePassword.Click += new System.EventHandler(this.crBtnChangePassword_Click);
             // 
+            // lblConfPass
+            // 
+            this.lblConfPass.AutoSize = true;
+            this.lblConfPass.BackColor = System.Drawing.Color.Transparent;
+            this.lblConfPass.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfPass.ForeColor = System.Drawing.Color.White;
+            this.lblConfPass.Location = new System.Drawing.Point(5, 65);
+            this.lblConfPass.Name = "lblConfPass";
+            this.lblConfPass.Size = new System.Drawing.Size(179, 25);
+            this.lblConfPass.TabIndex = 132;
+            this.lblConfPass.Text = "Confirm Password";
+            // 
             // cTBConfPassword
             // 
             this.cTBConfPassword.BackColor = System.Drawing.SystemColors.ScrollBar;
@@ -306,6 +237,18 @@ namespace Le_Sa.Account
             this.cTBConfPassword.TabIndex = 131;
             this.cTBConfPassword.Texts = "";
             this.cTBConfPassword.UnderlinedStyle = false;
+            // 
+            // lblNewPass
+            // 
+            this.lblNewPass.AutoSize = true;
+            this.lblNewPass.BackColor = System.Drawing.Color.Transparent;
+            this.lblNewPass.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewPass.ForeColor = System.Drawing.Color.White;
+            this.lblNewPass.Location = new System.Drawing.Point(5, 7);
+            this.lblNewPass.Name = "lblNewPass";
+            this.lblNewPass.Size = new System.Drawing.Size(146, 25);
+            this.lblNewPass.TabIndex = 130;
+            this.lblNewPass.Text = "New Password";
             // 
             // cTBNewPassword
             // 
@@ -348,6 +291,18 @@ namespace Le_Sa.Account
             this.crBtnContinue.UseVisualStyleBackColor = false;
             this.crBtnContinue.Click += new System.EventHandler(this.crBtnContinue_Click);
             // 
+            // lblOTPTimer
+            // 
+            this.lblOTPTimer.AutoSize = true;
+            this.lblOTPTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOTPTimer.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblOTPTimer.Location = new System.Drawing.Point(197, 116);
+            this.lblOTPTimer.Name = "lblOTPTimer";
+            this.lblOTPTimer.Size = new System.Drawing.Size(49, 20);
+            this.lblOTPTimer.TabIndex = 126;
+            this.lblOTPTimer.Text = "05:00";
+            this.lblOTPTimer.Visible = false;
+            // 
             // cTBOTP
             // 
             this.cTBOTP.BackColor = System.Drawing.SystemColors.ScrollBar;
@@ -367,6 +322,18 @@ namespace Le_Sa.Account
             this.cTBOTP.TabIndex = 125;
             this.cTBOTP.Texts = "";
             this.cTBOTP.UnderlinedStyle = false;
+            // 
+            // lblOTP
+            // 
+            this.lblOTP.AutoSize = true;
+            this.lblOTP.BackColor = System.Drawing.Color.Transparent;
+            this.lblOTP.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOTP.ForeColor = System.Drawing.Color.White;
+            this.lblOTP.Location = new System.Drawing.Point(5, 111);
+            this.lblOTP.Name = "lblOTP";
+            this.lblOTP.Size = new System.Drawing.Size(50, 25);
+            this.lblOTP.TabIndex = 124;
+            this.lblOTP.Text = "OTP";
             // 
             // crBtnResendOTP
             // 
@@ -429,25 +396,59 @@ namespace Le_Sa.Account
             this.cTBUsername.Texts = "";
             this.cTBUsername.UnderlinedStyle = false;
             // 
-            // crBrnClose
+            // lblUsername
             // 
-            this.crBrnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.crBrnClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.crBrnClose.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.crBrnClose.BorderRadius = 30;
-            this.crBrnClose.BorderSize = 0;
-            this.crBrnClose.FlatAppearance.BorderSize = 0;
-            this.crBrnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crBrnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.crBrnClose.ForeColor = System.Drawing.Color.White;
-            this.crBrnClose.Location = new System.Drawing.Point(220, 1);
-            this.crBrnClose.Name = "crBrnClose";
-            this.crBrnClose.Size = new System.Drawing.Size(30, 30);
-            this.crBrnClose.TabIndex = 124;
-            this.crBrnClose.Text = " X";
-            this.crBrnClose.TextColor = System.Drawing.Color.White;
-            this.crBrnClose.UseVisualStyleBackColor = false;
-            this.crBrnClose.Click += new System.EventHandler(this.crBrnClose_Click);
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.White;
+            this.lblUsername.Location = new System.Drawing.Point(5, 10);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(105, 25);
+            this.lblUsername.TabIndex = 120;
+            this.lblUsername.Text = "Username";
+            // 
+            // crBtnConfPassVisibility
+            // 
+            this.crBtnConfPassVisibility.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnConfPassVisibility.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnConfPassVisibility.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.crBtnConfPassVisibility.BorderColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnConfPassVisibility.BorderRadius = 20;
+            this.crBtnConfPassVisibility.BorderSize = 2;
+            this.crBtnConfPassVisibility.FlatAppearance.BorderSize = 0;
+            this.crBtnConfPassVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBtnConfPassVisibility.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnConfPassVisibility.Image = global::Le_Sa.Properties.Resources.hide_22px;
+            this.crBtnConfPassVisibility.Location = new System.Drawing.Point(221, 90);
+            this.crBtnConfPassVisibility.Name = "crBtnConfPassVisibility";
+            this.crBtnConfPassVisibility.Size = new System.Drawing.Size(27, 27);
+            this.crBtnConfPassVisibility.TabIndex = 138;
+            this.crBtnConfPassVisibility.TextColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnConfPassVisibility.UseVisualStyleBackColor = false;
+            this.crBtnConfPassVisibility.MouseDown += new System.Windows.Forms.MouseEventHandler(this.crBtnPassVisibility_MouseDown);
+            this.crBtnConfPassVisibility.MouseUp += new System.Windows.Forms.MouseEventHandler(this.crBtnConfPassVisibility_MouseUp);
+            // 
+            // crBtnPassVisibility
+            // 
+            this.crBtnPassVisibility.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnPassVisibility.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnPassVisibility.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.crBtnPassVisibility.BorderColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnPassVisibility.BorderRadius = 20;
+            this.crBtnPassVisibility.BorderSize = 2;
+            this.crBtnPassVisibility.FlatAppearance.BorderSize = 0;
+            this.crBtnPassVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBtnPassVisibility.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnPassVisibility.Image = global::Le_Sa.Properties.Resources.hide_22px;
+            this.crBtnPassVisibility.Location = new System.Drawing.Point(221, 32);
+            this.crBtnPassVisibility.Name = "crBtnPassVisibility";
+            this.crBtnPassVisibility.Size = new System.Drawing.Size(27, 27);
+            this.crBtnPassVisibility.TabIndex = 137;
+            this.crBtnPassVisibility.TextColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnPassVisibility.UseVisualStyleBackColor = false;
+            this.crBtnPassVisibility.MouseDown += new System.Windows.Forms.MouseEventHandler(this.crBtnPassVisibility_MouseDown);
+            this.crBtnPassVisibility.MouseUp += new System.Windows.Forms.MouseEventHandler(this.crBtnConfPassVisibility_MouseUp);
             // 
             // formForgotPassword
             // 
@@ -458,6 +459,7 @@ namespace Le_Sa.Account
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formForgotPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formForgotPassword";

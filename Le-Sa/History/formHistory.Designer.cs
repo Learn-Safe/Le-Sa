@@ -29,15 +29,16 @@ namespace Le_Sa.History
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formHistory));
             this.pnlDashboard = new System.Windows.Forms.Panel();
-            this.pnlDesktop = new System.Windows.Forms.Panel();
-            this.dgvBrowserHistory = new System.Windows.Forms.DataGridView();
             this.crBtnVivaldi = new Le_Sa.CustRoundedButton();
             this.crBtnBrave = new Le_Sa.CustRoundedButton();
             this.crBtnOpera = new Le_Sa.CustRoundedButton();
             this.crBtnEdge = new Le_Sa.CustRoundedButton();
             this.crBtnFirefox = new Le_Sa.CustRoundedButton();
             this.crBtnCommonSettings = new Le_Sa.CustRoundedButton();
+            this.pnlDesktop = new System.Windows.Forms.Panel();
+            this.dgvBrowserHistory = new System.Windows.Forms.DataGridView();
             this.pnlDashboard.SuspendLayout();
             this.pnlDesktop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBrowserHistory)).BeginInit();
@@ -58,32 +59,6 @@ namespace Le_Sa.History
             this.pnlDashboard.Name = "pnlDashboard";
             this.pnlDashboard.Size = new System.Drawing.Size(694, 40);
             this.pnlDashboard.TabIndex = 1;
-            // 
-            // pnlDesktop
-            // 
-            this.pnlDesktop.AutoScroll = true;
-            this.pnlDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(75)))));
-            this.pnlDesktop.Controls.Add(this.dgvBrowserHistory);
-            this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDesktop.Location = new System.Drawing.Point(0, 40);
-            this.pnlDesktop.Name = "pnlDesktop";
-            this.pnlDesktop.Size = new System.Drawing.Size(694, 521);
-            this.pnlDesktop.TabIndex = 2;
-            // 
-            // dgvBrowserHistory
-            // 
-            this.dgvBrowserHistory.AllowUserToAddRows = false;
-            this.dgvBrowserHistory.AllowUserToDeleteRows = false;
-            this.dgvBrowserHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvBrowserHistory.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(75)))));
-            this.dgvBrowserHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvBrowserHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBrowserHistory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvBrowserHistory.Location = new System.Drawing.Point(0, 0);
-            this.dgvBrowserHistory.Name = "dgvBrowserHistory";
-            this.dgvBrowserHistory.RowHeadersVisible = false;
-            this.dgvBrowserHistory.Size = new System.Drawing.Size(694, 521);
-            this.dgvBrowserHistory.TabIndex = 0;
             // 
             // crBtnVivaldi
             // 
@@ -223,6 +198,32 @@ namespace Le_Sa.History
             this.crBtnCommonSettings.UseVisualStyleBackColor = false;
             this.crBtnCommonSettings.Click += new System.EventHandler(this.crBtnChrome_Click);
             // 
+            // pnlDesktop
+            // 
+            this.pnlDesktop.AutoScroll = true;
+            this.pnlDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(75)))));
+            this.pnlDesktop.Controls.Add(this.dgvBrowserHistory);
+            this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDesktop.Location = new System.Drawing.Point(0, 40);
+            this.pnlDesktop.Name = "pnlDesktop";
+            this.pnlDesktop.Size = new System.Drawing.Size(694, 521);
+            this.pnlDesktop.TabIndex = 2;
+            // 
+            // dgvBrowserHistory
+            // 
+            this.dgvBrowserHistory.AllowUserToAddRows = false;
+            this.dgvBrowserHistory.AllowUserToDeleteRows = false;
+            this.dgvBrowserHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBrowserHistory.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(75)))));
+            this.dgvBrowserHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvBrowserHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBrowserHistory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBrowserHistory.Location = new System.Drawing.Point(0, 0);
+            this.dgvBrowserHistory.Name = "dgvBrowserHistory";
+            this.dgvBrowserHistory.RowHeadersVisible = false;
+            this.dgvBrowserHistory.Size = new System.Drawing.Size(694, 521);
+            this.dgvBrowserHistory.TabIndex = 0;
+            // 
             // formHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,6 +232,7 @@ namespace Le_Sa.History
             this.Controls.Add(this.pnlDesktop);
             this.Controls.Add(this.pnlDashboard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(694, 561);
             this.Name = "formHistory";
             this.Text = "formHistory";

@@ -29,9 +29,10 @@ namespace Le_Sa
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formAdminWarning));
             this.pnlDesktop = new System.Windows.Forms.Panel();
-            this.lblWarning = new System.Windows.Forms.Label();
             this.crBtnRestart = new Le_Sa.CustRoundedButton();
+            this.lblWarning = new System.Windows.Forms.Label();
             this.pnlDesktop.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,21 +46,6 @@ namespace Le_Sa
             this.pnlDesktop.Name = "pnlDesktop";
             this.pnlDesktop.Size = new System.Drawing.Size(694, 521);
             this.pnlDesktop.TabIndex = 0;
-            // 
-            // lblWarning
-            // 
-            this.lblWarning.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblWarning.AutoSize = true;
-            this.lblWarning.Font = new System.Drawing.Font("Microsoft Tai Le", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWarning.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblWarning.Location = new System.Drawing.Point(41, 130);
-            this.lblWarning.Name = "lblWarning";
-            this.lblWarning.Size = new System.Drawing.Size(613, 120);
-            this.lblWarning.TabIndex = 0;
-            this.lblWarning.Text = "PLEASE RESTART THE APPLICATION WITH\r\nADMINISTRATOR PRIVILEGES \r\nTO";
-            this.lblWarning.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // crBtnRestart
             // 
@@ -81,6 +67,21 @@ namespace Le_Sa
             this.crBtnRestart.UseVisualStyleBackColor = false;
             this.crBtnRestart.Click += new System.EventHandler(this.crBtnRestart_Click);
             // 
+            // lblWarning
+            // 
+            this.lblWarning.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblWarning.AutoSize = true;
+            this.lblWarning.Font = new System.Drawing.Font("Microsoft Tai Le", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWarning.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblWarning.Location = new System.Drawing.Point(41, 130);
+            this.lblWarning.Name = "lblWarning";
+            this.lblWarning.Size = new System.Drawing.Size(613, 120);
+            this.lblWarning.TabIndex = 0;
+            this.lblWarning.Text = "PLEASE RESTART THE APPLICATION WITH\r\nADMINISTRATOR PRIVILEGES \r\nTO";
+            this.lblWarning.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // formAdminWarning
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -89,6 +90,7 @@ namespace Le_Sa
             this.ClientSize = new System.Drawing.Size(694, 521);
             this.Controls.Add(this.pnlDesktop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formAdminWarning";
             this.Text = "formAdminWarning";
             this.SizeChanged += new System.EventHandler(this.formAdminWarning_SizeChanged);

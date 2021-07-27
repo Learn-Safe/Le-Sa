@@ -29,6 +29,7 @@ namespace Le_Sa.BrowserControls
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formChromeControls));
             this.pnlDescription = new System.Windows.Forms.Panel();
             this.cRPnlStatus = new Le_Sa.CustRoundedPanel();
             this.lblStatus = new System.Windows.Forms.Label();
@@ -352,6 +353,7 @@ namespace Le_Sa.BrowserControls
             this.Controls.Add(this.pnlControls);
             this.Controls.Add(this.pnlDescription);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formChromeControls";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "formChromeControls";

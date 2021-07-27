@@ -76,35 +76,41 @@ namespace Le_Sa
             }
             else
             {
-                FirebaseResponse res = client.Get(@"users/" + cTBUsername.Texts);
-                User ResUser = res.ResultAs<User>();
-
-                /*File.WriteAllText(@"C:\Users\saths\Desktop\user.json", JsonConvert.SerializeObject(ResUser));
-
-                // serialize JSON directly to a file
-                using (StreamWriter file = File.CreateText(@"C:\Users\saths\Desktop\user.json"))
+                try
                 {
-                    JsonSerializer serializer = new JsonSerializer();
-                    serializer.Serialize(file, ResUser);
-                }*/
+                    FirebaseResponse res = client.Get(@"users/" + cTBUsername.Texts);
+                    User ResUser = res.ResultAs<User>();
 
-                User UserInput = new User() // USER INPUT
-                {
-                    username = cTBUsername.Texts,
-                    password = cTBPassword.Texts
-                };
+                    /*File.WriteAllText(@"C:\Users\saths\Desktop\user.json", JsonConvert.SerializeObject(ResUser));
 
-                if (User.IsEqual(ResUser, UserInput))
-                {
-                    Properties.Settings.Default.username = cTBUsername.Texts;
-                    formDesktop desktop = new formDesktop();
-                    desktop.Show();
-                    this.Hide();
+                    // serialize JSON directly to a file
+                    using (StreamWriter file = File.CreateText(@"C:\Users\saths\Desktop\user.json"))
+                    {
+                        JsonSerializer serializer = new JsonSerializer();
+                        serializer.Serialize(file, ResUser);
+                    }*/
+
+                    User UserInput = new User() // USER INPUT
+                    {
+                        username = cTBUsername.Texts,
+                        password = cTBPassword.Texts
+                    };
+
+                    if (User.IsEqual(ResUser, UserInput))
+                    {
+                        Properties.Settings.Default.username = cTBUsername.Texts;
+                        formDesktop desktop = new formDesktop();
+                        desktop.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        User.ShowError();
+                    }
                 }
-
-                else
+                catch (Exception fireError)
                 {
-                    User.ShowError();
+                    MessageBox.Show(fireError.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

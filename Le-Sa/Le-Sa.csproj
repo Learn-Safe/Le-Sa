@@ -475,6 +475,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>user.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Le-Sa_120px_png1.png" />
     <Content Include="x64\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

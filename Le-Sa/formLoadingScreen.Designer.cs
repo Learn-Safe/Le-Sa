@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formLoadingScreen));
             this.lblCreator = new System.Windows.Forms.Label();
             this.lblSlogan = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
@@ -36,20 +37,20 @@
             this.pnlLoadingFront = new System.Windows.Forms.Panel();
             this.timerLoading = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.custRoundedPanel1 = new Le_Sa.CustRoundedPanel();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.llblHaveAnAccount = new System.Windows.Forms.LinkLabel();
-            this.crBtnVisibility = new Le_Sa.CustRoundedButton();
             this.cTBUsername = new Le_Sa.CustomControls.CustomTextBox();
             this.cTBPassword = new Le_Sa.CustomControls.CustomTextBox();
             this.crBtnContinue = new Le_Sa.CustRoundedButton();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.llblForgotPassword = new System.Windows.Forms.LinkLabel();
+            this.crBtnVisibility = new Le_Sa.CustRoundedButton();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.pnlLoadingBack.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.custRoundedPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCreator
@@ -119,16 +120,6 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "L    E    A    R    N     -     S    A    F    E";
             // 
-            // pbLogo
-            // 
-            this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbLogo.Location = new System.Drawing.Point(12, 12);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(120, 120);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbLogo.TabIndex = 15;
-            this.pbLogo.TabStop = false;
-            // 
             // custRoundedPanel1
             // 
             this.custRoundedPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(76)))));
@@ -178,27 +169,6 @@
             this.llblHaveAnAccount.Text = "Don\'t have an account?   Sign Up";
             this.llblHaveAnAccount.VisitedLinkColor = System.Drawing.Color.LightGray;
             this.llblHaveAnAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblHaveAnAccount_LinkClicked);
-            // 
-            // crBtnVisibility
-            // 
-            this.crBtnVisibility.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnVisibility.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnVisibility.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.crBtnVisibility.BorderColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnVisibility.BorderRadius = 20;
-            this.crBtnVisibility.BorderSize = 2;
-            this.crBtnVisibility.FlatAppearance.BorderSize = 0;
-            this.crBtnVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crBtnVisibility.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnVisibility.Image = global::Le_Sa.Properties.Resources.hide_22px;
-            this.crBtnVisibility.Location = new System.Drawing.Point(235, 231);
-            this.crBtnVisibility.Name = "crBtnVisibility";
-            this.crBtnVisibility.Size = new System.Drawing.Size(27, 27);
-            this.crBtnVisibility.TabIndex = 58;
-            this.crBtnVisibility.TextColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnVisibility.UseVisualStyleBackColor = false;
-            this.crBtnVisibility.MouseDown += new System.Windows.Forms.MouseEventHandler(this.crBtnVisibility_MouseDown);
-            this.crBtnVisibility.MouseUp += new System.Windows.Forms.MouseEventHandler(this.crBtnVisibility_MouseUp);
             // 
             // cTBUsername
             // 
@@ -299,6 +269,38 @@
             this.llblForgotPassword.VisitedLinkColor = System.Drawing.Color.LightGray;
             this.llblForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblForgotPassword_LinkClicked);
             // 
+            // crBtnVisibility
+            // 
+            this.crBtnVisibility.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnVisibility.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnVisibility.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.crBtnVisibility.BorderColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnVisibility.BorderRadius = 20;
+            this.crBtnVisibility.BorderSize = 2;
+            this.crBtnVisibility.FlatAppearance.BorderSize = 0;
+            this.crBtnVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBtnVisibility.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnVisibility.Image = global::Le_Sa.Properties.Resources.hide_22px;
+            this.crBtnVisibility.Location = new System.Drawing.Point(235, 231);
+            this.crBtnVisibility.Name = "crBtnVisibility";
+            this.crBtnVisibility.Size = new System.Drawing.Size(27, 27);
+            this.crBtnVisibility.TabIndex = 58;
+            this.crBtnVisibility.TextColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnVisibility.UseVisualStyleBackColor = false;
+            this.crBtnVisibility.MouseDown += new System.Windows.Forms.MouseEventHandler(this.crBtnVisibility_MouseDown);
+            this.crBtnVisibility.MouseUp += new System.Windows.Forms.MouseEventHandler(this.crBtnVisibility_MouseUp);
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbLogo.Image = global::Le_Sa.Properties.Resources.Le_Sa_120px_png;
+            this.pbLogo.Location = new System.Drawing.Point(12, 12);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(120, 120);
+            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLogo.TabIndex = 15;
+            this.pbLogo.TabStop = false;
+            // 
             // formLoadingScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -314,14 +316,15 @@
             this.Controls.Add(this.pbLogo);
             this.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formLoadingScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Le-Sa";
             this.Load += new System.EventHandler(this.formLoadingScreen_Load);
             this.pnlLoadingBack.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.custRoundedPanel1.ResumeLayout(false);
             this.custRoundedPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

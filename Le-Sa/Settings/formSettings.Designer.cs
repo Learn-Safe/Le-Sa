@@ -29,6 +29,7 @@ namespace Le_Sa
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formSettings));
             this.pnlDashboard = new System.Windows.Forms.Panel();
             this.crBtnDNSConfig = new Le_Sa.CustRoundedButton();
             this.pnlDesktop = new System.Windows.Forms.Panel();
@@ -85,6 +86,7 @@ namespace Le_Sa
             this.Controls.Add(this.pnlDesktop);
             this.Controls.Add(this.pnlDashboard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(694, 561);
             this.Name = "formSettings";
             this.Text = "formSettings";

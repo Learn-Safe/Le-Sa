@@ -29,15 +29,16 @@ namespace Le_Sa.BrowserControls
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formBrowserControls));
             this.pnlDashboard = new System.Windows.Forms.Panel();
-            this.pnlDesktop = new System.Windows.Forms.Panel();
-            this.lblSelect = new System.Windows.Forms.Label();
             this.crBtnVivaldi = new Le_Sa.CustRoundedButton();
             this.crBtnBrave = new Le_Sa.CustRoundedButton();
             this.crBtnOpera = new Le_Sa.CustRoundedButton();
             this.crBtnEdge = new Le_Sa.CustRoundedButton();
             this.crBtnFirefox = new Le_Sa.CustRoundedButton();
             this.crBtnChrome = new Le_Sa.CustRoundedButton();
+            this.pnlDesktop = new System.Windows.Forms.Panel();
+            this.lblSelect = new System.Windows.Forms.Label();
             this.pnlDashboard.SuspendLayout();
             this.pnlDesktop.SuspendLayout();
             this.SuspendLayout();
@@ -57,26 +58,6 @@ namespace Le_Sa.BrowserControls
             this.pnlDashboard.Name = "pnlDashboard";
             this.pnlDashboard.Size = new System.Drawing.Size(694, 40);
             this.pnlDashboard.TabIndex = 2;
-            // 
-            // pnlDesktop
-            // 
-            this.pnlDesktop.Controls.Add(this.lblSelect);
-            this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDesktop.Location = new System.Drawing.Point(0, 40);
-            this.pnlDesktop.Name = "pnlDesktop";
-            this.pnlDesktop.Size = new System.Drawing.Size(694, 521);
-            this.pnlDesktop.TabIndex = 3;
-            // 
-            // lblSelect
-            // 
-            this.lblSelect.AutoSize = true;
-            this.lblSelect.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelect.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblSelect.Location = new System.Drawing.Point(117, 247);
-            this.lblSelect.Name = "lblSelect";
-            this.lblSelect.Size = new System.Drawing.Size(450, 26);
-            this.lblSelect.TabIndex = 5;
-            this.lblSelect.Text = "SELECT A BROWSER YOU WANT TO CONTROL";
             // 
             // crBtnVivaldi
             // 
@@ -211,6 +192,26 @@ namespace Le_Sa.BrowserControls
             this.crBtnChrome.UseVisualStyleBackColor = false;
             this.crBtnChrome.Click += new System.EventHandler(this.crBtnChrome_Click);
             // 
+            // pnlDesktop
+            // 
+            this.pnlDesktop.Controls.Add(this.lblSelect);
+            this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDesktop.Location = new System.Drawing.Point(0, 40);
+            this.pnlDesktop.Name = "pnlDesktop";
+            this.pnlDesktop.Size = new System.Drawing.Size(694, 521);
+            this.pnlDesktop.TabIndex = 3;
+            // 
+            // lblSelect
+            // 
+            this.lblSelect.AutoSize = true;
+            this.lblSelect.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelect.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblSelect.Location = new System.Drawing.Point(117, 247);
+            this.lblSelect.Name = "lblSelect";
+            this.lblSelect.Size = new System.Drawing.Size(450, 26);
+            this.lblSelect.TabIndex = 5;
+            this.lblSelect.Text = "SELECT A BROWSER YOU WANT TO CONTROL";
+            // 
             // formBrowserControls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -220,6 +221,7 @@ namespace Le_Sa.BrowserControls
             this.Controls.Add(this.pnlDesktop);
             this.Controls.Add(this.pnlDashboard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formBrowserControls";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "formBrowserControls";

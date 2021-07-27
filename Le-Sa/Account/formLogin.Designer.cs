@@ -29,15 +29,16 @@ namespace Le_Sa.Account
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formLogin));
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.llblForgotPassword = new System.Windows.Forms.LinkLabel();
-            this.crBtnVisibility = new Le_Sa.CustRoundedButton();
             this.cTBUsername = new Le_Sa.CustomControls.CustomTextBox();
             this.cTBPassword = new Le_Sa.CustomControls.CustomTextBox();
             this.crBtnContinue = new Le_Sa.CustRoundedButton();
             this.llblHaveAnAccount = new System.Windows.Forms.LinkLabel();
+            this.crBtnVisibility = new Le_Sa.CustRoundedButton();
             this.SuspendLayout();
             // 
             // lblUsername
@@ -89,27 +90,6 @@ namespace Le_Sa.Account
             this.llblForgotPassword.Text = "Forgot password?";
             this.llblForgotPassword.VisitedLinkColor = System.Drawing.Color.LightGray;
             this.llblForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblForgotPassword_LinkClicked);
-            // 
-            // crBtnVisibility
-            // 
-            this.crBtnVisibility.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnVisibility.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnVisibility.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.crBtnVisibility.BorderColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnVisibility.BorderRadius = 20;
-            this.crBtnVisibility.BorderSize = 2;
-            this.crBtnVisibility.FlatAppearance.BorderSize = 0;
-            this.crBtnVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crBtnVisibility.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnVisibility.Image = global::Le_Sa.Properties.Resources.hide_22px;
-            this.crBtnVisibility.Location = new System.Drawing.Point(228, 311);
-            this.crBtnVisibility.Name = "crBtnVisibility";
-            this.crBtnVisibility.Size = new System.Drawing.Size(27, 27);
-            this.crBtnVisibility.TabIndex = 68;
-            this.crBtnVisibility.TextColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnVisibility.UseVisualStyleBackColor = false;
-            this.crBtnVisibility.MouseDown += new System.Windows.Forms.MouseEventHandler(this.crBtnVisibility_MouseDown);
-            this.crBtnVisibility.MouseUp += new System.Windows.Forms.MouseEventHandler(this.crBtnVisibility_MouseUp);
             // 
             // cTBUsername
             // 
@@ -187,6 +167,27 @@ namespace Le_Sa.Account
             this.llblHaveAnAccount.VisitedLinkColor = System.Drawing.Color.LightGray;
             this.llblHaveAnAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblHaveAnAccount_LinkClicked);
             // 
+            // crBtnVisibility
+            // 
+            this.crBtnVisibility.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnVisibility.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnVisibility.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.crBtnVisibility.BorderColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnVisibility.BorderRadius = 20;
+            this.crBtnVisibility.BorderSize = 2;
+            this.crBtnVisibility.FlatAppearance.BorderSize = 0;
+            this.crBtnVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBtnVisibility.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnVisibility.Image = global::Le_Sa.Properties.Resources.hide_22px;
+            this.crBtnVisibility.Location = new System.Drawing.Point(228, 311);
+            this.crBtnVisibility.Name = "crBtnVisibility";
+            this.crBtnVisibility.Size = new System.Drawing.Size(27, 27);
+            this.crBtnVisibility.TabIndex = 68;
+            this.crBtnVisibility.TextColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnVisibility.UseVisualStyleBackColor = false;
+            this.crBtnVisibility.MouseDown += new System.Windows.Forms.MouseEventHandler(this.crBtnVisibility_MouseDown);
+            this.crBtnVisibility.MouseUp += new System.Windows.Forms.MouseEventHandler(this.crBtnVisibility_MouseUp);
+            // 
             // formLogin
             // 
             this.AcceptButton = this.crBtnContinue;
@@ -204,6 +205,7 @@ namespace Le_Sa.Account
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.llblForgotPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(265, 490);
             this.MinimumSize = new System.Drawing.Size(265, 424);
             this.Name = "formLogin";

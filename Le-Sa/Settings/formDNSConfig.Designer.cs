@@ -29,6 +29,7 @@ namespace Le_Sa.Settings
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formDNSConfig));
             this.pnlDesktop = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@ namespace Le_Sa.Settings
             this.ClientSize = new System.Drawing.Size(694, 521);
             this.Controls.Add(this.pnlDesktop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(694, 521);
             this.Name = "formDNSConfig";
             this.Text = "formDNSConfig";
