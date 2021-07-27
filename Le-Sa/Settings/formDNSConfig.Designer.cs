@@ -1,4 +1,6 @@
 ﻿
+using Le_Sa.Properties;
+
 namespace Le_Sa.Settings
 {
     partial class formDNSConfig
