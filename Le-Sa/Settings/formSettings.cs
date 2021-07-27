@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using FontAwesome.Sharp;
 using Le_Sa.Settings;
 using System.Windows.Forms;
 
