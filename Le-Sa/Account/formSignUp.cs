@@ -151,6 +151,7 @@ namespace Le_Sa.Account
         #region DP
         private void crBtnRemovwDP_Click(object sender, EventArgs e)
         {
+            crPBDP.Image.Dispose();
             crPBDP.Image = Properties.Resources.user_90px;
             try
             {
@@ -175,6 +176,7 @@ namespace Le_Sa.Account
                 destinationFile = "DP";
                 crPBDP.SizeMode = PictureBoxSizeMode.StretchImage;
 
+                crPBDP.Image.Dispose();
                 Copy.CopyFile(null, source, destinationPath, destinationFile);
                 ImageLoc = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Le-Sa\User Data\DP\DP";
                 crPBDP.Image = new Bitmap(ImageLoc);
@@ -268,6 +270,7 @@ namespace Le_Sa.Account
             cTBPhoneNumber.Texts = "";
             cTBEmail.Texts = "";
             cTBOTP.Texts = "";
+            crPBDP.Image.Dispose();
             otp = null;
 
             lblOTPTimer.Text = "00:00";
