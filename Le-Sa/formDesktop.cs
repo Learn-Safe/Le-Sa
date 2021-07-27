@@ -10,6 +10,7 @@ using Le_Sa.History;
 using System.Windows.Forms;
 using Le_Sa.BrowserControls;
 using System.IO;
+using Squirrel;
 
 namespace Le_Sa
 {
@@ -44,10 +45,20 @@ namespace Le_Sa
                 {
                     cRPBDP.Image = Properties.Resources.user_90px;
                 }
+                CheckForUpdate();
             }
             catch(Exception error)
             {
                 MessageBox.Show(error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private async Task CheckForUpdate()
+        {
+            using(var manager = new UpdateManager("https://github.com/sathsarabandaraj/Le-Sa/releases/latest"))
+            {
+                await manager.UpdateApp();
             }
         }
 
