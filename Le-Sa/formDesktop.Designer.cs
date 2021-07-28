@@ -32,15 +32,15 @@ namespace Le_Sa
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formDesktop));
             this.pnlDesktop = new System.Windows.Forms.Panel();
             this.pnlUser = new System.Windows.Forms.Panel();
+            this.cRPBDP = new Le_Sa.CustRoundedPictureBox();
             this.lblUserName = new System.Windows.Forms.Label();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.crBtnSettings = new Le_Sa.CustRoundedButton();
             this.crBtnHistory = new Le_Sa.CustRoundedButton();
+            this.crBtnSettings = new Le_Sa.CustRoundedButton();
             this.crBtnBrowserControls = new Le_Sa.CustRoundedButton();
-            this.cRPBDP = new Le_Sa.CustRoundedPictureBox();
             this.pnlUser.SuspendLayout();
-            this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cRPBDP)).BeginInit();
+            this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlDesktop
@@ -61,6 +61,21 @@ namespace Le_Sa
             this.pnlUser.Name = "pnlUser";
             this.pnlUser.Size = new System.Drawing.Size(240, 240);
             this.pnlUser.TabIndex = 0;
+            // 
+            // cRPBDP
+            // 
+            this.cRPBDP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(76)))));
+            this.cRPBDP.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(76)))));
+            this.cRPBDP.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(44)))), ((int)(((byte)(90)))));
+            this.cRPBDP.BorderRadius = 150;
+            this.cRPBDP.BorderSize = 3;
+            this.cRPBDP.Image = global::Le_Sa.Properties.Resources.user_90px;
+            this.cRPBDP.Location = new System.Drawing.Point(45, 27);
+            this.cRPBDP.Name = "cRPBDP";
+            this.cRPBDP.Size = new System.Drawing.Size(150, 150);
+            this.cRPBDP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.cRPBDP.TabIndex = 2;
+            this.cRPBDP.TabStop = false;
             // 
             // lblUserName
             // 
@@ -86,28 +101,6 @@ namespace Le_Sa
             this.pnlMenu.Size = new System.Drawing.Size(240, 561);
             this.pnlMenu.TabIndex = 0;
             // 
-            // crBtnSettings
-            // 
-            this.crBtnSettings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.crBtnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(74)))));
-            this.crBtnSettings.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(74)))));
-            this.crBtnSettings.BorderColor = System.Drawing.Color.PapayaWhip;
-            this.crBtnSettings.BorderRadius = 15;
-            this.crBtnSettings.BorderSize = 0;
-            this.crBtnSettings.FlatAppearance.BorderSize = 0;
-            this.crBtnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crBtnSettings.Font = new System.Drawing.Font("Microsoft Tai Le", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.crBtnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(39)))), ((int)(((byte)(29)))));
-            this.crBtnSettings.Location = new System.Drawing.Point(12, 510);
-            this.crBtnSettings.Name = "crBtnSettings";
-            this.crBtnSettings.Size = new System.Drawing.Size(216, 39);
-            this.crBtnSettings.TabIndex = 7;
-            this.crBtnSettings.Text = "Settings";
-            this.crBtnSettings.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(39)))), ((int)(((byte)(29)))));
-            this.crBtnSettings.UseVisualStyleBackColor = false;
-            this.crBtnSettings.Click += new System.EventHandler(this.crBtnSettings_Click);
-            // 
             // crBtnHistory
             // 
             this.crBtnHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(76)))));
@@ -130,6 +123,28 @@ namespace Le_Sa
             this.crBtnHistory.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
             this.crBtnHistory.UseVisualStyleBackColor = false;
             this.crBtnHistory.Click += new System.EventHandler(this.crBtnHistory_Click);
+            // 
+            // crBtnSettings
+            // 
+            this.crBtnSettings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.crBtnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(74)))));
+            this.crBtnSettings.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(74)))));
+            this.crBtnSettings.BorderColor = System.Drawing.Color.PapayaWhip;
+            this.crBtnSettings.BorderRadius = 15;
+            this.crBtnSettings.BorderSize = 0;
+            this.crBtnSettings.FlatAppearance.BorderSize = 0;
+            this.crBtnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBtnSettings.Font = new System.Drawing.Font("Microsoft Tai Le", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.crBtnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(39)))), ((int)(((byte)(29)))));
+            this.crBtnSettings.Location = new System.Drawing.Point(12, 510);
+            this.crBtnSettings.Name = "crBtnSettings";
+            this.crBtnSettings.Size = new System.Drawing.Size(216, 39);
+            this.crBtnSettings.TabIndex = 7;
+            this.crBtnSettings.Text = "Settings";
+            this.crBtnSettings.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(39)))), ((int)(((byte)(29)))));
+            this.crBtnSettings.UseVisualStyleBackColor = false;
+            this.crBtnSettings.Click += new System.EventHandler(this.crBtnSettings_Click);
             // 
             // crBtnBrowserControls
             // 
@@ -154,21 +169,6 @@ namespace Le_Sa
             this.crBtnBrowserControls.UseVisualStyleBackColor = false;
             this.crBtnBrowserControls.Click += new System.EventHandler(this.crBtnBrowserControls_Click);
             // 
-            // cRPBDP
-            // 
-            this.cRPBDP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(76)))));
-            this.cRPBDP.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(46)))), ((int)(((byte)(76)))));
-            this.cRPBDP.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(44)))), ((int)(((byte)(90)))));
-            this.cRPBDP.BorderRadius = 150;
-            this.cRPBDP.BorderSize = 3;
-            this.cRPBDP.Image = global::Le_Sa.Properties.Resources.user_90px;
-            this.cRPBDP.Location = new System.Drawing.Point(45, 27);
-            this.cRPBDP.Name = "cRPBDP";
-            this.cRPBDP.Size = new System.Drawing.Size(150, 150);
-            this.cRPBDP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.cRPBDP.TabIndex = 2;
-            this.cRPBDP.TabStop = false;
-            // 
             // formDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,8 +187,8 @@ namespace Le_Sa
             this.Load += new System.EventHandler(this.formDesktop_Load);
             this.pnlUser.ResumeLayout(false);
             this.pnlUser.PerformLayout();
-            this.pnlMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cRPBDP)).EndInit();
+            this.pnlMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

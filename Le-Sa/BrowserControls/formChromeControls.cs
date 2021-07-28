@@ -191,11 +191,6 @@ namespace Le_Sa.BrowserControls
         #endregion
 
         #region Setting Status
-        private void lblStatus_SizeChanged(object sender, EventArgs e)
-        {
-            lblStatus.Location = new Point((cRPnlStatus.Width / 2) - (lblStatus.Width / 2), (cRPnlStatus.Height / 2) - (lblStatus.Height / 2));
-        }
-
         private void Dis_IncognitoModeAvailability()
         {
             lblPolicy.Text = lblDisableIncognitoMode.Text;
@@ -256,15 +251,15 @@ namespace Le_Sa.BrowserControls
         {
             if (cTBtn.CheckState == CheckState.Checked)
             {
-                cRPnlStatus.BackColor = statusEnabledBack;
-                lblStatus.Text = "Enabled";
-                lblStatus.ForeColor = statusEnabledFore;
+                crBtnStatus.BackColor = statusEnabledBack;
+                crBtnStatus.Text = "Enabled";
+                crBtnStatus.ForeColor = statusEnabledFore;
             }
             else if (cTBtn. CheckState == CheckState.Unchecked)
             {
-                cRPnlStatus.BackColor = statusDisabledBack;
-                lblStatus.Text = "Disabled";
-                lblStatus.ForeColor = statusDisabledFore;
+                crBtnStatus.BackColor = statusDisabledBack;
+                crBtnStatus.Text = "Disabled";
+                crBtnStatus.ForeColor = statusDisabledFore;
             }
         }
         #endregion

@@ -150,5 +150,12 @@ namespace Le_Sa.BrowserControls
             ActiveButton(sender, RGBColors.btnChromeClickedBack);
             crBtnChrome.BorderColor = RGBColors.btnChromeClickedBorder;
         }
+
+        private void crBtnFirefox_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new formFirefoxControl());
+            ActiveButton(sender, RGBColors.btnFirefoxClickedBack);
+            crBtnChrome.BorderColor = RGBColors.btnFirefoxClickedBorder;
+        }
     }
 }

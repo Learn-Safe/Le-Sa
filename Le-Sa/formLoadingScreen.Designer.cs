@@ -36,17 +36,17 @@
             this.pnlLoadingBack = new System.Windows.Forms.Panel();
             this.pnlLoadingFront = new System.Windows.Forms.Panel();
             this.timerLoading = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblProduct = new System.Windows.Forms.Label();
             this.custRoundedPanel1 = new Le_Sa.CustRoundedPanel();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.llblHaveAnAccount = new System.Windows.Forms.LinkLabel();
+            this.crBtnVisibility = new Le_Sa.CustRoundedButton();
             this.cTBUsername = new Le_Sa.CustomControls.CustomTextBox();
             this.cTBPassword = new Le_Sa.CustomControls.CustomTextBox();
             this.crBtnContinue = new Le_Sa.CustRoundedButton();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.llblForgotPassword = new System.Windows.Forms.LinkLabel();
-            this.crBtnVisibility = new Le_Sa.CustRoundedButton();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.pnlLoadingBack.SuspendLayout();
             this.custRoundedPanel1.SuspendLayout();
@@ -109,16 +109,16 @@
             this.timerLoading.Interval = 10;
             this.timerLoading.Tick += new System.EventHandler(this.timerLoading_Tick);
             // 
-            // label1
+            // lblProduct
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(154, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(232, 16);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "L    E    A    R    N     -     S    A    F    E";
+            this.lblProduct.AutoSize = true;
+            this.lblProduct.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProduct.ForeColor = System.Drawing.Color.White;
+            this.lblProduct.Location = new System.Drawing.Point(154, 9);
+            this.lblProduct.Name = "lblProduct";
+            this.lblProduct.Size = new System.Drawing.Size(232, 16);
+            this.lblProduct.TabIndex = 16;
+            this.lblProduct.Text = "L    E    A    R    N     -     S    A    F    E";
             // 
             // custRoundedPanel1
             // 
@@ -169,6 +169,27 @@
             this.llblHaveAnAccount.Text = "Don\'t have an account?   Sign Up";
             this.llblHaveAnAccount.VisitedLinkColor = System.Drawing.Color.LightGray;
             this.llblHaveAnAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblHaveAnAccount_LinkClicked);
+            // 
+            // crBtnVisibility
+            // 
+            this.crBtnVisibility.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnVisibility.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnVisibility.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.crBtnVisibility.BorderColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnVisibility.BorderRadius = 20;
+            this.crBtnVisibility.BorderSize = 2;
+            this.crBtnVisibility.FlatAppearance.BorderSize = 0;
+            this.crBtnVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBtnVisibility.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnVisibility.Image = global::Le_Sa.Properties.Resources.hide_22px;
+            this.crBtnVisibility.Location = new System.Drawing.Point(235, 231);
+            this.crBtnVisibility.Name = "crBtnVisibility";
+            this.crBtnVisibility.Size = new System.Drawing.Size(27, 27);
+            this.crBtnVisibility.TabIndex = 58;
+            this.crBtnVisibility.TextColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnVisibility.UseVisualStyleBackColor = false;
+            this.crBtnVisibility.MouseDown += new System.Windows.Forms.MouseEventHandler(this.crBtnVisibility_MouseDown);
+            this.crBtnVisibility.MouseUp += new System.Windows.Forms.MouseEventHandler(this.crBtnVisibility_MouseUp);
             // 
             // cTBUsername
             // 
@@ -269,27 +290,6 @@
             this.llblForgotPassword.VisitedLinkColor = System.Drawing.Color.LightGray;
             this.llblForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblForgotPassword_LinkClicked);
             // 
-            // crBtnVisibility
-            // 
-            this.crBtnVisibility.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnVisibility.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnVisibility.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.crBtnVisibility.BorderColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnVisibility.BorderRadius = 20;
-            this.crBtnVisibility.BorderSize = 2;
-            this.crBtnVisibility.FlatAppearance.BorderSize = 0;
-            this.crBtnVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crBtnVisibility.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnVisibility.Image = global::Le_Sa.Properties.Resources.hide_22px;
-            this.crBtnVisibility.Location = new System.Drawing.Point(235, 231);
-            this.crBtnVisibility.Name = "crBtnVisibility";
-            this.crBtnVisibility.Size = new System.Drawing.Size(27, 27);
-            this.crBtnVisibility.TabIndex = 58;
-            this.crBtnVisibility.TextColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnVisibility.UseVisualStyleBackColor = false;
-            this.crBtnVisibility.MouseDown += new System.Windows.Forms.MouseEventHandler(this.crBtnVisibility_MouseDown);
-            this.crBtnVisibility.MouseUp += new System.Windows.Forms.MouseEventHandler(this.crBtnVisibility_MouseUp);
-            // 
             // pbLogo
             // 
             this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -308,7 +308,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(919, 490);
             this.Controls.Add(this.custRoundedPanel1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblProduct);
             this.Controls.Add(this.lblCreator);
             this.Controls.Add(this.lblSlogan);
             this.Controls.Add(this.lblProductName);
@@ -339,7 +339,7 @@
         private System.Windows.Forms.Panel pnlLoadingFront;
         private System.Windows.Forms.Timer timerLoading;
         private System.Windows.Forms.PictureBox pbLogo;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblProduct;
         private CustRoundedPanel custRoundedPanel1;
         private CustRoundedButton crBtnVisibility;
         private CustomControls.CustomTextBox cTBUsername;

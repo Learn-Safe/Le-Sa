@@ -168,6 +168,7 @@ namespace Le_Sa.BrowserControls
             this.crBtnFirefox.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.crBtnFirefox.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
             this.crBtnFirefox.UseVisualStyleBackColor = false;
+            this.crBtnFirefox.Click += new System.EventHandler(this.crBtnFirefox_Click);
             // 
             // crBtnChrome
             // 
