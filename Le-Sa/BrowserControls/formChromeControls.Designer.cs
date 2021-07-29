@@ -31,6 +31,7 @@ namespace Le_Sa.BrowserControls
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formChromeControls));
             this.pnlDescription = new System.Windows.Forms.Panel();
+            this.crBtnStatus = new Le_Sa.CustRoundedButton();
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblPolicy = new System.Windows.Forms.Label();
             this.pnlControls = new System.Windows.Forms.Panel();
@@ -48,7 +49,6 @@ namespace Le_Sa.BrowserControls
             this.cTBtnGuestMode = new Le_Sa.CustomControls.CustToggleButton();
             this.lblDisableIncognitoMode = new System.Windows.Forms.Label();
             this.cTBtnIncognitoMode = new Le_Sa.CustomControls.CustToggleButton();
-            this.crBtnStatus = new Le_Sa.CustRoundedButton();
             this.pnlDescription.SuspendLayout();
             this.pnlControls.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +65,26 @@ namespace Le_Sa.BrowserControls
             this.pnlDescription.Padding = new System.Windows.Forms.Padding(5);
             this.pnlDescription.Size = new System.Drawing.Size(335, 521);
             this.pnlDescription.TabIndex = 0;
+            // 
+            // crBtnStatus
+            // 
+            this.crBtnStatus.BackColor = System.Drawing.Color.Gray;
+            this.crBtnStatus.BackgroundColor = System.Drawing.Color.Gray;
+            this.crBtnStatus.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.crBtnStatus.BorderRadius = 10;
+            this.crBtnStatus.BorderSize = 0;
+            this.crBtnStatus.Enabled = false;
+            this.crBtnStatus.FlatAppearance.BorderSize = 0;
+            this.crBtnStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBtnStatus.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold);
+            this.crBtnStatus.ForeColor = System.Drawing.Color.White;
+            this.crBtnStatus.Location = new System.Drawing.Point(233, 12);
+            this.crBtnStatus.Name = "crBtnStatus";
+            this.crBtnStatus.Size = new System.Drawing.Size(90, 25);
+            this.crBtnStatus.TabIndex = 2;
+            this.crBtnStatus.Text = "Unknown";
+            this.crBtnStatus.TextColor = System.Drawing.Color.White;
+            this.crBtnStatus.UseVisualStyleBackColor = false;
             // 
             // lblDescription
             // 
@@ -312,26 +332,6 @@ namespace Le_Sa.BrowserControls
             this.cTBtnIncognitoMode.Tag = "IncognitoModeAvailability";
             this.cTBtnIncognitoMode.UseVisualStyleBackColor = true;
             this.cTBtnIncognitoMode.CheckedChanged += new System.EventHandler(this.cTBtnIncognitoMode_CheckedChanged);
-            // 
-            // crBtnStatus
-            // 
-            this.crBtnStatus.BackColor = System.Drawing.Color.Gray;
-            this.crBtnStatus.BackgroundColor = System.Drawing.Color.Gray;
-            this.crBtnStatus.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.crBtnStatus.BorderRadius = 10;
-            this.crBtnStatus.BorderSize = 0;
-            this.crBtnStatus.Enabled = false;
-            this.crBtnStatus.FlatAppearance.BorderSize = 0;
-            this.crBtnStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crBtnStatus.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Bold);
-            this.crBtnStatus.ForeColor = System.Drawing.Color.White;
-            this.crBtnStatus.Location = new System.Drawing.Point(233, 12);
-            this.crBtnStatus.Name = "crBtnStatus";
-            this.crBtnStatus.Size = new System.Drawing.Size(90, 25);
-            this.crBtnStatus.TabIndex = 2;
-            this.crBtnStatus.Text = "Unknown";
-            this.crBtnStatus.TextColor = System.Drawing.Color.White;
-            this.crBtnStatus.UseVisualStyleBackColor = false;
             // 
             // formChromeControls
             // 

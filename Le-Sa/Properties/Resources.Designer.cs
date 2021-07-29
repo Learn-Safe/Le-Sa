@@ -63,6 +63,16 @@ namespace Le_Sa.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back_48px {
+            get {
+                object obj = ResourceManager.GetObject("back_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap browser_control_65 {
             get {
                 object obj = ResourceManager.GetObject("browser_control_65", resourceCulture);
@@ -123,6 +133,16 @@ namespace Le_Sa.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap forward_48px {
+            get {
+                object obj = ResourceManager.GetObject("forward_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hide_22px {
             get {
                 object obj = ResourceManager.GetObject("hide_22px", resourceCulture);
@@ -136,6 +156,16 @@ namespace Le_Sa.Properties {
         internal static System.Drawing.Bitmap history_65px {
             get {
                 object obj = ResourceManager.GetObject("history_65px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap home_48px {
+            get {
+                object obj = ResourceManager.GetObject("home_48px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +226,16 @@ namespace Le_Sa.Properties {
         internal static System.Drawing.Bitmap minimize_click20px {
             get {
                 object obj = ResourceManager.GetObject("minimize_click20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap reload_48px {
+            get {
+                object obj = ResourceManager.GetObject("reload_48px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
