@@ -146,6 +146,7 @@ namespace Le_Sa.BrowserControls
             this.crBtnEdge.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.crBtnEdge.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
             this.crBtnEdge.UseVisualStyleBackColor = false;
+            this.crBtnEdge.Click += new System.EventHandler(this.crBtnEdge_Click);
             // 
             // crBtnFirefox
             // 

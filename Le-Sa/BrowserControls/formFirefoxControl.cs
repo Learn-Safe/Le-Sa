@@ -49,13 +49,11 @@ namespace Le_Sa.BrowserControls
                 if (keyNeeded.Any(cTBtn.Tag.ToString().Contains))
                 {
                     SubFolderPath = @"Software\Policies\Mozilla\Firefox\" + cTBtn.Tag.ToString();
-                    MessageBox.Show(SubFolderPath);
                     keyName = "Default";
                 }
                 else
                 {
                     SubFolderPath = @"Software\Policies\Mozilla\Firefox\";
-                    MessageBox.Show(SubFolderPath);
                     keyName = cTBtn.Tag.ToString();
                 }
                 if (ReadWriteRegistry.ReadRegistry(BaseFolder, SubFolderPath, keyName).Item1)
@@ -99,13 +97,11 @@ namespace Le_Sa.BrowserControls
                 if (keyNeeded.Any(currentcTBtn.Tag.ToString().Contains))
                 {
                     SubFolderPath = @"Software\Policies\Mozilla\Firefox\" + currentcTBtn.Tag.ToString();
-                    MessageBox.Show(SubFolderPath);
                     keyName = "Default";
                 }
                 else
                 {
                     SubFolderPath = @"Software\Policies\Mozilla\Firefox\";
-                    MessageBox.Show(SubFolderPath);
                     keyName = currentcTBtn.Tag.ToString();
                 }
                 if (currentcTBtn.Checked)
