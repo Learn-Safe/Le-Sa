@@ -12,14 +12,14 @@ namespace Le_Sa
         [STAThread]
         static void Main()
         {
-            if (!AdminCheck.IsAdmin())
-            {
-                AdminCheck.RestartUnderAdmin();
-            }
+            //if (!AdminCheck.IsAdmin())
+            //{
+            //    AdminCheck.RestartUnderAdmin();
+            //}
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formLoadingScreen());
+            Application.Run(new formDesktop());
         }
     }
 }

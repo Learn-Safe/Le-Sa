@@ -41,8 +41,15 @@ namespace Le_Sa.Models.Registry
         {
             try
             {
-                RegistryKey KeyNames = BaseFolder.OpenSubKey(SubFolder);
-                return (true, KeyNames.GetSubKeyNames());
+                RegistryKey keyName = BaseFolder.OpenSubKey(SubFolder);
+                if (keyName != null)
+                {
+                    return (true, keyName.GetSubKeyNames());
+                }
+                else
+                {
+                    return (false, null);
+                }
             }
             catch
             {

@@ -62,17 +62,20 @@ namespace Le_Sa.BrowserControls
         {
             foreach (var crBtn in pnlDashboard.Controls.OfType<CustRoundedButton>())
             {
-                foreach (string browser in browserList)
+                if (browserList != null)
                 {
-                    if (crBtn.Enabled == false)
+                    foreach (string browser in browserList)
                     {
-                        if (browser == crBtn.Tag.ToString())
+                        if (crBtn.Enabled == false)
                         {
-                            crBtn.Enabled = true;
-                        }
-                        else if (browser.Substring(0, 5) == crBtn.Tag.ToString().Substring(0, 5))
-                        {
-                            crBtn.Enabled = true;
+                            if (browser == crBtn.Tag.ToString())
+                            {
+                                crBtn.Enabled = true;
+                            }
+                            else if (browser.Substring(0, 5) == crBtn.Tag.ToString().Substring(0, 5))
+                            {
+                                crBtn.Enabled = true;
+                            }
                         }
                     }
                 }

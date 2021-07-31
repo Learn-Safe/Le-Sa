@@ -438,6 +438,7 @@
     <None Include="userDataSet.xss">
       <DependentUpon>userDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Resources\Le-Sa_120px_png1.png" />
     <Content Include="Data\user.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -445,7 +446,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>user.mdf</DependentUpon>
     </Content>
-    <None Include="Resources\Le-Sa_120px_png1.png" />
     <Content Include="Le-Sa_256px_ico.ico" />
     <None Include="Resources\back_48px.png" />
     <None Include="Resources\forward_48px.png" />
