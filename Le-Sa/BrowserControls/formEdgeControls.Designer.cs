@@ -30,8 +30,8 @@ namespace Le_Sa.BrowserControls
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formEdgeControls));
-            this.lblBrowserAddPersonEnabled = new System.Windows.Forms.Label();
-            this.cTBtnBrowserAddPersonEnabled = new Le_Sa.CustomControls.CustToggleButton();
+            this.lblBrowserAddProfileEnabled = new System.Windows.Forms.Label();
+            this.cTBtnBrowserAddProfileEnabled = new Le_Sa.CustomControls.CustToggleButton();
             this.lblAllowDeletingBrowserHistory = new System.Windows.Forms.Label();
             this.cTBtnAllowDeletingBrowserHistory = new Le_Sa.CustomControls.CustToggleButton();
             this.lblDeveloperToolsAvailability = new System.Windows.Forms.Label();
@@ -40,7 +40,7 @@ namespace Le_Sa.BrowserControls
             this.cTBtnPasswordLeakDetectionEnabled = new Le_Sa.CustomControls.CustToggleButton();
             this.lblBlockExternalExtensions = new System.Windows.Forms.Label();
             this.cTBtnBlockExternalExtensions = new Le_Sa.CustomControls.CustToggleButton();
-            this.lblDisableAddProfile = new System.Windows.Forms.Label();
+            this.lblBrowserGuestModeEnabled = new System.Windows.Forms.Label();
             this.cTBtnAddProfile = new Le_Sa.CustomControls.CustToggleButton();
             this.lblDisableInPrivateMode = new System.Windows.Forms.Label();
             this.cTBtnInPrivateMode = new Le_Sa.CustomControls.CustToggleButton();
@@ -53,34 +53,34 @@ namespace Le_Sa.BrowserControls
             this.pnlDescription.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblBrowserAddPersonEnabled
+            // lblBrowserAddProfileEnabled
             // 
-            this.lblBrowserAddPersonEnabled.AutoSize = true;
-            this.lblBrowserAddPersonEnabled.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBrowserAddPersonEnabled.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblBrowserAddPersonEnabled.Location = new System.Drawing.Point(12, 210);
-            this.lblBrowserAddPersonEnabled.Name = "lblBrowserAddPersonEnabled";
-            this.lblBrowserAddPersonEnabled.Size = new System.Drawing.Size(167, 21);
-            this.lblBrowserAddPersonEnabled.TabIndex = 17;
-            this.lblBrowserAddPersonEnabled.Text = "Block Add New Person";
-            this.lblBrowserAddPersonEnabled.Click += new System.EventHandler(this.lblBrowserAddPersonEnabled_Click);
+            this.lblBrowserAddProfileEnabled.AutoSize = true;
+            this.lblBrowserAddProfileEnabled.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBrowserAddProfileEnabled.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblBrowserAddProfileEnabled.Location = new System.Drawing.Point(12, 210);
+            this.lblBrowserAddProfileEnabled.Name = "lblBrowserAddProfileEnabled";
+            this.lblBrowserAddProfileEnabled.Size = new System.Drawing.Size(164, 21);
+            this.lblBrowserAddProfileEnabled.TabIndex = 17;
+            this.lblBrowserAddProfileEnabled.Text = "Block Add New Profile";
+            this.lblBrowserAddProfileEnabled.Click += new System.EventHandler(this.lblBrowserAddProfileEnabled_Click);
             // 
-            // cTBtnBrowserAddPersonEnabled
+            // cTBtnBrowserAddProfileEnabled
             // 
-            this.cTBtnBrowserAddPersonEnabled.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cTBtnBrowserAddPersonEnabled.AutoSize = true;
-            this.cTBtnBrowserAddPersonEnabled.Location = new System.Drawing.Point(306, 210);
-            this.cTBtnBrowserAddPersonEnabled.MinimumSize = new System.Drawing.Size(45, 22);
-            this.cTBtnBrowserAddPersonEnabled.Name = "cTBtnBrowserAddPersonEnabled";
-            this.cTBtnBrowserAddPersonEnabled.OffBackColor = System.Drawing.Color.Gray;
-            this.cTBtnBrowserAddPersonEnabled.OffToggleColor = System.Drawing.Color.Gainsboro;
-            this.cTBtnBrowserAddPersonEnabled.OnBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.cTBtnBrowserAddPersonEnabled.OnToggleColor = System.Drawing.Color.Gainsboro;
-            this.cTBtnBrowserAddPersonEnabled.Size = new System.Drawing.Size(45, 22);
-            this.cTBtnBrowserAddPersonEnabled.TabIndex = 16;
-            this.cTBtnBrowserAddPersonEnabled.Tag = "BrowserAddPersonEnabled";
-            this.cTBtnBrowserAddPersonEnabled.UseVisualStyleBackColor = true;
-            this.cTBtnBrowserAddPersonEnabled.CheckedChanged += new System.EventHandler(this.cTBtnBrowserAddPersonEnabled_CheckedChanged);
+            this.cTBtnBrowserAddProfileEnabled.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cTBtnBrowserAddProfileEnabled.AutoSize = true;
+            this.cTBtnBrowserAddProfileEnabled.Location = new System.Drawing.Point(306, 210);
+            this.cTBtnBrowserAddProfileEnabled.MinimumSize = new System.Drawing.Size(45, 22);
+            this.cTBtnBrowserAddProfileEnabled.Name = "cTBtnBrowserAddProfileEnabled";
+            this.cTBtnBrowserAddProfileEnabled.OffBackColor = System.Drawing.Color.Gray;
+            this.cTBtnBrowserAddProfileEnabled.OffToggleColor = System.Drawing.Color.Gainsboro;
+            this.cTBtnBrowserAddProfileEnabled.OnBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.cTBtnBrowserAddProfileEnabled.OnToggleColor = System.Drawing.Color.Gainsboro;
+            this.cTBtnBrowserAddProfileEnabled.Size = new System.Drawing.Size(45, 22);
+            this.cTBtnBrowserAddProfileEnabled.TabIndex = 16;
+            this.cTBtnBrowserAddProfileEnabled.Tag = "BrowserAddProfileEnabled";
+            this.cTBtnBrowserAddProfileEnabled.UseVisualStyleBackColor = true;
+            this.cTBtnBrowserAddProfileEnabled.CheckedChanged += new System.EventHandler(this.cTBtnBrowserAddProfileEnabled_CheckedChanged);
             // 
             // lblAllowDeletingBrowserHistory
             // 
@@ -198,17 +198,17 @@ namespace Le_Sa.BrowserControls
             this.cTBtnBlockExternalExtensions.UseVisualStyleBackColor = true;
             this.cTBtnBlockExternalExtensions.CheckedChanged += new System.EventHandler(this.cTBtnBlockExternalExtensions_CheckedChanged);
             // 
-            // lblDisableAddProfile
+            // lblBrowserGuestModeEnabled
             // 
-            this.lblDisableAddProfile.AutoSize = true;
-            this.lblDisableAddProfile.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDisableAddProfile.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblDisableAddProfile.Location = new System.Drawing.Point(12, 45);
-            this.lblDisableAddProfile.Name = "lblDisableAddProfile";
-            this.lblDisableAddProfile.Size = new System.Drawing.Size(142, 21);
-            this.lblDisableAddProfile.TabIndex = 7;
-            this.lblDisableAddProfile.Text = "Disable Add Profile";
-            this.lblDisableAddProfile.Click += new System.EventHandler(this.lblDisableAddProfile_Click);
+            this.lblBrowserGuestModeEnabled.AutoSize = true;
+            this.lblBrowserGuestModeEnabled.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBrowserGuestModeEnabled.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblBrowserGuestModeEnabled.Location = new System.Drawing.Point(12, 45);
+            this.lblBrowserGuestModeEnabled.Name = "lblBrowserGuestModeEnabled";
+            this.lblBrowserGuestModeEnabled.Size = new System.Drawing.Size(149, 21);
+            this.lblBrowserGuestModeEnabled.TabIndex = 7;
+            this.lblBrowserGuestModeEnabled.Text = "Disable Guest Mode";
+            this.lblBrowserGuestModeEnabled.Click += new System.EventHandler(this.lblDisableAddProfile_Click);
             // 
             // cTBtnAddProfile
             // 
@@ -223,7 +223,7 @@ namespace Le_Sa.BrowserControls
             this.cTBtnAddProfile.OnToggleColor = System.Drawing.Color.Gainsboro;
             this.cTBtnAddProfile.Size = new System.Drawing.Size(45, 22);
             this.cTBtnAddProfile.TabIndex = 6;
-            this.cTBtnAddProfile.Tag = "BrowserAddProfileEnabled";
+            this.cTBtnAddProfile.Tag = "BrowserGuestModeEnabled";
             this.cTBtnAddProfile.UseVisualStyleBackColor = true;
             this.cTBtnAddProfile.CheckedChanged += new System.EventHandler(this.cTBtnAddProfile_CheckedChanged);
             // 
@@ -288,8 +288,8 @@ namespace Le_Sa.BrowserControls
             // 
             // pnlControls
             // 
-            this.pnlControls.Controls.Add(this.lblBrowserAddPersonEnabled);
-            this.pnlControls.Controls.Add(this.cTBtnBrowserAddPersonEnabled);
+            this.pnlControls.Controls.Add(this.lblBrowserAddProfileEnabled);
+            this.pnlControls.Controls.Add(this.cTBtnBrowserAddProfileEnabled);
             this.pnlControls.Controls.Add(this.lblAllowDeletingBrowserHistory);
             this.pnlControls.Controls.Add(this.cTBtnAllowDeletingBrowserHistory);
             this.pnlControls.Controls.Add(this.lblDeveloperToolsAvailability);
@@ -298,7 +298,7 @@ namespace Le_Sa.BrowserControls
             this.pnlControls.Controls.Add(this.cTBtnPasswordLeakDetectionEnabled);
             this.pnlControls.Controls.Add(this.lblBlockExternalExtensions);
             this.pnlControls.Controls.Add(this.cTBtnBlockExternalExtensions);
-            this.pnlControls.Controls.Add(this.lblDisableAddProfile);
+            this.pnlControls.Controls.Add(this.lblBrowserGuestModeEnabled);
             this.pnlControls.Controls.Add(this.cTBtnAddProfile);
             this.pnlControls.Controls.Add(this.lblDisableInPrivateMode);
             this.pnlControls.Controls.Add(this.cTBtnInPrivateMode);
@@ -356,8 +356,8 @@ namespace Le_Sa.BrowserControls
 
         #endregion
 
-        private System.Windows.Forms.Label lblBrowserAddPersonEnabled;
-        private CustomControls.CustToggleButton cTBtnBrowserAddPersonEnabled;
+        private System.Windows.Forms.Label lblBrowserAddProfileEnabled;
+        private CustomControls.CustToggleButton cTBtnBrowserAddProfileEnabled;
         private System.Windows.Forms.Label lblAllowDeletingBrowserHistory;
         private CustomControls.CustToggleButton cTBtnAllowDeletingBrowserHistory;
         private System.Windows.Forms.Label lblDeveloperToolsAvailability;
@@ -366,7 +366,7 @@ namespace Le_Sa.BrowserControls
         private CustomControls.CustToggleButton cTBtnPasswordLeakDetectionEnabled;
         private System.Windows.Forms.Label lblBlockExternalExtensions;
         private CustomControls.CustToggleButton cTBtnBlockExternalExtensions;
-        private System.Windows.Forms.Label lblDisableAddProfile;
+        private System.Windows.Forms.Label lblBrowserGuestModeEnabled;
         private CustomControls.CustToggleButton cTBtnAddProfile;
         private System.Windows.Forms.Label lblDisableInPrivateMode;
         private CustomControls.CustToggleButton cTBtnInPrivateMode;
