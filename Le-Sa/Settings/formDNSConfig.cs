@@ -1,12 +1,7 @@
-﻿using System;
+﻿using Le_Sa.Models.Netsh;
+using Le_Sa.Structs;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Web.WebView2.Core;
 using System.Windows.Forms;
 
 namespace Le_Sa.Settings
@@ -18,6 +13,7 @@ namespace Le_Sa.Settings
             InitializeComponent();
         }
 
+        #region Webview Navigation Controls
         private void crBtnBack_Click(object sender, EventArgs e)
         {
             wvOpenDNS.GoBack();
@@ -41,6 +37,43 @@ namespace Le_Sa.Settings
         private void crBtnSignUp_Click(object sender, EventArgs e)
         {
             wvOpenDNS.CoreWebView2.Navigate(@"https://www.opendns.com/home-internet-security#parental-controls");
+        }
+        #endregion
+
+        private void crBtnSetupThisDevice_Click(object sender, EventArgs e)
+        {
+            foreach (var @interface in NetshHelper.GetInterfaces())
+            {
+                Console.WriteLine(@interface);
+                try
+                {
+                    NetshHelper.UpdateDnsEntries(@interface, "208.67.222.222", "208.67.220.220");
+                }
+                catch (Exception dnsError)
+                {
+                    Console.WriteLine(dnsError.Message);
+                }
+                wvOpenDNS.CoreWebView2.Navigate("https://welcome.opendns.com/");
+            }
+        }
+
+        private void crBtnSetupRouter_Click(object sender, EventArgs e)
+        {
+            wvOpenDNS.CoreWebView2.Navigate("https://support.opendns.com/hc/en-us/sections/206253627");
+        }
+
+        private void crBtnResetThisDevice_Click(object sender, EventArgs e)
+        {
+            foreach (var @interface in NetshHelper.GetInterfaces())
+            {
+                NetshHelper.ResetDnsEntries(@interface);
+            }
+            wvOpenDNS.CoreWebView2.Navigate("https://welcome.opendns.com/");
+        }
+
+        private void crBtnDNSStatus_Click(object sender, EventArgs e)
+        {
+            wvOpenDNS.CoreWebView2.Navigate("https://welcome.opendns.com/");
         }
     }
 }

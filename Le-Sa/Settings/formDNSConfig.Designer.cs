@@ -32,13 +32,15 @@ namespace Le_Sa.Settings
             this.pnlDesktop = new System.Windows.Forms.Panel();
             this.wvOpenDNS = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.pnlNav = new System.Windows.Forms.Panel();
+            this.crBtnDNSStatus = new Le_Sa.CustRoundedButton();
+            this.crBtnResetThisDevice = new Le_Sa.CustRoundedButton();
+            this.crBtnSetupRouter = new Le_Sa.CustRoundedButton();
+            this.crBtnSetupThisDevice = new Le_Sa.CustRoundedButton();
             this.crBtnSignUp = new Le_Sa.CustRoundedButton();
             this.crBtnHome = new Le_Sa.CustRoundedButton();
             this.crBtnReload = new Le_Sa.CustRoundedButton();
             this.crBtnForward = new Le_Sa.CustRoundedButton();
             this.crBtnBack = new Le_Sa.CustRoundedButton();
-            this.crBtnSetup = new Le_Sa.CustRoundedButton();
-            this.custRoundedButton1 = new Le_Sa.CustRoundedButton();
             this.pnlDesktop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wvOpenDNS)).BeginInit();
             this.pnlNav.SuspendLayout();
@@ -69,8 +71,10 @@ namespace Le_Sa.Settings
             // pnlNav
             // 
             this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(75)))));
-            this.pnlNav.Controls.Add(this.custRoundedButton1);
-            this.pnlNav.Controls.Add(this.crBtnSetup);
+            this.pnlNav.Controls.Add(this.crBtnDNSStatus);
+            this.pnlNav.Controls.Add(this.crBtnResetThisDevice);
+            this.pnlNav.Controls.Add(this.crBtnSetupRouter);
+            this.pnlNav.Controls.Add(this.crBtnSetupThisDevice);
             this.pnlNav.Controls.Add(this.crBtnSignUp);
             this.pnlNav.Controls.Add(this.crBtnHome);
             this.pnlNav.Controls.Add(this.crBtnReload);
@@ -82,9 +86,96 @@ namespace Le_Sa.Settings
             this.pnlNav.Size = new System.Drawing.Size(694, 68);
             this.pnlNav.TabIndex = 5;
             // 
+            // crBtnDNSStatus
+            // 
+            this.crBtnDNSStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.crBtnDNSStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
+            this.crBtnDNSStatus.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
+            this.crBtnDNSStatus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.crBtnDNSStatus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
+            this.crBtnDNSStatus.BorderRadius = 10;
+            this.crBtnDNSStatus.BorderSize = 0;
+            this.crBtnDNSStatus.FlatAppearance.BorderSize = 0;
+            this.crBtnDNSStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBtnDNSStatus.Font = new System.Drawing.Font("Microsoft Tai Le", 11F);
+            this.crBtnDNSStatus.ForeColor = System.Drawing.Color.White;
+            this.crBtnDNSStatus.Location = new System.Drawing.Point(203, 35);
+            this.crBtnDNSStatus.Name = "crBtnDNSStatus";
+            this.crBtnDNSStatus.Size = new System.Drawing.Size(241, 29);
+            this.crBtnDNSStatus.TabIndex = 14;
+            this.crBtnDNSStatus.Text = "Check user DNS Status";
+            this.crBtnDNSStatus.TextColor = System.Drawing.Color.White;
+            this.crBtnDNSStatus.UseVisualStyleBackColor = false;
+            this.crBtnDNSStatus.Click += new System.EventHandler(this.crBtnDNSStatus_Click);
+            // 
+            // crBtnResetThisDevice
+            // 
+            this.crBtnResetThisDevice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.crBtnResetThisDevice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(89)))));
+            this.crBtnResetThisDevice.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(98)))), ((int)(((byte)(89)))));
+            this.crBtnResetThisDevice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.crBtnResetThisDevice.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(87)))), ((int)(((byte)(78)))));
+            this.crBtnResetThisDevice.BorderRadius = 10;
+            this.crBtnResetThisDevice.BorderSize = 2;
+            this.crBtnResetThisDevice.FlatAppearance.BorderSize = 0;
+            this.crBtnResetThisDevice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBtnResetThisDevice.Font = new System.Drawing.Font("Microsoft Tai Le", 11F);
+            this.crBtnResetThisDevice.ForeColor = System.Drawing.Color.White;
+            this.crBtnResetThisDevice.Location = new System.Drawing.Point(450, 35);
+            this.crBtnResetThisDevice.Name = "crBtnResetThisDevice";
+            this.crBtnResetThisDevice.Size = new System.Drawing.Size(241, 29);
+            this.crBtnResetThisDevice.TabIndex = 13;
+            this.crBtnResetThisDevice.Text = "Reset DNS settings on this device";
+            this.crBtnResetThisDevice.TextColor = System.Drawing.Color.White;
+            this.crBtnResetThisDevice.UseVisualStyleBackColor = false;
+            this.crBtnResetThisDevice.Click += new System.EventHandler(this.crBtnResetThisDevice_Click);
+            // 
+            // crBtnSetupRouter
+            // 
+            this.crBtnSetupRouter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.crBtnSetupRouter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
+            this.crBtnSetupRouter.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
+            this.crBtnSetupRouter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.crBtnSetupRouter.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.crBtnSetupRouter.BorderRadius = 10;
+            this.crBtnSetupRouter.BorderSize = 0;
+            this.crBtnSetupRouter.FlatAppearance.BorderSize = 0;
+            this.crBtnSetupRouter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBtnSetupRouter.Font = new System.Drawing.Font("Microsoft Tai Le", 11F);
+            this.crBtnSetupRouter.ForeColor = System.Drawing.Color.White;
+            this.crBtnSetupRouter.Location = new System.Drawing.Point(203, 2);
+            this.crBtnSetupRouter.Name = "crBtnSetupRouter";
+            this.crBtnSetupRouter.Size = new System.Drawing.Size(241, 29);
+            this.crBtnSetupRouter.TabIndex = 12;
+            this.crBtnSetupRouter.Text = "Setup OpenDNS on your router";
+            this.crBtnSetupRouter.TextColor = System.Drawing.Color.White;
+            this.crBtnSetupRouter.UseVisualStyleBackColor = false;
+            this.crBtnSetupRouter.Click += new System.EventHandler(this.crBtnSetupRouter_Click);
+            // 
+            // crBtnSetupThisDevice
+            // 
+            this.crBtnSetupThisDevice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.crBtnSetupThisDevice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
+            this.crBtnSetupThisDevice.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
+            this.crBtnSetupThisDevice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.crBtnSetupThisDevice.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.crBtnSetupThisDevice.BorderRadius = 10;
+            this.crBtnSetupThisDevice.BorderSize = 0;
+            this.crBtnSetupThisDevice.FlatAppearance.BorderSize = 0;
+            this.crBtnSetupThisDevice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBtnSetupThisDevice.Font = new System.Drawing.Font("Microsoft Tai Le", 11F);
+            this.crBtnSetupThisDevice.ForeColor = System.Drawing.Color.White;
+            this.crBtnSetupThisDevice.Location = new System.Drawing.Point(450, 2);
+            this.crBtnSetupThisDevice.Name = "crBtnSetupThisDevice";
+            this.crBtnSetupThisDevice.Size = new System.Drawing.Size(241, 29);
+            this.crBtnSetupThisDevice.TabIndex = 11;
+            this.crBtnSetupThisDevice.Text = "Setup OpenDNS on this device";
+            this.crBtnSetupThisDevice.TextColor = System.Drawing.Color.White;
+            this.crBtnSetupThisDevice.UseVisualStyleBackColor = false;
+            this.crBtnSetupThisDevice.Click += new System.EventHandler(this.crBtnSetupThisDevice_Click);
+            // 
             // crBtnSignUp
             // 
-            this.crBtnSignUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.crBtnSignUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
             this.crBtnSignUp.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
             this.crBtnSignUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -95,9 +186,9 @@ namespace Le_Sa.Settings
             this.crBtnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crBtnSignUp.Font = new System.Drawing.Font("Microsoft Tai Le", 11F);
             this.crBtnSignUp.ForeColor = System.Drawing.Color.White;
-            this.crBtnSignUp.Location = new System.Drawing.Point(514, 3);
+            this.crBtnSignUp.Location = new System.Drawing.Point(77, 3);
             this.crBtnSignUp.Name = "crBtnSignUp";
-            this.crBtnSignUp.Size = new System.Drawing.Size(175, 29);
+            this.crBtnSignUp.Size = new System.Drawing.Size(103, 62);
             this.crBtnSignUp.TabIndex = 10;
             this.crBtnSignUp.Text = "Didn\'t have an account?";
             this.crBtnSignUp.TextColor = System.Drawing.Color.White;
@@ -116,7 +207,7 @@ namespace Le_Sa.Settings
             this.crBtnHome.FlatAppearance.BorderSize = 0;
             this.crBtnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crBtnHome.ForeColor = System.Drawing.Color.White;
-            this.crBtnHome.Location = new System.Drawing.Point(3, 3);
+            this.crBtnHome.Location = new System.Drawing.Point(3, 2);
             this.crBtnHome.Name = "crBtnHome";
             this.crBtnHome.Size = new System.Drawing.Size(31, 31);
             this.crBtnHome.TabIndex = 8;
@@ -136,7 +227,7 @@ namespace Le_Sa.Settings
             this.crBtnReload.FlatAppearance.BorderSize = 0;
             this.crBtnReload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crBtnReload.ForeColor = System.Drawing.Color.White;
-            this.crBtnReload.Location = new System.Drawing.Point(40, 3);
+            this.crBtnReload.Location = new System.Drawing.Point(40, 2);
             this.crBtnReload.Name = "crBtnReload";
             this.crBtnReload.Size = new System.Drawing.Size(31, 31);
             this.crBtnReload.TabIndex = 6;
@@ -156,7 +247,7 @@ namespace Le_Sa.Settings
             this.crBtnForward.FlatAppearance.BorderSize = 0;
             this.crBtnForward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crBtnForward.ForeColor = System.Drawing.Color.White;
-            this.crBtnForward.Location = new System.Drawing.Point(40, 35);
+            this.crBtnForward.Location = new System.Drawing.Point(40, 34);
             this.crBtnForward.Name = "crBtnForward";
             this.crBtnForward.Size = new System.Drawing.Size(31, 31);
             this.crBtnForward.TabIndex = 4;
@@ -176,55 +267,13 @@ namespace Le_Sa.Settings
             this.crBtnBack.FlatAppearance.BorderSize = 0;
             this.crBtnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crBtnBack.ForeColor = System.Drawing.Color.White;
-            this.crBtnBack.Location = new System.Drawing.Point(3, 35);
+            this.crBtnBack.Location = new System.Drawing.Point(3, 34);
             this.crBtnBack.Name = "crBtnBack";
             this.crBtnBack.Size = new System.Drawing.Size(31, 31);
             this.crBtnBack.TabIndex = 2;
             this.crBtnBack.TextColor = System.Drawing.Color.White;
             this.crBtnBack.UseVisualStyleBackColor = false;
             this.crBtnBack.Click += new System.EventHandler(this.crBtnBack_Click);
-            // 
-            // crBtnSetup
-            // 
-            this.crBtnSetup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.crBtnSetup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
-            this.crBtnSetup.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
-            this.crBtnSetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.crBtnSetup.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.crBtnSetup.BorderRadius = 10;
-            this.crBtnSetup.BorderSize = 0;
-            this.crBtnSetup.FlatAppearance.BorderSize = 0;
-            this.crBtnSetup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crBtnSetup.Font = new System.Drawing.Font("Microsoft Tai Le", 11F);
-            this.crBtnSetup.ForeColor = System.Drawing.Color.White;
-            this.crBtnSetup.Location = new System.Drawing.Point(467, 35);
-            this.crBtnSetup.Name = "crBtnSetup";
-            this.crBtnSetup.Size = new System.Drawing.Size(222, 29);
-            this.crBtnSetup.TabIndex = 11;
-            this.crBtnSetup.Text = "Setup OpenDNS on this device";
-            this.crBtnSetup.TextColor = System.Drawing.Color.White;
-            this.crBtnSetup.UseVisualStyleBackColor = false;
-            // 
-            // custRoundedButton1
-            // 
-            this.custRoundedButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.custRoundedButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
-            this.custRoundedButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
-            this.custRoundedButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.custRoundedButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.custRoundedButton1.BorderRadius = 10;
-            this.custRoundedButton1.BorderSize = 0;
-            this.custRoundedButton1.FlatAppearance.BorderSize = 0;
-            this.custRoundedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.custRoundedButton1.Font = new System.Drawing.Font("Microsoft Tai Le", 11F);
-            this.custRoundedButton1.ForeColor = System.Drawing.Color.White;
-            this.custRoundedButton1.Location = new System.Drawing.Point(238, 35);
-            this.custRoundedButton1.Name = "custRoundedButton1";
-            this.custRoundedButton1.Size = new System.Drawing.Size(223, 29);
-            this.custRoundedButton1.TabIndex = 12;
-            this.custRoundedButton1.Text = "Setup OpenDNS on your router";
-            this.custRoundedButton1.TextColor = System.Drawing.Color.White;
-            this.custRoundedButton1.UseVisualStyleBackColor = false;
             // 
             // formDNSConfig
             // 
@@ -254,7 +303,9 @@ namespace Le_Sa.Settings
         private CustRoundedButton crBtnBack;
         private CustRoundedButton crBtnHome;
         private CustRoundedButton crBtnSignUp;
-        private CustRoundedButton crBtnSetup;
-        private CustRoundedButton custRoundedButton1;
+        private CustRoundedButton crBtnSetupThisDevice;
+        private CustRoundedButton crBtnSetupRouter;
+        private CustRoundedButton crBtnDNSStatus;
+        private CustRoundedButton crBtnResetThisDevice;
     }
 }

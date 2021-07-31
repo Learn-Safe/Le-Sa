@@ -1,9 +1,5 @@
-﻿using Le_Sa.Models.RandomString;
+﻿using Le_Sa.Models.AdminCheck;
 using System;
-using System.IO;
-using System.Data.SqlClient;
-using Le_Sa.Account;
-using Le_Sa.BrowserControls;
 using System.Windows.Forms;
 
 namespace Le_Sa
@@ -16,6 +12,11 @@ namespace Le_Sa
         [STAThread]
         static void Main()
         {
+            if (!AdminCheck.IsAdmin())
+            {
+                AdminCheck.RestartUnderAdmin();
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new formLoadingScreen());
