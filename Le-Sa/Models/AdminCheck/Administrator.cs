@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Management;
 using System.Security.Principal;
+using System.Windows.Forms;
 
 namespace Le_Sa.Models.AdminCheck
 {
@@ -30,28 +31,25 @@ namespace Le_Sa.Models.AdminCheck
 
 		public static void RestartUnderAdmin()
 		{
-			var proc = new Process
-			{
-				StartInfo = new ProcessStartInfo
-				{
-					FileName = GetCurrentProcessPath(),
-					Arguments = Process.GetCurrentProcess().GetCommandLine(),
-					UseShellExecute = true,
-					Verb = "runas",
-				},
-			};
-
-			try
-			{
-				proc.Start();
-			}
-			catch
-			{
-				// ignored
-			}
-
-			Environment.Exit(0);
-		}
+            ProcessStartInfo proc = new ProcessStartInfo
+            {
+                UseShellExecute = true,
+                WorkingDirectory = Environment.CurrentDirectory,
+                FileName = Application.ExecutablePath,
+                Verb = "runas"
+            };
+            try
+            {
+                Process.Start(proc);
+            }
+            catch
+            {
+                // The user refused the elevation.
+                // Do nothing and return directly
+                return;
+            }
+            Application.Exit();  // Quit itself
+        }
 
 	}
 }

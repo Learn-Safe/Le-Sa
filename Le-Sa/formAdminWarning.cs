@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Le_Sa.Models.AdminCheck;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,24 +29,7 @@ namespace Le_Sa
 
         private void crBtnRestart_Click(object sender, EventArgs e)
         {
-            ProcessStartInfo proc = new ProcessStartInfo
-            {
-                UseShellExecute = true,
-                WorkingDirectory = Environment.CurrentDirectory,
-                FileName = Application.ExecutablePath,
-                Verb = "runas"
-            };
-            try
-            {
-                Process.Start(proc);
-            }
-            catch
-            {
-                // The user refused the elevation.
-                // Do nothing and return directly
-                return;
-            }
-            Application.Exit();  // Quit itself
+            AdminCheck.RestartUnderAdmin();
         }
     }
 }

@@ -56,13 +56,13 @@ namespace Le_Sa
             this.crBtnRestart.BorderSize = 0;
             this.crBtnRestart.FlatAppearance.BorderSize = 0;
             this.crBtnRestart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crBtnRestart.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.crBtnRestart.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.crBtnRestart.ForeColor = System.Drawing.Color.White;
-            this.crBtnRestart.Location = new System.Drawing.Point(237, 295);
+            this.crBtnRestart.Location = new System.Drawing.Point(279, 318);
             this.crBtnRestart.Name = "crBtnRestart";
-            this.crBtnRestart.Size = new System.Drawing.Size(221, 70);
+            this.crBtnRestart.Size = new System.Drawing.Size(137, 46);
             this.crBtnRestart.TabIndex = 2;
-            this.crBtnRestart.Text = "Restart the application with admin privileges";
+            this.crBtnRestart.Text = "Restart Now\r\n";
             this.crBtnRestart.TextColor = System.Drawing.Color.White;
             this.crBtnRestart.UseVisualStyleBackColor = false;
             this.crBtnRestart.Click += new System.EventHandler(this.crBtnRestart_Click);
