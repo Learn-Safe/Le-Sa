@@ -68,7 +68,7 @@ namespace Le_Sa
             }
         }
 
-        private void crBtnDNSConfig_Click(object sender, EventArgs e)
+        public void crBtnDNSConfig_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.normal);
             (bool, string) edgeWebviewAvailablity = ((bool, string))ReadWriteRegistry.ReadRegistry(Registry.LocalMachine, @"SOFTWARE\WOW6432Node\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}", "pv");
