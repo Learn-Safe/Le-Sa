@@ -24,12 +24,27 @@ namespace Le_Sa.Models.Registry
             }
         }
 
-        public static (bool, string) ReadRegistry(RegistryKey BaseFolder, string SubFolder, string keyName)
+        public static (bool, object) ReadRegistry(RegistryKey BaseFolder, string SubFolder, string ValueName)
         {
             try
             {
-                RegistryKey subKey = BaseFolder.OpenSubKey(SubFolder);
-                return (true, subKey.GetValue(keyName).ToString());
+                RegistryKey key = BaseFolder.OpenSubKey(SubFolder);
+                if (key == null)
+                {
+                    return (false, null);
+                }
+                else
+                {
+                    var value = key.GetValue(ValueName);
+                    if (value == null)
+                    {
+                        return (false, null);
+                    }
+                    else
+                    {
+                        return (true, value);
+                    }
+                }
             }
             catch
             {

@@ -11,7 +11,6 @@ namespace Le_Sa.Models.AdminCheck
     {
 		private static string GetCurrentProcessPath()
 		{
-			// ReSharper disable once PossibleNullReferenceException
 			return Process.GetCurrentProcess().MainModule.FileName;
 		}
 
