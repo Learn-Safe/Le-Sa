@@ -2,6 +2,8 @@
 using System.Drawing;
 using Le_Sa.Settings;
 using System.Windows.Forms;
+using Le_Sa.Models.Registry;
+using Microsoft.Win32;
 
 namespace Le_Sa
 {
@@ -66,10 +68,18 @@ namespace Le_Sa
             }
         }
 
-        private void crBtnDNSConfig_Click(object sender, EventArgs e)
+        public void crBtnDNSConfig_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.normal);
-            OpenChildForm(new formDNSConfig());
+            (bool, string) edgeWebviewAvailablity = ((bool, string))ReadWriteRegistry.ReadRegistry(Registry.LocalMachine, @"SOFTWARE\WOW6432Node\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}", "pv");
+            if (edgeWebviewAvailablity.Item1 == false)
+            {
+                OpenChildForm(new formWebviewMissing());
+            }
+            else
+            {
+                OpenChildForm(new formDNSConfig());
+            }
         }
         #endregion
     }
