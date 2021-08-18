@@ -12,14 +12,16 @@ namespace Le_Sa
         [STAThread]
         static void Main()
         {
-            if (!AdminCheck.IsAdmin())
+            if (AdminCheck.IsAdmin())
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new formLoadingScreen());
+            }
+            else
             {
                 AdminCheck.RestartUnderAdmin();
             }
-
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formLoadingScreen());
         }
     }
 }
