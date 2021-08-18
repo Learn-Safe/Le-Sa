@@ -72,12 +72,12 @@ namespace Le_Sa.BrowserControls
                 }
                 if (ReadWriteRegistry.ReadRegistry(BaseFolder, SubFolderPath, cTBtn.Tag.ToString()).Item1)
                 {
-                    if (ReadWriteRegistry.ReadRegistry(BaseFolder, SubFolderPath, cTBtn.Tag.ToString()).Item2 == trueValue)
+                    if (ReadWriteRegistry.ReadRegistry(BaseFolder, SubFolderPath, cTBtn.Tag.ToString()).Item2.ToString() == trueValue)
                     {
                         cTBtn.CheckState = CheckState.Checked;
 
                     }
-                    else if (ReadWriteRegistry.ReadRegistry(BaseFolder, SubFolderPath, cTBtn.Tag.ToString()).Item2 == falseValue)
+                    else if (ReadWriteRegistry.ReadRegistry(BaseFolder, SubFolderPath, cTBtn.Tag.ToString()).Item2.ToString() == falseValue)
                     {
                         cTBtn.CheckState = CheckState.Unchecked;
                     }
