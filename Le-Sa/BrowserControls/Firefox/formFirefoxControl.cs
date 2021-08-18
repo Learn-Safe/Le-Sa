@@ -58,7 +58,7 @@ namespace Le_Sa.BrowserControls
                 }
                 if (ReadWriteRegistry.ReadRegistry(BaseFolder, SubFolderPath, keyName).Item1)
                 {
-                    if (ReadWriteRegistry.ReadRegistry(BaseFolder, SubFolderPath, keyName).Item2 == "1")
+                    if (ReadWriteRegistry.ReadRegistry(BaseFolder, SubFolderPath, keyName).Item2.ToString() == "1")
                     {
                         if (invert.Any(cTBtn.Tag.ToString().Contains))
                         {
@@ -69,7 +69,7 @@ namespace Le_Sa.BrowserControls
                             cTBtn.CheckState = CheckState.Checked;
                         }
                     }
-                    else if (ReadWriteRegistry.ReadRegistry(BaseFolder, SubFolderPath, keyName).Item2 == "0")
+                    else if (ReadWriteRegistry.ReadRegistry(BaseFolder, SubFolderPath, keyName).Item2.ToString() == "0")
                     {
                         if (invert.Any(cTBtn.Tag.ToString().Contains))
                         {
