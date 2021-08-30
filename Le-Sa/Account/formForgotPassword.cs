@@ -248,6 +248,15 @@ namespace Le_Sa.Account
                         login_count = ResUser.login_count
                     };
 
+                    Properties.Settings.Default.username = ResUser.username;
+                    Properties.Settings.Default.Save();
+                    Properties.Settings.Default.password = ResUser.password;
+                    Properties.Settings.Default.Save();
+                    Properties.Settings.Default.phoneNo = ResUser.phone_no;
+                    Properties.Settings.Default.Save();
+                    Properties.Settings.Default.email = ResUser.email;
+                    Properties.Settings.Default.Save();
+
                     SetResponse set = client.Set(@"users/" + ResUser.username, resetPass);
 
                     MessageBox.Show("Password resetted successfully.\r\nNow you can login using new password", "Sucessful", MessageBoxButtons.OK);

@@ -48,6 +48,7 @@ namespace Le_Sa.Settings
             // 
             // pnlDesktop
             // 
+            this.pnlDesktop.BackColor = System.Drawing.Color.White;
             this.pnlDesktop.Controls.Add(this.wvOpenDNS);
             this.pnlDesktop.Controls.Add(this.pnlNav);
             this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -58,6 +59,7 @@ namespace Le_Sa.Settings
             // 
             // wvOpenDNS
             // 
+            this.wvOpenDNS.BackColor = System.Drawing.Color.White;
             this.wvOpenDNS.CreationProperties = null;
             this.wvOpenDNS.DefaultBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(75)))));
             this.wvOpenDNS.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -121,7 +123,7 @@ namespace Le_Sa.Settings
             this.crBtnResetThisDevice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crBtnResetThisDevice.Font = new System.Drawing.Font("Microsoft Tai Le", 11F);
             this.crBtnResetThisDevice.ForeColor = System.Drawing.Color.White;
-            this.crBtnResetThisDevice.Location = new System.Drawing.Point(450, 35);
+            this.crBtnResetThisDevice.Location = new System.Drawing.Point(450, 36);
             this.crBtnResetThisDevice.Name = "crBtnResetThisDevice";
             this.crBtnResetThisDevice.Size = new System.Drawing.Size(241, 29);
             this.crBtnResetThisDevice.TabIndex = 13;
@@ -188,7 +190,7 @@ namespace Le_Sa.Settings
             this.crBtnSignUp.ForeColor = System.Drawing.Color.White;
             this.crBtnSignUp.Location = new System.Drawing.Point(77, 3);
             this.crBtnSignUp.Name = "crBtnSignUp";
-            this.crBtnSignUp.Size = new System.Drawing.Size(103, 62);
+            this.crBtnSignUp.Size = new System.Drawing.Size(120, 62);
             this.crBtnSignUp.TabIndex = 10;
             this.crBtnSignUp.Text = "Didn\'t have an account?";
             this.crBtnSignUp.TextColor = System.Drawing.Color.White;

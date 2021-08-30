@@ -315,7 +315,6 @@ namespace Le_Sa.Account
                             }
                             else
                             {
-
                                 if (cTBOTP.Texts != otp)
                                 {
                                     MessageBox.Show("OTP didn't match!", "Confirmation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -351,6 +350,13 @@ namespace Le_Sa.Account
                                             SetResponse set = client.Set(@"users/" + cTBUsername.Texts, userData);
 
                                             Properties.Settings.Default.username = cTBUsername.Texts;
+                                            Properties.Settings.Default.Save();
+                                            Properties.Settings.Default.password = cTBPassword.Texts;
+                                            Properties.Settings.Default.Save();
+                                            Properties.Settings.Default.phoneNo = cTBPhoneNumber.Texts;
+                                            Properties.Settings.Default.Save();
+                                            Properties.Settings.Default.email = cTBEmail.Texts;
+                                            Properties.Settings.Default.Save();
 
                                             tmrOTP.Stop();
                                             MessageBox.Show("User accout created successfully." + Environment.NewLine + "Thanks for choosing Le-Sa", "Account Created", MessageBoxButtons.OK);
