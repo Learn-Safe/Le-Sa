@@ -36,7 +36,6 @@
             this.pnlLoadingBack = new System.Windows.Forms.Panel();
             this.pnlLoadingFront = new System.Windows.Forms.Panel();
             this.timerLoading = new System.Windows.Forms.Timer(this.components);
-            this.lblProduct = new System.Windows.Forms.Label();
             this.custRoundedPanel1 = new Le_Sa.CustRoundedPanel();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.llblHaveAnAccount = new System.Windows.Forms.LinkLabel();
@@ -80,7 +79,7 @@
             this.lblProductName.AutoSize = true;
             this.lblProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 65.24999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductName.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblProductName.Location = new System.Drawing.Point(135, 19);
+            this.lblProductName.Location = new System.Drawing.Point(135, 16);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(273, 98);
             this.lblProductName.TabIndex = 12;
@@ -108,17 +107,6 @@
             this.timerLoading.Enabled = true;
             this.timerLoading.Interval = 10;
             this.timerLoading.Tick += new System.EventHandler(this.timerLoading_Tick);
-            // 
-            // lblProduct
-            // 
-            this.lblProduct.AutoSize = true;
-            this.lblProduct.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProduct.ForeColor = System.Drawing.Color.White;
-            this.lblProduct.Location = new System.Drawing.Point(154, 9);
-            this.lblProduct.Name = "lblProduct";
-            this.lblProduct.Size = new System.Drawing.Size(232, 16);
-            this.lblProduct.TabIndex = 16;
-            this.lblProduct.Text = "L    E    A    R    N     -     S    A    F    E";
             // 
             // custRoundedPanel1
             // 
@@ -308,7 +296,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(919, 490);
             this.Controls.Add(this.custRoundedPanel1);
-            this.Controls.Add(this.lblProduct);
             this.Controls.Add(this.lblCreator);
             this.Controls.Add(this.lblSlogan);
             this.Controls.Add(this.lblProductName);
@@ -339,7 +326,6 @@
         private System.Windows.Forms.Panel pnlLoadingFront;
         private System.Windows.Forms.Timer timerLoading;
         private System.Windows.Forms.PictureBox pbLogo;
-        private System.Windows.Forms.Label lblProduct;
         private CustRoundedPanel custRoundedPanel1;
         private CustRoundedButton crBtnVisibility;
         private CustomControls.CustomTextBox cTBUsername;
