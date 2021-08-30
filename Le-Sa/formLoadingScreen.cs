@@ -2,17 +2,8 @@
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using Le_Sa.Account;
-using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Le_Sa
@@ -22,7 +13,6 @@ namespace Le_Sa
         public formLoadingScreen()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
@@ -98,11 +88,21 @@ namespace Le_Sa
 
                     if (User.IsEqual(ResUser, UserInput))
                     {
-                        Properties.Settings.Default.username = cTBUsername.Texts;
+                        Properties.Settings.Default.username = ResUser.username;
+                        Properties.Settings.Default.Save();
+                        Properties.Settings.Default.password = ResUser.password;
+                        Properties.Settings.Default.Save();
+                        Properties.Settings.Default.phoneNo = ResUser.phone_no;
+                        Properties.Settings.Default.Save();
+                        Properties.Settings.Default.email = ResUser.email;
+                        Properties.Settings.Default.Save();
+
                         formDesktop desktop = new formDesktop();
                         desktop.Show();
                         this.Hide();
                     }
+
+
                     else
                     {
                         User.ShowError();

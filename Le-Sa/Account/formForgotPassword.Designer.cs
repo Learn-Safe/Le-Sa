@@ -35,6 +35,8 @@ namespace Le_Sa.Account
             this.lblForgotPass = new System.Windows.Forms.Label();
             this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlNewPass = new System.Windows.Forms.Panel();
+            this.crBtnConfPassVisibility = new Le_Sa.CustRoundedButton();
+            this.crBtnPassVisibility = new Le_Sa.CustRoundedButton();
             this.lblStrength = new System.Windows.Forms.Label();
             this.crBtnStrength = new Le_Sa.CustRoundedButton();
             this.crBtnGeneratePassword = new Le_Sa.CustRoundedButton();
@@ -51,8 +53,6 @@ namespace Le_Sa.Account
             this.crBtnSendOTP = new Le_Sa.CustRoundedButton();
             this.cTBUsername = new Le_Sa.CustomControls.CustomTextBox();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.crBtnConfPassVisibility = new Le_Sa.CustRoundedButton();
-            this.crBtnPassVisibility = new Le_Sa.CustRoundedButton();
             this.pnlHeader.SuspendLayout();
             this.pnlContent.SuspendLayout();
             this.pnlNewPass.SuspendLayout();
@@ -133,6 +133,48 @@ namespace Le_Sa.Account
             this.pnlNewPass.Name = "pnlNewPass";
             this.pnlNewPass.Size = new System.Drawing.Size(253, 224);
             this.pnlNewPass.TabIndex = 129;
+            // 
+            // crBtnConfPassVisibility
+            // 
+            this.crBtnConfPassVisibility.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnConfPassVisibility.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnConfPassVisibility.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.crBtnConfPassVisibility.BorderColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnConfPassVisibility.BorderRadius = 20;
+            this.crBtnConfPassVisibility.BorderSize = 2;
+            this.crBtnConfPassVisibility.FlatAppearance.BorderSize = 0;
+            this.crBtnConfPassVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBtnConfPassVisibility.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnConfPassVisibility.Image = global::Le_Sa.Properties.Resources.hide_22px;
+            this.crBtnConfPassVisibility.Location = new System.Drawing.Point(221, 90);
+            this.crBtnConfPassVisibility.Name = "crBtnConfPassVisibility";
+            this.crBtnConfPassVisibility.Size = new System.Drawing.Size(27, 27);
+            this.crBtnConfPassVisibility.TabIndex = 138;
+            this.crBtnConfPassVisibility.TextColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnConfPassVisibility.UseVisualStyleBackColor = false;
+            this.crBtnConfPassVisibility.MouseDown += new System.Windows.Forms.MouseEventHandler(this.crBtnPassVisibility_MouseDown);
+            this.crBtnConfPassVisibility.MouseUp += new System.Windows.Forms.MouseEventHandler(this.crBtnConfPassVisibility_MouseUp);
+            // 
+            // crBtnPassVisibility
+            // 
+            this.crBtnPassVisibility.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnPassVisibility.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnPassVisibility.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.crBtnPassVisibility.BorderColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnPassVisibility.BorderRadius = 20;
+            this.crBtnPassVisibility.BorderSize = 2;
+            this.crBtnPassVisibility.FlatAppearance.BorderSize = 0;
+            this.crBtnPassVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBtnPassVisibility.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnPassVisibility.Image = global::Le_Sa.Properties.Resources.hide_22px;
+            this.crBtnPassVisibility.Location = new System.Drawing.Point(221, 32);
+            this.crBtnPassVisibility.Name = "crBtnPassVisibility";
+            this.crBtnPassVisibility.Size = new System.Drawing.Size(27, 27);
+            this.crBtnPassVisibility.TabIndex = 137;
+            this.crBtnPassVisibility.TextColor = System.Drawing.SystemColors.ScrollBar;
+            this.crBtnPassVisibility.UseVisualStyleBackColor = false;
+            this.crBtnPassVisibility.MouseDown += new System.Windows.Forms.MouseEventHandler(this.crBtnPassVisibility_MouseDown);
+            this.crBtnPassVisibility.MouseUp += new System.Windows.Forms.MouseEventHandler(this.crBtnConfPassVisibility_MouseUp);
             // 
             // lblStrength
             // 
@@ -407,48 +449,6 @@ namespace Le_Sa.Account
             this.lblUsername.Size = new System.Drawing.Size(105, 25);
             this.lblUsername.TabIndex = 120;
             this.lblUsername.Text = "Username";
-            // 
-            // crBtnConfPassVisibility
-            // 
-            this.crBtnConfPassVisibility.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnConfPassVisibility.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnConfPassVisibility.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.crBtnConfPassVisibility.BorderColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnConfPassVisibility.BorderRadius = 20;
-            this.crBtnConfPassVisibility.BorderSize = 2;
-            this.crBtnConfPassVisibility.FlatAppearance.BorderSize = 0;
-            this.crBtnConfPassVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crBtnConfPassVisibility.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnConfPassVisibility.Image = global::Le_Sa.Properties.Resources.hide_22px;
-            this.crBtnConfPassVisibility.Location = new System.Drawing.Point(221, 90);
-            this.crBtnConfPassVisibility.Name = "crBtnConfPassVisibility";
-            this.crBtnConfPassVisibility.Size = new System.Drawing.Size(27, 27);
-            this.crBtnConfPassVisibility.TabIndex = 138;
-            this.crBtnConfPassVisibility.TextColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnConfPassVisibility.UseVisualStyleBackColor = false;
-            this.crBtnConfPassVisibility.MouseDown += new System.Windows.Forms.MouseEventHandler(this.crBtnPassVisibility_MouseDown);
-            this.crBtnConfPassVisibility.MouseUp += new System.Windows.Forms.MouseEventHandler(this.crBtnConfPassVisibility_MouseUp);
-            // 
-            // crBtnPassVisibility
-            // 
-            this.crBtnPassVisibility.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnPassVisibility.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnPassVisibility.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.crBtnPassVisibility.BorderColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnPassVisibility.BorderRadius = 20;
-            this.crBtnPassVisibility.BorderSize = 2;
-            this.crBtnPassVisibility.FlatAppearance.BorderSize = 0;
-            this.crBtnPassVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crBtnPassVisibility.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnPassVisibility.Image = global::Le_Sa.Properties.Resources.hide_22px;
-            this.crBtnPassVisibility.Location = new System.Drawing.Point(221, 32);
-            this.crBtnPassVisibility.Name = "crBtnPassVisibility";
-            this.crBtnPassVisibility.Size = new System.Drawing.Size(27, 27);
-            this.crBtnPassVisibility.TabIndex = 137;
-            this.crBtnPassVisibility.TextColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnPassVisibility.UseVisualStyleBackColor = false;
-            this.crBtnPassVisibility.MouseDown += new System.Windows.Forms.MouseEventHandler(this.crBtnPassVisibility_MouseDown);
-            this.crBtnPassVisibility.MouseUp += new System.Windows.Forms.MouseEventHandler(this.crBtnConfPassVisibility_MouseUp);
             // 
             // formForgotPassword
             // 

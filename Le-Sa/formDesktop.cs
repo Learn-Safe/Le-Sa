@@ -52,6 +52,11 @@ namespace Le_Sa
 
         }
 
+        private void formDesktop_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
         private struct RGBColors
         {
             public static Color btnDefault = Color.FromArgb(35,46,76);

@@ -72,6 +72,14 @@ namespace Le_Sa.Account
                     username = cTBUsername.Texts,
                     password = cTBPassword.Texts
                 };
+                Properties.Settings.Default.username = ResUser.username;
+                Properties.Settings.Default.Save();
+                Properties.Settings.Default.password = ResUser.password;
+                Properties.Settings.Default.Save();
+                Properties.Settings.Default.phoneNo = ResUser.phone_no;
+                Properties.Settings.Default.Save();
+                Properties.Settings.Default.email = ResUser.email;
+                Properties.Settings.Default.Save();
 
                 if (User.IsEqual(ResUser, UserInput))
                 {

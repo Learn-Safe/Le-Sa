@@ -45,7 +45,7 @@ namespace Le_Sa
         }
         #endregion  
 
-        #region Side Menu
+        #region Top Menu
         private void ActiveButton(object senderBtn, Color color)
         {
             if (senderBtn != null)
@@ -68,7 +68,7 @@ namespace Le_Sa
             }
         }
 
-        public void crBtnDNSConfig_Click(object sender, EventArgs e)
+        private void crBtnDNSConfig_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGBColors.normal);
             (bool, string) edgeWebviewAvailablity = ((bool, string))ReadWriteRegistry.ReadRegistry(Registry.LocalMachine, @"SOFTWARE\WOW6432Node\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}", "pv");
@@ -80,6 +80,12 @@ namespace Le_Sa
             {
                 OpenChildForm(new formDNSConfig());
             }
+        }
+
+        private void crBtnAccountSettings_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGBColors.normal);
+            OpenChildForm(new formAccountSettings());
         }
         #endregion
     }

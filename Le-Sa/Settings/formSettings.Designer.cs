@@ -31,6 +31,7 @@ namespace Le_Sa
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formSettings));
             this.pnlDashboard = new System.Windows.Forms.Panel();
+            this.crBtnAccountSettings = new Le_Sa.CustRoundedButton();
             this.crBtnDNSConfig = new Le_Sa.CustRoundedButton();
             this.pnlDesktop = new System.Windows.Forms.Panel();
             this.pnlDashboard.SuspendLayout();
@@ -40,12 +41,33 @@ namespace Le_Sa
             // 
             this.pnlDashboard.AutoScroll = true;
             this.pnlDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(75)))));
+            this.pnlDashboard.Controls.Add(this.crBtnAccountSettings);
             this.pnlDashboard.Controls.Add(this.crBtnDNSConfig);
             this.pnlDashboard.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlDashboard.Location = new System.Drawing.Point(0, 0);
             this.pnlDashboard.Name = "pnlDashboard";
             this.pnlDashboard.Size = new System.Drawing.Size(694, 40);
             this.pnlDashboard.TabIndex = 3;
+            // 
+            // crBtnAccountSettings
+            // 
+            this.crBtnAccountSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
+            this.crBtnAccountSettings.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(27)))), ((int)(((byte)(56)))));
+            this.crBtnAccountSettings.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(91)))), ((int)(((byte)(234)))));
+            this.crBtnAccountSettings.BorderRadius = 20;
+            this.crBtnAccountSettings.BorderSize = 0;
+            this.crBtnAccountSettings.FlatAppearance.BorderSize = 0;
+            this.crBtnAccountSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBtnAccountSettings.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.crBtnAccountSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
+            this.crBtnAccountSettings.Location = new System.Drawing.Point(133, 5);
+            this.crBtnAccountSettings.Name = "crBtnAccountSettings";
+            this.crBtnAccountSettings.Size = new System.Drawing.Size(136, 30);
+            this.crBtnAccountSettings.TabIndex = 1;
+            this.crBtnAccountSettings.Text = "Account Settings";
+            this.crBtnAccountSettings.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
+            this.crBtnAccountSettings.UseVisualStyleBackColor = false;
+            this.crBtnAccountSettings.Click += new System.EventHandler(this.crBtnAccountSettings_Click);
             // 
             // crBtnDNSConfig
             // 
@@ -100,5 +122,6 @@ namespace Le_Sa
         private System.Windows.Forms.Panel pnlDashboard;
         private CustRoundedButton crBtnDNSConfig;
         private System.Windows.Forms.Panel pnlDesktop;
+        private CustRoundedButton crBtnAccountSettings;
     }
 }
