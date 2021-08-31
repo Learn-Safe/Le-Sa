@@ -188,8 +188,8 @@ namespace Le_Sa.BrowserControls
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(294, 408);
             this.lblDescription.TabIndex = 1;
-            this.lblDescription.Text = "In here you can change some Firefox Browser settings.\r\n\r\nPlease select item to vi" +
-    "ew more. ";
+            this.lblDescription.Text = "In here you can change Firefox Browser settings.\r\n\r\nPlease select an item to view" +
+    " more. ";
             // 
             // lblPolicy
             // 

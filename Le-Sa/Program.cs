@@ -18,7 +18,7 @@ namespace Le_Sa
             AppDomain.CurrentDomain.ProcessExit += new EventHandler(CurrentDomain_ProcessExit);
             if (AdminCheck.IsAdmin())
             {
-                Application.Run(new formLoadingScreen());
+                Application.Run(new formDesktop());
             }
             else
             {

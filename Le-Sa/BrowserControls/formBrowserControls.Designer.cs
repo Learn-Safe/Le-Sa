@@ -102,6 +102,7 @@ namespace Le_Sa.BrowserControls
             this.crBtnBrave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.crBtnBrave.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
             this.crBtnBrave.UseVisualStyleBackColor = false;
+            this.crBtnBrave.Click += new System.EventHandler(this.crBtnBrave_Click);
             // 
             // crBtnOpera
             // 

@@ -1,7 +1,9 @@
 ﻿using Le_Sa.CustomControls;
 using Le_Sa.Models.Registry;
+using Le_Sa.Models.Serialization;
 using Microsoft.Win32;
 using System;
+using Le_Sa.Properties;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,24 +15,24 @@ using System.Windows.Forms;
 
 namespace Le_Sa.BrowserControls
 {
-    public partial class formEdgeControls : Form
+    public partial class formBraveControls : Form
     {
         private readonly RegistryKey BaseFolder = Registry.CurrentUser;
-        private readonly string SubFolderPath = @"Software\Policies\Microsoft\Edge\";
-        private readonly string[] invert = { "BrowserGuestModeEnabled", "AllowDeletingBrowserHistory", "BrowserAddProfileEnabled" };
+        private readonly string SubFolderPath = @"Software\Policies\BraveSoftware\Brave\";
+        private readonly string[] invert = { "BrowserGuestModeEnabled", "AllowDeletingBrowserHistory", "BrowserAddPersonEnabled" };
         private readonly string[] valeTwo = { "DeveloperToolsAvailability" };
         CustToggleButton cTBtn;
         private string trueValue;
         private string falseValue;
 
         #region Description Vars
-        private readonly string InPrivateModeAvailability = "Disabling InPrivate Mode will block access to the InPrivate MODE.\n\nEnabling this will allow user to access to the InPrivate MODE.\n\nInPrivate MODE doesn't store any data about user activities.";
-        private readonly string BrowserGuestModeEnabled = "Disabling Guest Mode will block access to the Guest Mode\n\nEnabling this will allow user to access to the Guest Mode\n\nGuest Mode doesn't store any data about user activities.";
-        private readonly string BlockExternalExtensions = "Blocking External Extension will deny user from installing external extensions.\n\nIf this setting is disabled, user is allowed to install any external extension.";
-        private readonly string PasswordLeakDetectionEnabled = "Enabling this will notify the user if any saved password has been compromised as a part of a data breach.";
-        private readonly string DeveloperToolsAvailability = "Disabling DEVELOPER TOOLS will block access to the DEVELOPER TOOLS.\n\nEnabling this will allow the user to acess the DEVELOPER TOOLS.\n\nDEVELOPER TOOLS lets user to view the source code of any web app and more.";
-        private readonly string AllowDeletingBrowserHistory = "Blocking History Deletion will deny user from deleting browser history and download history.\n\nIf this setting is disabled, the user is allowed to delete all BROWSING data.";
-        private readonly string BrowserAddProfileEnabled = "Blocking Add new profile will deny user from adding a new user profile to Edge.\n\nIf this setting is disabled, user is allowed to add a new user profile to Edge.\n\n";
+        private readonly string IncognitoModeAvailability = "Disabling Incognito Mode will block access to the INCOGNITO MODE.\n\nEnabling this will allow user to access to the INCOGNITO MODE.\n\nINCOGNITO MODE doesn't store any data about user activities.";
+        private readonly string BrowserGuestModeEnabled = "Disabling Guest Mode will block access to the GUEST MODE.\n\nEnabling this will allow user to access to the GUEST MODE\n\nGUEST MODE doesn't store any data about user activities.";
+        private readonly string BlockExternalExtensions = "Blocking External Extension will deny user from installing external extensions.\n\nIf this setting disabled, user is allowed to install any external extension.";
+        private readonly string PasswordLeakDetectionEnabled = "Enabling Password Leak Detection will notify the user if any saved password has been compromised as part of a data breach.";
+        private readonly string DeveloperToolsAvailability = "Disabling DEVELOPER TOOLS will block access to the DEVELOPER TOOLS.\n\nEnabling this will allow user to acess to the DEVELOPER TOOLS.\n\nDEVELOPER TOOLS lets the user to view the source code of any web app and more.";
+        private readonly string AllowDeletingBrowserHistory = "Blocking History Deletion will deny the user from deleting BROWSER history and DOWNLOAD history.\n\nIf this setting disabled, the user is allowed to delete all BROWSING data.";
+        private readonly string BrowserAddPersonEnabled = "Blocking Add new person will deny user to add new user profile to Brave.\n\nIf this setting is disabled, user is allowed to add new user profile to Brave.\n\n";
         #endregion
 
         #region Status Color Vars
@@ -40,13 +42,13 @@ namespace Le_Sa.BrowserControls
         readonly Color statusDisabledFore = Color.FromArgb(121, 4, 7);
         #endregion
 
-        public formEdgeControls()
+        public formBraveControls()
         {
             InitializeComponent();
         }
 
         #region Check Curret Settings
-        private void formEdgeControls_Load(object sender, EventArgs e)
+        private void formBraveControls_Load(object sender, EventArgs e)
         {
             foreach (var cTBtn in pnlControls.Controls.OfType<CustToggleButton>())
             {
@@ -122,15 +124,15 @@ namespace Le_Sa.BrowserControls
         #endregion
 
         #region Toggle Buttons
-        private void cTBtnInPrivateMode_CheckedChanged(object sender, EventArgs e)
+        private void cTBtnIncognitoMode_CheckedChanged(object sender, EventArgs e)
         {
-            CheckedChangedToggleBtn(cTBtnInPrivateMode, 0x00000001, 0x00000000);
-            Dis_InPrivateModeAvailability();
+            CheckedChangedToggleBtn(cTBtnIncognitoMode, 0x00000001, 0x00000000);
+            Dis_IncognitoModeAvailability();
         }
 
-        private void cTBtnAddProfile_CheckedChanged(object sender, EventArgs e)
+        private void cTBtnGuestMode_CheckedChanged(object sender, EventArgs e)
         {
-            CheckedChangedToggleBtn(cTBtnAddProfile, 0x00000000, 0x00000001);
+            CheckedChangedToggleBtn(cTBtnGuestMode, 0x00000000, 0x00000001);
             Dis_BrowserGuestModeEnabled();
         }
 
@@ -148,7 +150,7 @@ namespace Le_Sa.BrowserControls
 
         private void cTBtnDeveloperToolsAvailability_CheckedChanged(object sender, EventArgs e)
         {
-            CheckedChangedToggleBtn(cTBtnDeveloperToolsAvailability, 0x00000002, 0x00000001);
+            CheckedChangedToggleBtn(cTBtnDeveloperToolsAvailability, 0x00000002, 0x00000000);
             Dis_DeveloperToolsAvailability();
         }
 
@@ -158,20 +160,20 @@ namespace Le_Sa.BrowserControls
             Dis_AllowDeletingBrowserHistory();
         }
 
-        private void cTBtnBrowserAddProfileEnabled_CheckedChanged(object sender, EventArgs e)
+        private void cTBtnBrowserAddPersonEnabled_CheckedChanged(object sender, EventArgs e)
         {
-            CheckedChangedToggleBtn(cTBtnBrowserAddProfileEnabled, 0x00000000, 0x00000001);
-            Dis_BrowserAddProfileEnabled();
+            CheckedChangedToggleBtn(cTBtnBrowserAddPersonEnabled, 0x00000000, 0x00000001);
+            Dis_BrowserAddPersonEnabled();
         }
         #endregion
 
         #region Lables
-        private void lblDisableInPrivateMode_Click(object sender, EventArgs e)
+        private void lblDisableIncognitoMode_Click(object sender, EventArgs e)
         {
-            Dis_InPrivateModeAvailability();
+            Dis_IncognitoModeAvailability();
         }
 
-        private void lblDisableAddProfile_Click(object sender, EventArgs e)
+        private void lblDisableGuestMode_Click(object sender, EventArgs e)
         {
             Dis_BrowserGuestModeEnabled();
         }
@@ -196,26 +198,26 @@ namespace Le_Sa.BrowserControls
             Dis_AllowDeletingBrowserHistory();
         }
 
-        private void lblBrowserAddProfileEnabled_Click(object sender, EventArgs e)
+        private void lblBrowserAddPersonEnabled_Click(object sender, EventArgs e)
         {
-            Dis_BrowserAddProfileEnabled();
+            Dis_BrowserAddPersonEnabled();
         }
         #endregion
 
         #region Setting Status
-        private void Dis_InPrivateModeAvailability()
+        private void Dis_IncognitoModeAvailability()
         {
-            lblPolicy.Text = lblDisableInPrivateMode.Text;
-            lblDescription.Text = InPrivateModeAvailability;
-            cTBtn = cTBtnInPrivateMode;
+            lblPolicy.Text = lblDisableIncognitoMode.Text;
+            lblDescription.Text = IncognitoModeAvailability;
+            cTBtn = cTBtnIncognitoMode;
             Status();
         }
 
         private void Dis_BrowserGuestModeEnabled()
         {
-            lblPolicy.Text = lblBrowserGuestModeEnabled.Text;
+            lblPolicy.Text = lblDisableGuestMode.Text;
             lblDescription.Text = BrowserGuestModeEnabled;
-            cTBtn = cTBtnAddProfile;
+            cTBtn = cTBtnGuestMode;
             Status();
         }
 
@@ -251,11 +253,11 @@ namespace Le_Sa.BrowserControls
             Status();
         }
 
-        private void Dis_BrowserAddProfileEnabled()
+        private void Dis_BrowserAddPersonEnabled()
         {
-            lblPolicy.Text = lblBrowserAddProfileEnabled.Text;
-            lblDescription.Text = BrowserAddProfileEnabled;
-            cTBtn = cTBtnBrowserAddProfileEnabled;
+            lblPolicy.Text = lblBrowserAddPersonEnabled.Text;
+            lblDescription.Text = BrowserAddPersonEnabled;
+            cTBtn = cTBtnBrowserAddPersonEnabled;
             Status();
         }
 
@@ -267,7 +269,7 @@ namespace Le_Sa.BrowserControls
                 crBtnStatus.Text = "Enabled";
                 crBtnStatus.ForeColor = statusEnabledFore;
             }
-            else if (cTBtn.CheckState == CheckState.Unchecked)
+            else if (cTBtn. CheckState == CheckState.Unchecked)
             {
                 crBtnStatus.BackColor = statusDisabledBack;
                 crBtnStatus.Text = "Disabled";

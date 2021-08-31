@@ -33,7 +33,7 @@ namespace Le_Sa.Settings
             this.pnlDesktop = new System.Windows.Forms.Panel();
             this.cBtnClear = new Le_Sa.CustRoundedButton();
             this.crBtnChangeEmail = new Le_Sa.CustRoundedButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblCantChangeUsername = new System.Windows.Forms.Label();
             this.lblOTPTimer = new System.Windows.Forms.Label();
             this.crBtnResendOTP = new Le_Sa.CustRoundedButton();
             this.lblOTP = new System.Windows.Forms.Label();
@@ -55,6 +55,7 @@ namespace Le_Sa.Settings
             this.cTBPassword = new Le_Sa.CustomControls.CustomTextBox();
             this.cTBUsername = new Le_Sa.CustomControls.CustomTextBox();
             this.lblUsername = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.crPnlWarning = new Le_Sa.CustRoundedPanel();
             this.cBoxDontShowAgain = new System.Windows.Forms.CheckBox();
             this.crBtnUnderstand = new Le_Sa.CustRoundedButton();
@@ -68,11 +69,11 @@ namespace Le_Sa.Settings
             // 
             // pnlDesktop
             // 
+            this.pnlDesktop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pnlDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(75)))));
-            this.pnlDesktop.Controls.Add(this.crPnlWarning);
             this.pnlDesktop.Controls.Add(this.cBtnClear);
             this.pnlDesktop.Controls.Add(this.crBtnChangeEmail);
-            this.pnlDesktop.Controls.Add(this.label1);
+            this.pnlDesktop.Controls.Add(this.lblCantChangeUsername);
             this.pnlDesktop.Controls.Add(this.lblOTPTimer);
             this.pnlDesktop.Controls.Add(this.crBtnResendOTP);
             this.pnlDesktop.Controls.Add(this.lblOTP);
@@ -142,16 +143,16 @@ namespace Le_Sa.Settings
             this.crBtnChangeEmail.Visible = false;
             this.crBtnChangeEmail.Click += new System.EventHandler(this.crBtnChangeEmail_Click);
             // 
-            // label1
+            // lblCantChangeUsername
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(196, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(228, 19);
-            this.label1.TabIndex = 118;
-            this.label1.Text = "*You can\'t change your username";
+            this.lblCantChangeUsername.AutoSize = true;
+            this.lblCantChangeUsername.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantChangeUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.lblCantChangeUsername.Location = new System.Drawing.Point(196, 38);
+            this.lblCantChangeUsername.Name = "lblCantChangeUsername";
+            this.lblCantChangeUsername.Size = new System.Drawing.Size(228, 19);
+            this.lblCantChangeUsername.TabIndex = 118;
+            this.lblCantChangeUsername.Text = "*You can\'t change your username";
             // 
             // lblOTPTimer
             // 
@@ -520,6 +521,14 @@ namespace Le_Sa.Settings
             this.lblUsername.TabIndex = 77;
             this.lblUsername.Text = "Username";
             // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(694, 521);
+            this.panel1.TabIndex = 123;
+            // 
             // crPnlWarning
             // 
             this.crPnlWarning.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -534,9 +543,9 @@ namespace Le_Sa.Settings
             this.crPnlWarning.Controls.Add(this.lblWarningMsg);
             this.crPnlWarning.Controls.Add(this.crBtnCloseWarning);
             this.crPnlWarning.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.crPnlWarning.Location = new System.Drawing.Point(18, 411);
+            this.crPnlWarning.Location = new System.Drawing.Point(19, 411);
             this.crPnlWarning.Name = "crPnlWarning";
-            this.crPnlWarning.Size = new System.Drawing.Size(676, 97);
+            this.crPnlWarning.Size = new System.Drawing.Size(684, 97);
             this.crPnlWarning.TabIndex = 113;
             this.crPnlWarning.TextColor = System.Drawing.Color.SaddleBrown;
             // 
@@ -621,7 +630,9 @@ namespace Le_Sa.Settings
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(694, 521);
+            this.Controls.Add(this.crPnlWarning);
             this.Controls.Add(this.pnlDesktop);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formAccountSettings";
@@ -665,9 +676,10 @@ namespace Le_Sa.Settings
         private CustomControls.CustomTextBox cTBOTP;
         private CustRoundedButton crBtnResendOTP;
         private System.Windows.Forms.Label lblOTPTimer;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCantChangeUsername;
         private CustRoundedButton crBtnChangeEmail;
         private CustRoundedButton crBtnSaveChanges;
         private CustRoundedButton cBtnClear;
+        private System.Windows.Forms.Panel panel1;
     }
 }

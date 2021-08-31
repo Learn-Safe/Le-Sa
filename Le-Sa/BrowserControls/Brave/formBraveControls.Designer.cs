@@ -1,7 +1,7 @@
 ﻿
 namespace Le_Sa.BrowserControls
 {
-    partial class formChromeControls
+    partial class formBraveControls
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Le_Sa.BrowserControls
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formChromeControls));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formBraveControls));
             this.pnlDescription = new System.Windows.Forms.Panel();
             this.crBtnStatus = new Le_Sa.CustRoundedButton();
             this.lblDescription = new System.Windows.Forms.Label();
@@ -94,7 +94,7 @@ namespace Le_Sa.BrowserControls
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(294, 408);
             this.lblDescription.TabIndex = 1;
-            this.lblDescription.Text = "In here you can change Chrome Browser settings.\r\n\r\nPlease select an item to view " +
+            this.lblDescription.Text = "In here you can change Brave Browser settings.\r\n\r\nPlease select an item to view " +
     "more. ";
             // 
             // lblPolicy
@@ -105,7 +105,7 @@ namespace Le_Sa.BrowserControls
             this.lblPolicy.Name = "lblPolicy";
             this.lblPolicy.Size = new System.Drawing.Size(218, 55);
             this.lblPolicy.TabIndex = 0;
-            this.lblPolicy.Text = "Chrome Controls";
+            this.lblPolicy.Text = "Brave Controls";
             // 
             // pnlControls
             // 
@@ -333,7 +333,7 @@ namespace Le_Sa.BrowserControls
             this.cTBtnIncognitoMode.UseVisualStyleBackColor = true;
             this.cTBtnIncognitoMode.CheckedChanged += new System.EventHandler(this.cTBtnIncognitoMode_CheckedChanged);
             // 
-            // formChromeControls
+            // formBraveControls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -343,10 +343,10 @@ namespace Le_Sa.BrowserControls
             this.Controls.Add(this.pnlDescription);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "formChromeControls";
+            this.Name = "formBraveControls";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "formChromeControls";
-            this.Load += new System.EventHandler(this.formChromeControls_Load);
+            this.Text = "formBraveControls";
+            this.Load += new System.EventHandler(this.formBraveControls_Load);
             this.pnlDescription.ResumeLayout(false);
             this.pnlControls.ResumeLayout(false);
             this.pnlControls.PerformLayout();

@@ -29,7 +29,10 @@ namespace Le_Sa.Settings
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formDNSConfig));
             this.pnlDesktop = new System.Windows.Forms.Panel();
+            this.crBtnClose = new Le_Sa.CustRoundedButton();
+            this.crBtnYT = new Le_Sa.CustRoundedButton();
             this.wvOpenDNS = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.pnlNav = new System.Windows.Forms.Panel();
             this.crBtnDNSStatus = new Le_Sa.CustRoundedButton();
@@ -49,6 +52,8 @@ namespace Le_Sa.Settings
             // pnlDesktop
             // 
             this.pnlDesktop.BackColor = System.Drawing.Color.White;
+            this.pnlDesktop.Controls.Add(this.crBtnClose);
+            this.pnlDesktop.Controls.Add(this.crBtnYT);
             this.pnlDesktop.Controls.Add(this.wvOpenDNS);
             this.pnlDesktop.Controls.Add(this.pnlNav);
             this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -56,6 +61,48 @@ namespace Le_Sa.Settings
             this.pnlDesktop.Name = "pnlDesktop";
             this.pnlDesktop.Size = new System.Drawing.Size(694, 521);
             this.pnlDesktop.TabIndex = 0;
+            // 
+            // crBtnClose
+            // 
+            this.crBtnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.crBtnClose.BackColor = System.Drawing.Color.Red;
+            this.crBtnClose.BackgroundColor = System.Drawing.Color.Red;
+            this.crBtnClose.BorderColor = System.Drawing.Color.Transparent;
+            this.crBtnClose.BorderRadius = 0;
+            this.crBtnClose.BorderSize = 2;
+            this.crBtnClose.FlatAppearance.BorderSize = 0;
+            this.crBtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBtnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.crBtnClose.ForeColor = System.Drawing.Color.Black;
+            this.crBtnClose.Location = new System.Drawing.Point(126, 482);
+            this.crBtnClose.Name = "crBtnClose";
+            this.crBtnClose.Size = new System.Drawing.Size(17, 17);
+            this.crBtnClose.TabIndex = 8;
+            this.crBtnClose.Text = "X";
+            this.crBtnClose.TextColor = System.Drawing.Color.Black;
+            this.crBtnClose.UseVisualStyleBackColor = false;
+            this.crBtnClose.Click += new System.EventHandler(this.crBtnClose_Click);
+            // 
+            // crBtnYT
+            // 
+            this.crBtnYT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.crBtnYT.BackColor = System.Drawing.Color.Red;
+            this.crBtnYT.BackgroundColor = System.Drawing.Color.Red;
+            this.crBtnYT.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.crBtnYT.BorderRadius = 37;
+            this.crBtnYT.BorderSize = 2;
+            this.crBtnYT.FlatAppearance.BorderSize = 0;
+            this.crBtnYT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.crBtnYT.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.crBtnYT.ForeColor = System.Drawing.Color.White;
+            this.crBtnYT.Location = new System.Drawing.Point(-16, 481);
+            this.crBtnYT.Name = "crBtnYT";
+            this.crBtnYT.Size = new System.Drawing.Size(159, 37);
+            this.crBtnYT.TabIndex = 7;
+            this.crBtnYT.Text = "How to setup?";
+            this.crBtnYT.TextColor = System.Drawing.Color.White;
+            this.crBtnYT.UseVisualStyleBackColor = false;
+            this.crBtnYT.Click += new System.EventHandler(this.crBtnYT_Click);
             // 
             // wvOpenDNS
             // 
@@ -69,6 +116,7 @@ namespace Le_Sa.Settings
             this.wvOpenDNS.Source = new System.Uri("https://login.opendns.com/?return_to=https://dashboard.opendns.com/", System.UriKind.Absolute);
             this.wvOpenDNS.TabIndex = 6;
             this.wvOpenDNS.ZoomFactor = 1D;
+            this.wvOpenDNS.NavigationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs>(this.wvOpenDNS_NavigationCompleted);
             // 
             // pnlNav
             // 
@@ -281,10 +329,11 @@ namespace Le_Sa.Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(75)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(694, 521);
             this.Controls.Add(this.pnlDesktop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formDNSConfig";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "formDNSConfig";
@@ -309,5 +358,7 @@ namespace Le_Sa.Settings
         private CustRoundedButton crBtnSetupRouter;
         private CustRoundedButton crBtnDNSStatus;
         private CustRoundedButton crBtnResetThisDevice;
+        private CustRoundedButton crBtnYT;
+        private CustRoundedButton crBtnClose;
     }
 }

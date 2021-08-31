@@ -23,10 +23,9 @@ namespace Le_Sa.BrowserControls
         private string keyName;
 
         #region Description Vars
-        private readonly string DisablePrivateBrowsing = "Disabling Incognito Mode will block access to the INCOGNITO MODE.\r\n\r\nEnabling Incognito Mode will allow user to access to the INCOGNITO MODE.\r\n\r\nINCOGNITO MODE doesn't store any data about user activities.";
-
-        private readonly string InstallAddonsPermission = "Blocking Extension Installation will denies user from installing extensions.\r\n\r\nIf this setting disabled, user is allowed to install any extension.";
-        private readonly string DisableDeveloperTools = "Disabling DEVELOPER TOOLS will block access to the DEVELOPER TOOLS.\r\n\r\n Enabling DEVELOPER TOOLS will allow user to acess to the DEVELOPER TOOLS.\r\n\r\nDEVELOPER TOOLS let user to see the source code of any web app and more.";
+        private readonly string DisablePrivateBrowsing = "Disabling Incognito Mode will block access to the INCOGNITO MODE.\n\nEnabling this will allow user to access to the INCOGNITO MODE.\n\nINCOGNITO MODE doesn't store any data about user activities.";
+        private readonly string InstallAddonsPermission = "Blocking Extension Installation will deny user from installing extensions.\n\nIf this setting disabled, user is allowed to install any extension.";
+        private readonly string DisableDeveloperTools = "Disabling DEVELOPER TOOLS will block access to the DEVELOPER TOOLS.\n\nEnabling this will allow user to acess to the DEVELOPER TOOLS.\n\nDEVELOPER TOOLS lets user to view the source code of any web app and more.";
         #endregion
 
         #region Status Color Vars

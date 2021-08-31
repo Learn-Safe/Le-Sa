@@ -1,15 +1,9 @@
 ﻿using Le_Sa.Models.AdminCheck;
 using Le_Sa.Models.Registry;
-using Le_Sa.Properties;
 using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Le_Sa.BrowserControls
@@ -55,6 +49,8 @@ namespace Le_Sa.BrowserControls
                 }
                 browserList = ReadWriteRegistry.KeyNames(Registry.CurrentUser, @"SOFTWARE\Clients\StartMenuInternet").Item2;
                 IsBrowserInstalled();
+                crBtnOpera.Enabled = false;
+                crBtnVivaldi.Enabled = false;
             }
         }
 
@@ -100,6 +96,7 @@ namespace Le_Sa.BrowserControls
         }
 
         #region Top Bar
+
         #region Open Child Form
         private void OpenChildForm(Form childForm)
         {
@@ -117,6 +114,7 @@ namespace Le_Sa.BrowserControls
             childForm.Show();
         }
         #endregion  
+
         private void ActiveButton(object senderBtn, Color color)
         {
             if (senderBtn != null)
@@ -140,12 +138,6 @@ namespace Le_Sa.BrowserControls
                 currentTBtn.Font = new Font(Font.FontFamily, 12, FontStyle.Regular);
             }
         }
-        #endregion
-
-        private void formBrowserControls_SizeChanged(object sender, EventArgs e)
-        {
-            lblSelect.Location = new Point(((this.Width / 2) - (lblSelect.Width / 2)), ((this.Height / 2) - (lblSelect.Height / 2) + 70));
-        }
 
         private void crBtnChrome_Click(object sender, EventArgs e)
         {
@@ -166,6 +158,19 @@ namespace Le_Sa.BrowserControls
             OpenChildForm(new formEdgeControls());
             ActiveButton(sender, RGBColors.btnEdgeClickedBack);
             crBtnChrome.BorderColor = RGBColors.btnEdgeClickedBorder;
+        }
+
+        private void crBtnBrave_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new formBraveControls());
+            ActiveButton(sender, RGBColors.btnBraveClickedBack);
+            crBtnChrome.BorderColor = RGBColors.btnBraveClickedBorder;
+        }
+        #endregion
+
+        private void formBrowserControls_SizeChanged(object sender, EventArgs e)
+        {
+            lblSelect.Location = new Point(((this.Width / 2) - (lblSelect.Width / 2)), ((this.Height / 2) - (lblSelect.Height / 2) + 70));
         }
     }
 }

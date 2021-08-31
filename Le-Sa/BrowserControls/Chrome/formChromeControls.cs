@@ -20,16 +20,19 @@ namespace Le_Sa.BrowserControls
         private readonly RegistryKey BaseFolder = Registry.CurrentUser;
         private readonly string SubFolderPath = @"Software\Policies\Google\Chrome\";
         private readonly string[] invert = { "BrowserGuestModeEnabled", "AllowDeletingBrowserHistory", "BrowserAddPersonEnabled" };
+        private readonly string[] valeTwo = { "DeveloperToolsAvailability" };
         CustToggleButton cTBtn;
+        private string trueValue;
+        private string falseValue;
 
         #region Description Vars
-        private readonly string IncognitoModeAvailability = "Disabling Incognito Mode will block access to the INCOGNITO MODE.\r\n\r\nEnabling Incognito Mode will allow user to access to the INCOGNITO MODE.\r\n\r\nINCOGNITO MODE doesn't store any data about user activities.";
-        private readonly string BrowserGuestModeEnabled = "Disabling Guest Mode will block access to the GUEST MODE.\r\n\r\nEnabling Guest Mode will allow user to access to the GUEST MODE\r\n\r\nGUEST MODE doesn't store any data about user activities.";
-        private readonly string BlockExternalExtensions = "Blocking External Extension will denies user from installing external extensions.\r\n\r\nIf this setting disabled, user is allowed to install any external extension.";
+        private readonly string IncognitoModeAvailability = "Disabling Incognito Mode will block access to the INCOGNITO MODE.\n\nEnabling this will allow user to access to the INCOGNITO MODE.\n\nINCOGNITO MODE doesn't store any data about user activities.";
+        private readonly string BrowserGuestModeEnabled = "Disabling Guest Mode will block access to the GUEST MODE.\n\nEnabling this will allow user to access to the GUEST MODE\n\nGUEST MODE doesn't store any data about user activities.";
+        private readonly string BlockExternalExtensions = "Blocking External Extension will deny user from installing external extensions.\n\nIf this setting disabled, user is allowed to install any external extension.";
         private readonly string PasswordLeakDetectionEnabled = "Enabling Password Leak Detection will notify the user if any saved password has been compromised as part of a data breach.";
-        private readonly string DeveloperToolsAvailability = "Disabling DEVELOPER TOOLS will block access to the DEVELOPER TOOLS.\r\n\r\n Enabling DEVELOPER TOOLS will allow user to acess to the DEVELOPER TOOLS.\r\n\r\nDEVELOPER TOOLS let user to see the source code of any web app and more.";
-        private readonly string AllowDeletingBrowserHistory = "Blocking History Deletion will denies user from delete BROWSING history and DOWNLOAD history.\r\n\r\nIf this setting disabled, user is allowed to delete all BROWSING data.";
-        private readonly string BrowserAddPersonEnabled = "Blocking Add new person will denies user to add new user profile to Chrome.\r\n\r\nIf this setting is disabled, user is allowed to add new user profile to Chrome.\r\n\r\n";
+        private readonly string DeveloperToolsAvailability = "Disabling DEVELOPER TOOLS will block access to the DEVELOPER TOOLS.\n\nEnabling this will allow user to acess to the DEVELOPER TOOLS.\n\nDEVELOPER TOOLS lets the user to view the source code of any web app and more.";
+        private readonly string AllowDeletingBrowserHistory = "Blocking History Deletion will deny the user from deleting BROWSER history and DOWNLOAD history.\n\nIf this setting disabled, the user is allowed to delete all BROWSING data.";
+        private readonly string BrowserAddPersonEnabled = "Blocking Add new person will deny user to add new user profile to Chrome.\n\nIf this setting is disabled, user is allowed to add new user profile to Chrome.\n\n";
         #endregion
 
         #region Status Color Vars
@@ -49,29 +52,36 @@ namespace Le_Sa.BrowserControls
         {
             foreach (var cTBtn in pnlControls.Controls.OfType<CustToggleButton>())
             {
+                if (invert.Any(cTBtn.Tag.ToString().Contains) && valeTwo.Any(cTBtn.Tag.ToString().Contains))
+                {
+                    trueValue = "1";
+                    falseValue = "2";
+                }
+                if (valeTwo.Any(cTBtn.Tag.ToString().Contains))
+                {
+                    trueValue = "2";
+                    falseValue = "1";
+                }
+                else if (invert.Any(cTBtn.Tag.ToString().Contains))
+                {
+                    trueValue = "0";
+                    falseValue = "1";
+                }
+                else
+                {
+                    trueValue = "1";
+                    falseValue = "0";
+                }
                 if (ReadWriteRegistry.ReadRegistry(BaseFolder, SubFolderPath, cTBtn.Tag.ToString()).Item1)
                 {
-                    if (ReadWriteRegistry.ReadRegistry(BaseFolder, SubFolderPath, cTBtn.Tag.ToString()).Item2.ToString() == "1")
+                    if (ReadWriteRegistry.ReadRegistry(BaseFolder, SubFolderPath, cTBtn.Tag.ToString()).Item2.ToString() == trueValue)
                     {
-                        if (invert.Any(cTBtn.Tag.ToString().Contains))
-                        {
-                            cTBtn.CheckState = CheckState.Unchecked;
-                        }
-                        else
-                        {
-                            cTBtn.CheckState = CheckState.Checked;
-                        }
+                        cTBtn.CheckState = CheckState.Checked;
+
                     }
-                    else if (ReadWriteRegistry.ReadRegistry(BaseFolder, SubFolderPath, cTBtn.Tag.ToString()).Item2.ToString() == "0")
+                    else if (ReadWriteRegistry.ReadRegistry(BaseFolder, SubFolderPath, cTBtn.Tag.ToString()).Item2.ToString() == falseValue)
                     {
-                        if (invert.Any(cTBtn.Tag.ToString().Contains))
-                        {
-                            cTBtn.CheckState = CheckState.Checked;
-                        }
-                        else
-                        {
-                            cTBtn.CheckState = CheckState.Unchecked;
-                        }
+                        cTBtn.CheckState = CheckState.Unchecked;
                     }
                     else if (ReadWriteRegistry.ReadRegistry(BaseFolder, SubFolderPath, cTBtn.Tag.ToString()).Item2 == null)
                     {
@@ -140,7 +150,7 @@ namespace Le_Sa.BrowserControls
 
         private void cTBtnDeveloperToolsAvailability_CheckedChanged(object sender, EventArgs e)
         {
-            CheckedChangedToggleBtn(cTBtnDeveloperToolsAvailability, 0x00000001, 0x00000000);
+            CheckedChangedToggleBtn(cTBtnDeveloperToolsAvailability, 0x00000002, 0x00000000);
             Dis_DeveloperToolsAvailability();
         }
 

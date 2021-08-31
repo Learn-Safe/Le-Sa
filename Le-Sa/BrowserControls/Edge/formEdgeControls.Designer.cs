@@ -60,9 +60,9 @@ namespace Le_Sa.BrowserControls
             this.lblBrowserAddProfileEnabled.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblBrowserAddProfileEnabled.Location = new System.Drawing.Point(12, 210);
             this.lblBrowserAddProfileEnabled.Name = "lblBrowserAddProfileEnabled";
-            this.lblBrowserAddProfileEnabled.Size = new System.Drawing.Size(164, 21);
+            this.lblBrowserAddProfileEnabled.Size = new System.Drawing.Size(167, 21);
             this.lblBrowserAddProfileEnabled.TabIndex = 17;
-            this.lblBrowserAddProfileEnabled.Text = "Block Add New Profile";
+            this.lblBrowserAddProfileEnabled.Text = "Block, Add New Profile";
             this.lblBrowserAddProfileEnabled.Click += new System.EventHandler(this.lblBrowserAddProfileEnabled_Click);
             // 
             // cTBtnBrowserAddProfileEnabled
@@ -330,8 +330,8 @@ namespace Le_Sa.BrowserControls
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(294, 408);
             this.lblDescription.TabIndex = 1;
-            this.lblDescription.Text = "In here you can change some Edge Browser settings.\r\n\r\nPlease select item to view " +
-    "more. ";
+            this.lblDescription.Text = "In here you can change Edge Browser settings.\r\n\r\nPlease select an item to view mo" +
+    "re. ";
             // 
             // formEdgeControls
             // 

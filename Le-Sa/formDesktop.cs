@@ -17,6 +17,7 @@ namespace Le_Sa
     {
         private CustRoundedButton currentBtn;
         private Form currentChildForm;
+        private string ImageLoc = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Le-Sa\User Data\DP\DP";
         string DPLoc;
 
         public formDesktop()
@@ -30,24 +31,23 @@ namespace Le_Sa
 
         private void formDesktop_Load(object sender, EventArgs e)
         {
-            DPLoc = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Le-Sa\User Data\DP\";
-            lblUserName.Text = Properties.Settings.Default.username;
+        lblUserName.Text = Properties.Settings.Default.username;
             lblUserName.Location = new Point(((pnlUser.Width / 2) - (lblUserName.Width / 2)), ((pnlUser.Height / 2) - (lblUserName.Height / 2) + 87));
 
             try
             {
-                if (File.Exists(DPLoc))
+                if (File.Exists(ImageLoc))
                 {
-                    cRPBDP.ImageLocation = DPLoc;
+                    cRPBDP.Image = new Bitmap(ImageLoc);
                 }
                 else
                 {
                     cRPBDP.Image = Properties.Resources.user_90px;
                 }
             }
-            catch(Exception error)
+            catch
             {
-                MessageBox.Show(error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cRPBDP.Image = Properties.Resources.user_90px;
             }
 
         }
