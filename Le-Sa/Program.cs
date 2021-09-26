@@ -14,8 +14,6 @@ namespace Le_Sa
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.ApplicationExit += new EventHandler(Application_ApplicationExit);
-            AppDomain.CurrentDomain.ProcessExit += new EventHandler(CurrentDomain_ProcessExit);
             if (AdminCheck.IsAdmin())
             {
                 Application.Run(new formLoadingScreen());
@@ -24,16 +22,6 @@ namespace Le_Sa
             {
                 AdminCheck.RestartUnderAdmin();
             }
-        }
-
-        private static void CurrentDomain_ProcessExit(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private static void Application_ApplicationExit(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }
