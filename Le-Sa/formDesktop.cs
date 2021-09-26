@@ -54,7 +54,7 @@ namespace Le_Sa
 
         private void formDesktop_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            Application.Exit();
         }
 
         private struct RGBColors
