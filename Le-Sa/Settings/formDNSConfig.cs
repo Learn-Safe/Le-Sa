@@ -154,10 +154,10 @@ namespace Le_Sa.Settings
                 MessageBox.Show(downErr.Message, "Error");
             }
 
-            if (System.IO.File.Exists(currentUserTempFolder + @"\tutorielVid.txt"))
+            if (File.Exists(currentUserTempFolder + @"\tutorielVid.txt"))
             {
                 const Int32 BufferSize = 128;
-                using (var fileStream = System.IO.File.OpenRead(currentUserTempFolder + @"\tutorielVid.txt"))
+                var fileStream = File.OpenRead(currentUserTempFolder + @"\tutorielVid.txt");
                 using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true, BufferSize))
                 {
                     String link;

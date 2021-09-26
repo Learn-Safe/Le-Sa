@@ -2,6 +2,7 @@
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using Le_Sa.Account;
+using Le_Sa.Models.Hashing;
 using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -80,17 +81,18 @@ namespace Le_Sa
                         serializer.Serialize(file, ResUser);
                     }*/
 
+                    string hashedPassword = Hashing.ToSHA512(cTBPassword.Texts);
                     User UserInput = new User() // USER INPUT
                     {
                         username = cTBUsername.Texts,
-                        password = cTBPassword.Texts
+                        password = hashedPassword
                     };
 
                     if (User.IsEqual(ResUser, UserInput))
                     {
                         Properties.Settings.Default.username = ResUser.username;
                         Properties.Settings.Default.Save();
-                        Properties.Settings.Default.password = ResUser.password;
+                        Properties.Settings.Default.password = hashedPassword;
                         Properties.Settings.Default.Save();
                         Properties.Settings.Default.phoneNo = ResUser.phone_no;
                         Properties.Settings.Default.Save();
@@ -101,7 +103,6 @@ namespace Le_Sa
                         desktop.Show();
                         this.Hide();
                     }
-
 
                     else
                     {

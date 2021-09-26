@@ -9,6 +9,7 @@ using Le_Sa.Models.Email;
 using FireSharp.Response;
 using FireSharp.Interfaces;
 using FireSharp.Config;
+using Le_Sa.Models.Hashing;
 
 namespace Le_Sa.Account
 {
@@ -116,6 +117,7 @@ namespace Le_Sa.Account
                 crBtnSendOTP.Enabled = false;
                 cTBEmail.Enabled = false;
                 otp = RandomStringGenerator.GenerateRandomString(6, true, false, true, false);
+                cTBOTP.Texts = otp;
                 bool sendMsg = Email.SendMsg(cTBEmail.Texts, "Le-Sa", "Use this One Time Password to verify your account 👉 " + otp + " 👈");
 
                 if (sendMsg == true)
@@ -336,10 +338,11 @@ namespace Le_Sa.Account
                                         }
                                         else
                                         {
+                                            string  hashedPassword = Hashing.ToSHA512(cTBPassword.Texts);
                                             User userData = new User()
                                             {
                                                 username = cTBUsername.Texts,
-                                                password = cTBPassword.Texts,
+                                                password = hashedPassword,
                                                 email = cTBEmail.Texts,
                                                 phone_no = cTBPhoneNumber.Texts,
                                                 status = true,
@@ -351,7 +354,7 @@ namespace Le_Sa.Account
 
                                             Properties.Settings.Default.username = cTBUsername.Texts;
                                             Properties.Settings.Default.Save();
-                                            Properties.Settings.Default.password = cTBPassword.Texts;
+                                            Properties.Settings.Default.password = hashedPassword;
                                             Properties.Settings.Default.Save();
                                             Properties.Settings.Default.phoneNo = cTBPhoneNumber.Texts;
                                             Properties.Settings.Default.Save();
@@ -377,7 +380,7 @@ namespace Le_Sa.Account
                 }
             }
         }
-        #endregion
+        #endregion        
 
         #region Titlebar
         private void crBrnClose_Click(object sender, EventArgs e)

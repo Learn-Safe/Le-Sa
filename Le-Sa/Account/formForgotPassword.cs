@@ -2,6 +2,7 @@
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using Le_Sa.Models.Email;
+using Le_Sa.Models.Hashing;
 using Le_Sa.Models.RandomString;
 using System;
 using System.Collections.Generic;
@@ -236,10 +237,11 @@ namespace Le_Sa.Account
                     FirebaseResponse res = client.Get(@"users/" + cTBUsername.Texts);
                     User ResUser = res.ResultAs<User>();
 
+                    string hashedPassword = Hashing.ToSHA512(cTBNewPassword.Texts);
                     User resetPass = new User()
                     {
                         username = ResUser.username,
-                        password = cTBNewPassword.Texts,
+                        password = hashedPassword,
                         email = ResUser.email,
                         phone_no = ResUser.phone_no,
                         status = ResUser.status,
@@ -250,7 +252,7 @@ namespace Le_Sa.Account
 
                     Properties.Settings.Default.username = ResUser.username;
                     Properties.Settings.Default.Save();
-                    Properties.Settings.Default.password = ResUser.password;
+                    Properties.Settings.Default.password = hashedPassword;
                     Properties.Settings.Default.Save();
                     Properties.Settings.Default.phoneNo = ResUser.phone_no;
                     Properties.Settings.Default.Save();

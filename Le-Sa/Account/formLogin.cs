@@ -1,17 +1,11 @@
 ﻿using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using Le_Sa.Models.Hashing;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Le_Sa.Account
@@ -67,23 +61,23 @@ namespace Le_Sa.Account
             {
                 FirebaseResponse res = client.Get(@"users/" + cTBUsername.Texts);
                 User ResUser = res.ResultAs<User>();
+                string hashedPassword = Hashing.ToSHA512(cTBPassword.Texts);
                 User UserInput = new User() // USER INPUT
                 {
                     username = cTBUsername.Texts,
-                    password = cTBPassword.Texts
+                    password = hashedPassword
                 };
-                Properties.Settings.Default.username = ResUser.username;
-                Properties.Settings.Default.Save();
-                Properties.Settings.Default.password = ResUser.password;
-                Properties.Settings.Default.Save();
-                Properties.Settings.Default.phoneNo = ResUser.phone_no;
-                Properties.Settings.Default.Save();
-                Properties.Settings.Default.email = ResUser.email;
-                Properties.Settings.Default.Save();
 
                 if (User.IsEqual(ResUser, UserInput))
                 {
-                    Properties.Settings.Default.username = cTBUsername.Texts;
+                    Properties.Settings.Default.username = ResUser.username;
+                    Properties.Settings.Default.Save();
+                    Properties.Settings.Default.password = ResUser.password;
+                    Properties.Settings.Default.Save();
+                    Properties.Settings.Default.phoneNo = ResUser.phone_no;
+                    Properties.Settings.Default.Save();
+                    Properties.Settings.Default.email = ResUser.email;
+                    Properties.Settings.Default.Save();
                     formDesktop desktop = new formDesktop();
                     desktop.Show();
                     this.Hide();
