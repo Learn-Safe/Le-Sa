@@ -184,6 +184,7 @@ namespace Le_Sa
             this.Name = "formDesktop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Le-Sa";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formDesktop_FormClosing);
             this.Load += new System.EventHandler(this.formDesktop_Load);
             this.pnlUser.ResumeLayout(false);
             this.pnlUser.PerformLayout();
