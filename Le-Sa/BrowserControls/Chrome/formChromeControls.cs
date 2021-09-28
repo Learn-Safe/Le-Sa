@@ -1,19 +1,12 @@
 ﻿using Le_Sa.CustomControls;
 using Le_Sa.Models.Registry;
-using Le_Sa.Models.Serialization;
 using Microsoft.Win32;
 using System;
-using Le_Sa.Properties;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Le_Sa.BrowserControls
+namespace Le_Sa.BrowserControls.Chrome
 {
     public partial class formChromeControls : Form
     {

@@ -80,6 +80,7 @@ namespace Le_Sa.BrowserControls
             this.crBtnVivaldi.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.crBtnVivaldi.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(213)))));
             this.crBtnVivaldi.UseVisualStyleBackColor = false;
+            this.crBtnVivaldi.Click += new System.EventHandler(this.crBtnVivaldi_Click);
             // 
             // crBtnBrave
             // 
