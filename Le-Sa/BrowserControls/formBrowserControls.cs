@@ -1,4 +1,9 @@
-﻿using Le_Sa.Models.AdminCheck;
+﻿using Le_Sa.BrowserControls.Vivaldi;
+using Le_Sa.BrowserControls.Brave;
+using Le_Sa.BrowserControls.Chrome;
+using Le_Sa.BrowserControls.Edge;
+using Le_Sa.BrowserControls.Firefox;
+using Le_Sa.Models.AdminCheck;
 using Le_Sa.Models.Registry;
 using Microsoft.Win32;
 using System;
@@ -50,7 +55,6 @@ namespace Le_Sa.BrowserControls
                 browserList = ReadWriteRegistry.KeyNames(Registry.CurrentUser, @"SOFTWARE\Clients\StartMenuInternet").Item2;
                 IsBrowserInstalled();
                 crBtnOpera.Enabled = false;
-                crBtnVivaldi.Enabled = false;
             }
         }
 
@@ -62,6 +66,7 @@ namespace Le_Sa.BrowserControls
                 {
                     foreach (string browser in browserList)
                     {
+                        Console.WriteLine(browser);
                         if (crBtn.Enabled == false)
                         {
                             if (browser == crBtn.Tag.ToString())
@@ -166,11 +171,19 @@ namespace Le_Sa.BrowserControls
             ActiveButton(sender, RGBColors.btnBraveClickedBack);
             crBtnChrome.BorderColor = RGBColors.btnBraveClickedBorder;
         }
+
+        private void crBtnVivaldi_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new formVivaldiControls());
+            ActiveButton(sender, RGBColors.btnVivaldiClickedBack);
+            crBtnChrome.BorderColor = RGBColors.btnVivaldiClickedBorder;
+        }
         #endregion
 
         private void formBrowserControls_SizeChanged(object sender, EventArgs e)
         {
             lblSelect.Location = new Point(((this.Width / 2) - (lblSelect.Width / 2)), ((this.Height / 2) - (lblSelect.Height / 2) + 70));
         }
+
     }
 }

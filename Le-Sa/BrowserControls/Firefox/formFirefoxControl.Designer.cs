@@ -1,5 +1,5 @@
 ﻿
-namespace Le_Sa.BrowserControls
+namespace Le_Sa.BrowserControls.Firefox
 {
     partial class formFirefoxControl
     {
