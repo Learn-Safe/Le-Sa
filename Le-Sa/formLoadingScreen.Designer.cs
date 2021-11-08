@@ -152,7 +152,7 @@
             this.llblHaveAnAccount.Location = new System.Drawing.Point(12, 354);
             this.llblHaveAnAccount.Name = "llblHaveAnAccount";
             this.llblHaveAnAccount.Size = new System.Drawing.Size(241, 20);
-            this.llblHaveAnAccount.TabIndex = 64;
+            this.llblHaveAnAccount.TabIndex = 6;
             this.llblHaveAnAccount.TabStop = true;
             this.llblHaveAnAccount.Text = "Don\'t have an account?   Sign Up";
             this.llblHaveAnAccount.VisitedLinkColor = System.Drawing.Color.LightGray;
@@ -173,7 +173,7 @@
             this.crBtnVisibility.Location = new System.Drawing.Point(235, 231);
             this.crBtnVisibility.Name = "crBtnVisibility";
             this.crBtnVisibility.Size = new System.Drawing.Size(27, 27);
-            this.crBtnVisibility.TabIndex = 58;
+            this.crBtnVisibility.TabIndex = 4;
             this.crBtnVisibility.TextColor = System.Drawing.SystemColors.ScrollBar;
             this.crBtnVisibility.UseVisualStyleBackColor = false;
             this.crBtnVisibility.MouseDown += new System.Windows.Forms.MouseEventHandler(this.crBtnVisibility_MouseDown);
@@ -195,7 +195,7 @@
             this.cTBUsername.Padding = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.cTBUsername.PasswordChar = false;
             this.cTBUsername.Size = new System.Drawing.Size(248, 27);
-            this.cTBUsername.TabIndex = 57;
+            this.cTBUsername.TabIndex = 1;
             this.cTBUsername.Texts = "";
             this.cTBUsername.UnderlinedStyle = false;
             // 
@@ -215,7 +215,7 @@
             this.cTBPassword.Padding = new System.Windows.Forms.Padding(6, 4, 35, 4);
             this.cTBPassword.PasswordChar = true;
             this.cTBPassword.Size = new System.Drawing.Size(246, 27);
-            this.cTBPassword.TabIndex = 59;
+            this.cTBPassword.TabIndex = 2;
             this.cTBPassword.Texts = "";
             this.cTBPassword.UnderlinedStyle = false;
             // 
@@ -233,7 +233,7 @@
             this.crBtnContinue.Location = new System.Drawing.Point(3, 386);
             this.crBtnContinue.Name = "crBtnContinue";
             this.crBtnContinue.Size = new System.Drawing.Size(274, 31);
-            this.crBtnContinue.TabIndex = 60;
+            this.crBtnContinue.TabIndex = 3;
             this.crBtnContinue.Text = "Continue";
             this.crBtnContinue.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.crBtnContinue.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(22)))));
@@ -272,7 +272,7 @@
             this.llblForgotPassword.Location = new System.Drawing.Point(12, 279);
             this.llblForgotPassword.Name = "llblForgotPassword";
             this.llblForgotPassword.Size = new System.Drawing.Size(128, 20);
-            this.llblForgotPassword.TabIndex = 63;
+            this.llblForgotPassword.TabIndex = 5;
             this.llblForgotPassword.TabStop = true;
             this.llblForgotPassword.Text = "Forgot password?";
             this.llblForgotPassword.VisitedLinkColor = System.Drawing.Color.LightGray;
@@ -291,6 +291,7 @@
             // 
             // formLoadingScreen
             // 
+            this.AcceptButton = this.crBtnContinue;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
