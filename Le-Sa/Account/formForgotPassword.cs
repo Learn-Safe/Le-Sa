@@ -2,17 +2,11 @@
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using Le_Sa.Models.Email;
-using Le_Sa.Models.Hashing;
 using Le_Sa.Models.RandomString;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Le_Sa.Account
@@ -25,11 +19,12 @@ namespace Le_Sa.Account
         private int min = 05;
         IFirebaseClient client;
         private string emailAddress;
+        public static string inputUsername;
 
         public formForgotPassword()
         {
             InitializeComponent();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
         }
 
         #region Rounded Corner
@@ -50,7 +45,6 @@ namespace Le_Sa.Account
             AuthSecret = "K9Ul4asnJqIMFlBlpm0AkjcEnwWagBxs4Iy0xZes",
             BasePath = "https://le-sa-f718d-default-rtdb.firebaseio.com/"
         };
-
 
         private void formForgotPassword_Load(object sender, EventArgs e)
         {
@@ -163,7 +157,7 @@ namespace Le_Sa.Account
 
             if (sendMsg)
             {
-                MessageBox.Show("OTP Sent successfully to your email address (" + HideEmailAddress(emailAddress) + ")"  + Environment.NewLine + "Please check your spam or junk mail if you not received it within the next 2 minutes");
+                MessageBox.Show("OTP Sent successfully to your email address (" + HideEmailAddress(emailAddress) + ")" + Environment.NewLine + "Please check your spam or junk mail if you not received it within the next 2 minutes");
             }
             else
             {
@@ -187,7 +181,7 @@ namespace Le_Sa.Account
             int localLength = localPart.Length;
             string showenPart = email.Substring(0, (int)Math.Round(((double)localLength) / 3));
             int hiddenLength = localLength - (int)Math.Round((double)localLength / 3);
-            string hiddenEmail = showenPart + string.Concat(Enumerable.Repeat("*", hiddenLength))+ "@" + domainPart;
+            string hiddenEmail = showenPart + string.Concat(Enumerable.Repeat("*", hiddenLength)) + "@" + domainPart;
             return hiddenEmail;
         }
         #endregion
@@ -198,7 +192,8 @@ namespace Le_Sa.Account
             if (string.IsNullOrEmpty(cTBUsername.Texts) || string.IsNullOrEmpty(cTBOTP.Texts))
             {
                 MessageBox.Show("Please fill all fileds and verify your account before continue", "Fields are empty", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }else if (cTBOTP.Texts != otp)
+            }
+            else if (cTBOTP.Texts != otp)
             {
                 MessageBox.Show("OTP didn't match!", "Confirmation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -213,126 +208,20 @@ namespace Le_Sa.Account
                 cTBOTP.Enabled = false;
                 crBtnContinue.Visible = false;
                 this.Width += 20;
-                pnlContent.AutoScroll = true;
-                pnlContent.AutoScrollPosition = new Point(0, 210);
+                inputUsername = cTBUsername.Texts;
+                formCreateNewPassword formNewPassword = new formCreateNewPassword();
+                formNewPassword.Show();
+                this.Close();
             }
         }
         #endregion
 
-        #region Reset Password
-        private void crBtnChangePassword_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(cTBUsername.Texts) || string.IsNullOrEmpty(cTBOTP.Texts) || string.IsNullOrEmpty(cTBUsername.Texts) || string.IsNullOrEmpty(cTBUsername.Texts))
-            {
-                MessageBox.Show("Please fill all fields", "Fields are empty", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (cTBNewPassword.Texts != cTBConfPassword.Texts)
-            {
-                MessageBox.Show("Passwords didn't match!", "Confirmation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                try
-                {
-                    FirebaseResponse res = client.Get(@"users/" + cTBUsername.Texts);
-                    User ResUser = res.ResultAs<User>();
-
-                    string hashedPassword = Hashing.ToSHA512(cTBNewPassword.Texts);
-                    User resetPass = new User()
-                    {
-                        username = ResUser.username,
-                        password = hashedPassword,
-                        email = ResUser.email,
-                        phone_no = ResUser.phone_no,
-                        status = ResUser.status,
-                        start = ResUser.start,
-                        duration = ResUser.duration,
-                        login_count = ResUser.login_count
-                    };
-
-                    Properties.Settings.Default.username = ResUser.username;
-                    Properties.Settings.Default.Save();
-                    Properties.Settings.Default.password = hashedPassword;
-                    Properties.Settings.Default.Save();
-                    Properties.Settings.Default.phoneNo = ResUser.phone_no;
-                    Properties.Settings.Default.Save();
-                    Properties.Settings.Default.email = ResUser.email;
-                    Properties.Settings.Default.Save();
-
-                    SetResponse set = client.Set(@"users/" + ResUser.username, resetPass);
-
-                    MessageBox.Show("Password resetted successfully.\r\nNow you can login using new password", "Sucessful", MessageBoxButtons.OK);
-
-                    formLogin login = new formLogin();
-                    login.Show();
-                    this.Hide();
-                }
-                catch (Exception fireError)
-                {
-                    MessageBox.Show(fireError.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-        #endregion
-
-        #region New Password
-        private void crBtnGeneratePassword_Click(object sender, EventArgs e)
-        {
-            string generatedPass = RandomStringGenerator.GenerateRandomString(14, true, true, true, true);
-            cTBNewPassword.Texts = generatedPass;
-            cTBConfPassword.Texts = generatedPass;
-            StrengthCheck();
-        }
-
-        private void crBtnPassVisibility_MouseDown(object sender, MouseEventArgs e)
-        {
-            cTBNewPassword.PasswordChar = false;
-            cTBConfPassword.PasswordChar = false;
-            crBtnPassVisibility.Image = Properties.Resources.show_22px;
-            crBtnConfPassVisibility.Image = Properties.Resources.show_22px;
-        }
-
-        private void crBtnConfPassVisibility_MouseUp(object sender, MouseEventArgs e)
-        {
-            cTBNewPassword.PasswordChar = true;
-            cTBConfPassword.PasswordChar = true;
-            crBtnPassVisibility.Image = Properties.Resources.hide_22px;
-            crBtnConfPassVisibility.Image = Properties.Resources.hide_22px;
-        }
-
-        #region Strength
-        private void crBtnStrength_Click(object sender, EventArgs e)
-        {
-            if (cTBNewPassword.Texts == "" || cTBConfPassword.Texts == "")
-            {
-                lblStrength.Visible = false;
-                MessageBox.Show("Please fill password fields before strength check", "Fields are empty", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (cTBNewPassword.Texts != cTBConfPassword.Texts)
-            {
-                lblStrength.Visible = false;
-                MessageBox.Show("Passwords didn't match!", "Confirmation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                StrengthCheck();
-            }
-        }
-
-        private void StrengthCheck()
-        {
-            int passwordScore = CheckString.StrengthScore(cTBNewPassword.Texts, true, true, true, true);
-            (string strengthLevel, Color strengthColor) = (CheckString.StrengthNaming(passwordScore).Item1, CheckString.StrengthNaming(passwordScore).Item2);
-            lblStrength.Text = strengthLevel;
-            lblStrength.ForeColor = strengthColor;
-            lblStrength.Visible = true;
-        }
-        #endregion
-
-        #endregion
-
-        private void crBrnClose_Click(object sender, EventArgs e)
-        {
+            tmrOTP.Stop();
+            otp = null;
+            formLogin loginForm = new formLogin();
+            loginForm.Show();
             this.Close();
         }
     }

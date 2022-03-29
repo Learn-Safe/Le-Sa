@@ -73,7 +73,7 @@ namespace Le_Sa.BrowserControls
                             {
                                 crBtn.Enabled = true;
                             }
-                            else if (browser.Substring(0, 5) == crBtn.Tag.ToString().Substring(0, 5))
+                            else if (browser.Length >= 5 && browser.Substring(0, 5) == crBtn.Tag.ToString().Substring(0, 5))
                             {
                                 crBtn.Enabled = true;
                             }
