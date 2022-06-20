@@ -42,7 +42,6 @@ namespace Le_Sa.Settings
                 crPnlWarning.Visible = false;
             }
             cTBUsername.Texts = Properties.Settings.Default.username;
-            cTBPassword.Texts = Properties.Settings.Default.password;
             cTBPhoneNumber.Texts = Properties.Settings.Default.phoneNo;
             cTBEmail.Texts = Properties.Settings.Default.email;
 
@@ -211,54 +210,6 @@ namespace Le_Sa.Settings
 
         #endregion
 
-        #region Password
-
-        private void crBtnGeneratePassword_Click(object sender, EventArgs e)
-        {
-            string generatedPass = RandomStringGenerator.GenerateRandomString(14, true, true, true, true);
-            cTBPassword.Texts = generatedPass;
-            StrengthCheck();
-        }
-
-        private void crBtnPassVisibility_MouseDown(object sender, MouseEventArgs e)
-        {
-            cTBPassword.PasswordChar = false;
-            crBtnPassVisibility.Image = Properties.Resources.show_22px;
-        }
-
-        private void crBtnPassVisibility_MouseUp(object sender, MouseEventArgs e)
-        {
-            cTBPassword.PasswordChar = true;
-            crBtnPassVisibility.Image = Properties.Resources.hide_22px;
-        }
-
-        #region Password Strength
-        private void crBtnStrength_Click(object sender, EventArgs e)
-        {
-            if (cTBPassword.Texts == "")
-            {
-                lblStrength.Visible = false;
-                MessageBox.Show("Please fill password field before strength check", "Fields are empty", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                StrengthCheck();
-            }
-        }
-
-        private void StrengthCheck()
-        {
-            int passwordScore = CheckString.StrengthScore(cTBPassword.Texts, true, true, true, true);
-            (string strengthLevel, Color strengthColor) = (CheckString.StrengthNaming(passwordScore).Item1, CheckString.StrengthNaming(passwordScore).Item2);
-            lblStrength.Text = strengthLevel;
-            lblStrength.ForeColor = strengthColor;
-            lblStrength.Visible = true;
-        }
-        #endregion
-
-        #endregion
-
-
         private void crBtnChangeEmail_Click(object sender, EventArgs e)
         {
             otp = null;
@@ -275,7 +226,7 @@ namespace Le_Sa.Settings
 
         private void crBtnSaveChanges_Click(object sender, EventArgs e)
         {
-            if (cTBPassword.Texts == Properties.Settings.Default.password && cTBPhoneNumber.Texts == Properties.Settings.Default.phoneNo && cTBEmail.Texts == Properties.Settings.Default.email)
+            if (cTBPhoneNumber.Texts == Properties.Settings.Default.phoneNo && cTBEmail.Texts == Properties.Settings.Default.email)
             {
                 MessageBox.Show("Please cahnge field you want to update", "Same data", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -290,13 +241,9 @@ namespace Le_Sa.Settings
                     MessageBox.Show("OTP didn't match!", "Confirmation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            else if (CheckString.StrengthScore(cTBPassword.Texts, true, true, true, true) < 5)
-            {
-                MessageBox.Show("Password strength must be Strong or Excellent.\r\nYou can generate new password by clicking Generate Password button.\r\nUse Check Strength button to check your password strength.", "Weak Password", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
             else
             {
-                DialogResult updateUserData = MessageBox.Show($"Account data will be saved as follows.\nUsername : {cTBUsername.Texts}\nPassword : {cTBPassword.Texts}\nEmail : {cTBEmail.Texts}\nPhone No. : {cTBPhoneNumber.Texts}", "Update Account Data", MessageBoxButtons.OKCancel);
+                DialogResult updateUserData = MessageBox.Show($"Account data will be saved as follows.\nUsername : {cTBUsername.Texts}\nEmail : {cTBEmail.Texts}\nPhone No. : {cTBPhoneNumber.Texts}", "Update Account Data", MessageBoxButtons.OKCancel);
                 if (updateUserData == DialogResult.OK)
                 {
                     try
@@ -307,7 +254,7 @@ namespace Le_Sa.Settings
                         User updateUser = new User()
                         {
                             username = ResUser.username,
-                            password = cTBPassword.Texts,
+                            password = ResUser.password,
                             email = cTBEmail.Texts,
                             phone_no = cTBPhoneNumber.Texts,
                             status = ResUser.status,
@@ -319,11 +266,7 @@ namespace Le_Sa.Settings
                         SetResponse set = client.Set(@"users/" + ResUser.username, updateUser);
 
                         Properties.Settings.Default.username = cTBUsername.Texts;
-                        Properties.Settings.Default.Save();
-                        Properties.Settings.Default.password = cTBPassword.Texts;
-                        Properties.Settings.Default.Save();
                         Properties.Settings.Default.phoneNo = cTBPhoneNumber.Texts;
-                        Properties.Settings.Default.Save();
                         Properties.Settings.Default.email = cTBEmail.Texts;
                         Properties.Settings.Default.Save();
 
@@ -342,7 +285,6 @@ namespace Le_Sa.Settings
         private void cBtnClear_Click(object sender, EventArgs e)
         {
             cTBUsername.Texts = Properties.Settings.Default.username;
-            cTBPassword.Texts = Properties.Settings.Default.password;
             cTBPhoneNumber.Texts = Properties.Settings.Default.phoneNo;
             cTBEmail.Texts = Properties.Settings.Default.email;
             cTBOTP.Texts = "";
@@ -356,7 +298,6 @@ namespace Le_Sa.Settings
             crBtnResendOTP.Visible = false;
             crBtnSendOTP.Enabled = true;
             cTBEmail.Enabled = true;
-            lblStrength.Visible = false;
         }
         #endregion
     }

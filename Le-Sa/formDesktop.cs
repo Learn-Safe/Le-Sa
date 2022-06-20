@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Le_Sa.History;
 using System.Windows.Forms;
 using Le_Sa.BrowserControls;
@@ -18,7 +12,6 @@ namespace Le_Sa
         private CustRoundedButton currentBtn;
         private Form currentChildForm;
         private string ImageLoc = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\Le-Sa\User Data\DP\DP";
-        string DPLoc;
 
         public formDesktop()
         {
