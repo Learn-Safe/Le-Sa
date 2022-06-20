@@ -47,12 +47,6 @@ namespace Le_Sa.Settings
             this.lblEmail = new System.Windows.Forms.Label();
             this.cTBPhoneNumber = new Le_Sa.CustomControls.CustomTextBox();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
-            this.lblStrength = new System.Windows.Forms.Label();
-            this.crBtnStrength = new Le_Sa.CustRoundedButton();
-            this.crBtnGeneratePassword = new Le_Sa.CustRoundedButton();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.crBtnPassVisibility = new Le_Sa.CustRoundedButton();
-            this.cTBPassword = new Le_Sa.CustomControls.CustomTextBox();
             this.cTBUsername = new Le_Sa.CustomControls.CustomTextBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -87,12 +81,6 @@ namespace Le_Sa.Settings
             this.pnlDesktop.Controls.Add(this.lblEmail);
             this.pnlDesktop.Controls.Add(this.cTBPhoneNumber);
             this.pnlDesktop.Controls.Add(this.lblPhoneNumber);
-            this.pnlDesktop.Controls.Add(this.lblStrength);
-            this.pnlDesktop.Controls.Add(this.crBtnStrength);
-            this.pnlDesktop.Controls.Add(this.crBtnGeneratePassword);
-            this.pnlDesktop.Controls.Add(this.lblPassword);
-            this.pnlDesktop.Controls.Add(this.crBtnPassVisibility);
-            this.pnlDesktop.Controls.Add(this.cTBPassword);
             this.pnlDesktop.Controls.Add(this.cTBUsername);
             this.pnlDesktop.Controls.Add(this.lblUsername);
             this.pnlDesktop.Location = new System.Drawing.Point(0, 0);
@@ -133,7 +121,7 @@ namespace Le_Sa.Settings
             this.crBtnChangeEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crBtnChangeEmail.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.crBtnChangeEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.crBtnChangeEmail.Location = new System.Drawing.Point(70, 171);
+            this.crBtnChangeEmail.Location = new System.Drawing.Point(70, 104);
             this.crBtnChangeEmail.Name = "crBtnChangeEmail";
             this.crBtnChangeEmail.Size = new System.Drawing.Size(125, 27);
             this.crBtnChangeEmail.TabIndex = 119;
@@ -159,7 +147,7 @@ namespace Le_Sa.Settings
             this.lblOTPTimer.AutoSize = true;
             this.lblOTPTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOTPTimer.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblOTPTimer.Location = new System.Drawing.Point(414, 208);
+            this.lblOTPTimer.Location = new System.Drawing.Point(414, 141);
             this.lblOTPTimer.Name = "lblOTPTimer";
             this.lblOTPTimer.Size = new System.Drawing.Size(49, 20);
             this.lblOTPTimer.TabIndex = 117;
@@ -177,7 +165,7 @@ namespace Le_Sa.Settings
             this.crBtnResendOTP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crBtnResendOTP.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.crBtnResendOTP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.crBtnResendOTP.Location = new System.Drawing.Point(469, 203);
+            this.crBtnResendOTP.Location = new System.Drawing.Point(469, 136);
             this.crBtnResendOTP.Name = "crBtnResendOTP";
             this.crBtnResendOTP.Size = new System.Drawing.Size(108, 26);
             this.crBtnResendOTP.TabIndex = 116;
@@ -193,7 +181,7 @@ namespace Le_Sa.Settings
             this.lblOTP.BackColor = System.Drawing.Color.Transparent;
             this.lblOTP.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOTP.ForeColor = System.Drawing.Color.White;
-            this.lblOTP.Location = new System.Drawing.Point(12, 203);
+            this.lblOTP.Location = new System.Drawing.Point(12, 136);
             this.lblOTP.Name = "lblOTP";
             this.lblOTP.Size = new System.Drawing.Size(50, 25);
             this.lblOTP.TabIndex = 115;
@@ -209,7 +197,7 @@ namespace Le_Sa.Settings
             this.cTBOTP.BorderSize = 0;
             this.cTBOTP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cTBOTP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.cTBOTP.Location = new System.Drawing.Point(200, 201);
+            this.cTBOTP.Location = new System.Drawing.Point(200, 134);
             this.cTBOTP.Margin = new System.Windows.Forms.Padding(1);
             this.cTBOTP.Multiline = false;
             this.cTBOTP.Name = "cTBOTP";
@@ -255,7 +243,7 @@ namespace Le_Sa.Settings
             this.crBtnRemovwDP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crBtnRemovwDP.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.crBtnRemovwDP.ForeColor = System.Drawing.Color.Sienna;
-            this.crBtnRemovwDP.Location = new System.Drawing.Point(17, 294);
+            this.crBtnRemovwDP.Location = new System.Drawing.Point(17, 227);
             this.crBtnRemovwDP.Name = "crBtnRemovwDP";
             this.crBtnRemovwDP.Size = new System.Drawing.Size(178, 27);
             this.crBtnRemovwDP.TabIndex = 110;
@@ -275,7 +263,7 @@ namespace Le_Sa.Settings
             this.crBtnDP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crBtnDP.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.crBtnDP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.crBtnDP.Location = new System.Drawing.Point(17, 257);
+            this.crBtnDP.Location = new System.Drawing.Point(17, 190);
             this.crBtnDP.Name = "crBtnDP";
             this.crBtnDP.Size = new System.Drawing.Size(178, 27);
             this.crBtnDP.TabIndex = 109;
@@ -292,7 +280,7 @@ namespace Le_Sa.Settings
             this.crPBDP.BorderRadius = 116;
             this.crPBDP.BorderSize = 2;
             this.crPBDP.Image = global::Le_Sa.Properties.Resources.user_90px;
-            this.crPBDP.Location = new System.Drawing.Point(200, 257);
+            this.crPBDP.Location = new System.Drawing.Point(200, 190);
             this.crPBDP.Name = "crPBDP";
             this.crPBDP.Size = new System.Drawing.Size(116, 116);
             this.crPBDP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -310,7 +298,7 @@ namespace Le_Sa.Settings
             this.crBtnSendOTP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.crBtnSendOTP.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.crBtnSendOTP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.crBtnSendOTP.Location = new System.Drawing.Point(583, 203);
+            this.crBtnSendOTP.Location = new System.Drawing.Point(583, 136);
             this.crBtnSendOTP.Name = "crBtnSendOTP";
             this.crBtnSendOTP.Size = new System.Drawing.Size(101, 26);
             this.crBtnSendOTP.TabIndex = 107;
@@ -328,7 +316,7 @@ namespace Le_Sa.Settings
             this.cTBEmail.BorderSize = 0;
             this.cTBEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cTBEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.cTBEmail.Location = new System.Drawing.Point(200, 171);
+            this.cTBEmail.Location = new System.Drawing.Point(200, 104);
             this.cTBEmail.Margin = new System.Windows.Forms.Padding(1);
             this.cTBEmail.Multiline = false;
             this.cTBEmail.Name = "cTBEmail";
@@ -345,7 +333,7 @@ namespace Le_Sa.Settings
             this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(12, 173);
+            this.lblEmail.Location = new System.Drawing.Point(12, 106);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(61, 25);
             this.lblEmail.TabIndex = 105;
@@ -360,7 +348,7 @@ namespace Le_Sa.Settings
             this.cTBPhoneNumber.BorderSize = 0;
             this.cTBPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cTBPhoneNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.cTBPhoneNumber.Location = new System.Drawing.Point(200, 130);
+            this.cTBPhoneNumber.Location = new System.Drawing.Point(200, 63);
             this.cTBPhoneNumber.Margin = new System.Windows.Forms.Padding(1);
             this.cTBPhoneNumber.Multiline = false;
             this.cTBPhoneNumber.Name = "cTBPhoneNumber";
@@ -377,116 +365,11 @@ namespace Le_Sa.Settings
             this.lblPhoneNumber.BackColor = System.Drawing.Color.Transparent;
             this.lblPhoneNumber.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhoneNumber.ForeColor = System.Drawing.Color.White;
-            this.lblPhoneNumber.Location = new System.Drawing.Point(12, 132);
+            this.lblPhoneNumber.Location = new System.Drawing.Point(12, 65);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
             this.lblPhoneNumber.Size = new System.Drawing.Size(152, 25);
             this.lblPhoneNumber.TabIndex = 103;
             this.lblPhoneNumber.Text = "Phone Number";
-            // 
-            // lblStrength
-            // 
-            this.lblStrength.AutoSize = true;
-            this.lblStrength.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(75)))));
-            this.lblStrength.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblStrength.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStrength.Location = new System.Drawing.Point(196, 91);
-            this.lblStrength.Name = "lblStrength";
-            this.lblStrength.Size = new System.Drawing.Size(0, 21);
-            this.lblStrength.TabIndex = 102;
-            // 
-            // crBtnStrength
-            // 
-            this.crBtnStrength.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnStrength.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnStrength.BorderColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnStrength.BorderRadius = 11;
-            this.crBtnStrength.BorderSize = 0;
-            this.crBtnStrength.FlatAppearance.BorderSize = 0;
-            this.crBtnStrength.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crBtnStrength.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.crBtnStrength.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.crBtnStrength.Location = new System.Drawing.Point(378, 88);
-            this.crBtnStrength.Name = "crBtnStrength";
-            this.crBtnStrength.Size = new System.Drawing.Size(135, 26);
-            this.crBtnStrength.TabIndex = 100;
-            this.crBtnStrength.Text = "Check Strength";
-            this.crBtnStrength.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.crBtnStrength.UseVisualStyleBackColor = false;
-            this.crBtnStrength.Click += new System.EventHandler(this.crBtnStrength_Click);
-            // 
-            // crBtnGeneratePassword
-            // 
-            this.crBtnGeneratePassword.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnGeneratePassword.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnGeneratePassword.BorderColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnGeneratePassword.BorderRadius = 11;
-            this.crBtnGeneratePassword.BorderSize = 0;
-            this.crBtnGeneratePassword.FlatAppearance.BorderSize = 0;
-            this.crBtnGeneratePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crBtnGeneratePassword.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.crBtnGeneratePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.crBtnGeneratePassword.Location = new System.Drawing.Point(521, 88);
-            this.crBtnGeneratePassword.Name = "crBtnGeneratePassword";
-            this.crBtnGeneratePassword.Size = new System.Drawing.Size(163, 26);
-            this.crBtnGeneratePassword.TabIndex = 99;
-            this.crBtnGeneratePassword.Text = "Generate Password";
-            this.crBtnGeneratePassword.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
-            this.crBtnGeneratePassword.UseVisualStyleBackColor = false;
-            this.crBtnGeneratePassword.Click += new System.EventHandler(this.crBtnGeneratePassword_Click);
-            // 
-            // lblPassword
-            // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(75)))));
-            this.lblPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.ForeColor = System.Drawing.Color.White;
-            this.lblPassword.Location = new System.Drawing.Point(12, 60);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(99, 25);
-            this.lblPassword.TabIndex = 96;
-            this.lblPassword.Text = "Password";
-            // 
-            // crBtnPassVisibility
-            // 
-            this.crBtnPassVisibility.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnPassVisibility.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnPassVisibility.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.crBtnPassVisibility.BorderColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnPassVisibility.BorderRadius = 20;
-            this.crBtnPassVisibility.BorderSize = 2;
-            this.crBtnPassVisibility.FlatAppearance.BorderSize = 0;
-            this.crBtnPassVisibility.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.crBtnPassVisibility.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnPassVisibility.Image = global::Le_Sa.Properties.Resources.hide_22px;
-            this.crBtnPassVisibility.Location = new System.Drawing.Point(657, 58);
-            this.crBtnPassVisibility.Name = "crBtnPassVisibility";
-            this.crBtnPassVisibility.Size = new System.Drawing.Size(27, 27);
-            this.crBtnPassVisibility.TabIndex = 97;
-            this.crBtnPassVisibility.TextColor = System.Drawing.SystemColors.ScrollBar;
-            this.crBtnPassVisibility.UseVisualStyleBackColor = false;
-            this.crBtnPassVisibility.MouseDown += new System.Windows.Forms.MouseEventHandler(this.crBtnPassVisibility_MouseDown);
-            this.crBtnPassVisibility.MouseUp += new System.Windows.Forms.MouseEventHandler(this.crBtnPassVisibility_MouseUp);
-            // 
-            // cTBPassword
-            // 
-            this.cTBPassword.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.cTBPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(75)))));
-            this.cTBPassword.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(39)))), ((int)(((byte)(75)))));
-            this.cTBPassword.BorderRadius = 20;
-            this.cTBPassword.BorderSize = 0;
-            this.cTBPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cTBPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.cTBPassword.Location = new System.Drawing.Point(200, 58);
-            this.cTBPassword.Margin = new System.Windows.Forms.Padding(1);
-            this.cTBPassword.Multiline = false;
-            this.cTBPassword.Name = "cTBPassword";
-            this.cTBPassword.Padding = new System.Windows.Forms.Padding(6, 4, 35, 4);
-            this.cTBPassword.PasswordChar = true;
-            this.cTBPassword.Size = new System.Drawing.Size(484, 27);
-            this.cTBPassword.TabIndex = 98;
-            this.cTBPassword.Texts = "";
-            this.cTBPassword.UnderlinedStyle = false;
             // 
             // cTBUsername
             // 
@@ -556,7 +439,7 @@ namespace Le_Sa.Settings
             this.cBoxDontShowAgain.ForeColor = System.Drawing.Color.SaddleBrown;
             this.cBoxDontShowAgain.Location = new System.Drawing.Point(13, 73);
             this.cBoxDontShowAgain.Name = "cBoxDontShowAgain";
-            this.cBoxDontShowAgain.Size = new System.Drawing.Size(144, 20);
+            this.cBoxDontShowAgain.Size = new System.Drawing.Size(143, 20);
             this.cBoxDontShowAgain.TabIndex = 4;
             this.cBoxDontShowAgain.Text = "Don\'t show this again.";
             this.cBoxDontShowAgain.UseVisualStyleBackColor = true;
@@ -651,12 +534,6 @@ namespace Le_Sa.Settings
         #endregion
         private System.Windows.Forms.Panel pnlDesktop;
         private System.Windows.Forms.Label lblUsername;
-        private CustRoundedButton crBtnGeneratePassword;
-        private System.Windows.Forms.Label lblPassword;
-        private CustRoundedButton crBtnPassVisibility;
-        private CustomControls.CustomTextBox cTBPassword;
-        private CustRoundedButton crBtnStrength;
-        private System.Windows.Forms.Label lblStrength;
         private CustomControls.CustomTextBox cTBPhoneNumber;
         private System.Windows.Forms.Label lblPhoneNumber;
         private CustRoundedButton crBtnSendOTP;
