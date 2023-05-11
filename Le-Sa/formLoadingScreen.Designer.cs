@@ -60,7 +60,7 @@
             this.lblCreator.Location = new System.Drawing.Point(350, 468);
             this.lblCreator.Name = "lblCreator";
             this.lblCreator.Size = new System.Drawing.Size(218, 14);
-            this.lblCreator.TabIndex = 14;
+            this.lblCreator.TabIndex = 11;
             this.lblCreator.Text = "SATHSARA BANDARA JAYASUNDARA 2021";
             // 
             // lblSlogan
@@ -70,8 +70,8 @@
             this.lblSlogan.ForeColor = System.Drawing.Color.White;
             this.lblSlogan.Location = new System.Drawing.Point(154, 116);
             this.lblSlogan.Name = "lblSlogan";
-            this.lblSlogan.Size = new System.Drawing.Size(111, 16);
-            this.lblSlogan.TabIndex = 13;
+            this.lblSlogan.Size = new System.Drawing.Size(110, 16);
+            this.lblSlogan.TabIndex = 111;
             this.lblSlogan.Text = "Focus on learning";
             // 
             // lblProductName
@@ -82,7 +82,7 @@
             this.lblProductName.Location = new System.Drawing.Point(135, 16);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(273, 98);
-            this.lblProductName.TabIndex = 12;
+            this.lblProductName.TabIndex = 111;
             this.lblProductName.Text = "Le-Sa";
             // 
             // pnlLoadingBack
@@ -128,7 +128,7 @@
             this.custRoundedPanel1.Location = new System.Drawing.Point(627, 12);
             this.custRoundedPanel1.Name = "custRoundedPanel1";
             this.custRoundedPanel1.Size = new System.Drawing.Size(280, 420);
-            this.custRoundedPanel1.TabIndex = 17;
+            this.custRoundedPanel1.TabIndex = 111;
             this.custRoundedPanel1.TextColor = System.Drawing.Color.White;
             // 
             // lblWelcome
@@ -140,7 +140,7 @@
             this.lblWelcome.Location = new System.Drawing.Point(10, 7);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(186, 62);
-            this.lblWelcome.TabIndex = 65;
+            this.lblWelcome.TabIndex = 111;
             this.lblWelcome.Text = "Hello there,\r\nwelcome back\r\n";
             // 
             // llblHaveAnAccount
@@ -249,7 +249,7 @@
             this.lblUsername.Location = new System.Drawing.Point(9, 130);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(105, 25);
-            this.lblUsername.TabIndex = 55;
+            this.lblUsername.TabIndex = 111;
             this.lblUsername.Text = "Username";
             // 
             // lblPassword
@@ -261,7 +261,7 @@
             this.lblPassword.Location = new System.Drawing.Point(9, 202);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(99, 25);
-            this.lblPassword.TabIndex = 56;
+            this.lblPassword.TabIndex = 111;
             this.lblPassword.Text = "Password";
             // 
             // llblForgotPassword
