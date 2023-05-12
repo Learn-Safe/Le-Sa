@@ -14,14 +14,11 @@ namespace Le_Sa
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if (AdminCheck.IsAdmin())
-            {
-                Application.Run(new formLoadingScreen());
-            }
-            else
+            if (!AdminCheck.IsAdmin())
             {
                 AdminCheck.RestartUnderAdmin();
             }
+            Application.Run(new formLoadingScreen());
         }
     }
 }

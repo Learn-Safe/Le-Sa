@@ -4,12 +4,10 @@ using FireSharp.Response;
 using Le_Sa.Models.Hashing;
 using System;
 using System.Runtime.InteropServices;
-using System.Security.Cryptography;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Le_Sa.Account
-{ 
+{
     public partial class formLogin : Form
     {
         public formLogin()

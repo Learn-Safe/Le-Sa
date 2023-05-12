@@ -1,7 +1,5 @@
 ﻿using Le_Sa.Models.Netsh;
-using Le_Sa.Structs;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
